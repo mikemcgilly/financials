@@ -2,19 +2,26 @@ from edgar import set_identity, Company
 from datetime import date
 import pandas as pd
 import json
+import time
+from stock_universe import get_all_stocks, get_stock_classifications
 
-def check_data_availability():
-    """Scans popular symbols for required EBITDA data availability (annual + quarterly)"""
+def check_data_availability(symbols=None, batch_size=10):
+    """Scans stocks for required EBITDA data availability with batch processing"""
     
-    symbols = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'META', 'NVDA', 'JPM', 
-               'JNJ', 'V', 'PG', 'UNH', 'HD', 'MA', 'DIS', 'ADBE', 'NFLX', 'CRM', 'INTC', 'AMD']
+    if symbols is None:
+        symbols = get_all_stocks()
     
     set_identity("mikemcgilly@gmail.com")
     
     results = []
+    total_symbols = len(symbols)
     
-    for symbol in symbols:
+    print(f"Checking data availability for {total_symbols} stocks...")
+    
+    for i, symbol in enumerate(symbols):
         try:
+            print(f"Processing {symbol} ({i+1}/{total_symbols})")
+            
             company = Company(symbol)
             
             # Check if facts are available
@@ -25,15 +32,16 @@ def check_data_availability():
                     'Annual_Depreciation': 0,
                     'Quarterly_Op_Income': 0,
                     'Quarterly_Depreciation': 0,
-                    'Complete_Data': False
+                    'Complete_Data': False,
+                    'Error': 'No facts available'
                 })
                 continue
             
-            # Annual data - use periods parameter
+            # Annual data
             income_stmt_annual = company.income_statement(periods=4, annual=True, as_dataframe=True)
             cash_flow_annual = company.cash_flow(periods=4, annual=True, as_dataframe=True)
             
-            # Quarterly data - use periods parameter  
+            # Quarterly data
             income_stmt_quarterly = company.income_statement(periods=8, annual=False, as_dataframe=True)
             cash_flow_quarterly = company.cash_flow(periods=8, annual=False, as_dataframe=True)
             
@@ -73,9 +81,15 @@ def check_data_availability():
                 'Annual_Depreciation': annual_depr_count,
                 'Quarterly_Op_Income': quarterly_op_count,
                 'Quarterly_Depreciation': quarterly_depr_count,
-                'Complete_Data': annual_op_count >= 2 and annual_depr_count >= 2
+                'Complete_Data': annual_op_count >= 2 and annual_depr_count >= 2,
+                'Error': None
             })
             
+            # Rate limiting - pause every batch_size requests
+            if (i + 1) % batch_size == 0:
+                print(f"Completed batch {(i + 1) // batch_size}, pausing...")
+                time.sleep(2)
+                
         except Exception as e:
             print(f"Error checking {symbol}: {e}")
             results.append({
@@ -84,21 +98,64 @@ def check_data_availability():
                 'Annual_Depreciation': 0,
                 'Quarterly_Op_Income': 0,
                 'Quarterly_Depreciation': 0,
-                'Complete_Data': False
+                'Complete_Data': False,
+                'Error': str(e)
             })
     
+    # Create comprehensive report
     df = pd.DataFrame(results)
-    print(df.to_string(index=False))
-    df.to_csv('quarterly_data_availability_report.csv', index=False)
+    
+    # Add index classifications
+    classifications = get_stock_classifications()
+    df['Primary_Index'] = df['Symbol'].map(lambda x: classifications.get(x, {}).get('primary_index', 'OTHER'))
+    df['All_Indices'] = df['Symbol'].map(lambda x: ','.join(classifications.get(x, {}).get('indices', [])))
+    
+    # Summary statistics
+    total_stocks = len(df)
+    complete_data = len(df[df['Complete_Data'] == True])
+    by_index = df.groupby('Primary_Index')['Complete_Data'].agg(['count', 'sum']).reset_index()
+    by_index.columns = ['Index', 'Total', 'Complete']
+    by_index['Percentage'] = (by_index['Complete'] / by_index['Total'] * 100).round(1)
+    
+    print(f"\n=== DATA AVAILABILITY SUMMARY ===")
+    print(f"Total stocks analyzed: {total_stocks}")
+    print(f"Stocks with complete data: {complete_data} ({complete_data/total_stocks*100:.1f}%)")
+    print(f"\nBy Index:")
+    print(by_index.to_string(index=False))
+    
+    # Save detailed report
+    df.to_csv('stock_data_availability_report.csv', index=False)
+    by_index.to_csv('availability_summary_by_index.csv', index=False)
+    
+    print(f"\nReports saved:")
+    print(f"- stock_data_availability_report.csv")
+    print(f"- availability_summary_by_index.csv")
+    
     return df
 
-def get_ebitda_combined(ticker=["AAPL"]):
-    """Returns EBITDA for a given company using both annual and quarterly data"""
+def get_ebitda_combined(ticker=None, batch_size=5):
+    """Returns EBITDA for companies using both annual and quarterly data with batch processing"""
+    
+    if ticker is None:
+        # Get stocks with complete data from availability check
+        try:
+            availability_df = pd.read_csv('stock_data_availability_report.csv')
+            ticker = availability_df[availability_df['Complete_Data'] == True]['Symbol'].tolist()
+            print(f"Using {len(ticker)} stocks with complete data from availability report")
+        except FileNotFoundError:
+            print("No availability report found, using sample stocks")
+            ticker = ['AAPL', 'MSFT', 'GOOGL']
     
     portfolio_data = []
+    total_stocks = len(ticker)
+    classifications = get_stock_classifications()
     
-    for i in ticker:
+    print(f"Processing EBITDA data for {total_stocks} stocks...")
+    
+    for idx, i in enumerate(ticker):
         try:
+            print(f"Processing {i} ({idx+1}/{total_stocks})")
+            
             company = Company(i.upper())
             set_identity("mikemcgilly@gmail.com")
 
@@ -117,7 +174,9 @@ def get_ebitda_combined(ticker=["AAPL"]):
                 'quarterly_data': [],
                 'latest_ebitda': None,
                 'ebitda_growth': None,
-                'data_quality': 'complete'
+                'data_quality': 'complete',
+                'indices': classifications.get(i.upper(), {}).get('indices', []),
+                'primary_index': classifications.get(i.upper(), {}).get('primary_index', 'OTHER')
             }
             
             # Process annual data
@@ -154,11 +213,13 @@ def get_ebitda_combined(ticker=["AAPL"]):
                             depreciation = depr_quarterly[period].iloc[0]
                             ebitda = op_income + depreciation
                             
+                            # Store quarterly data with annualized flag for portfolio calculations
                             company_data['quarterly_data'].append({
                                 'period': period,
                                 'operating_income': float(op_income),
                                 'depreciation': float(depreciation),
                                 'ebitda': float(ebitda),
+                                'ebitda_annualized': float(ebitda * 4),  # Annualized for comparison
                                 'period_type': 'quarterly'
                             })
             
@@ -181,56 +242,48 @@ def get_ebitda_combined(ticker=["AAPL"]):
             else:
                 print(f"No matching periods found for {i}")
             
+            # Rate limiting
+            if (idx + 1) % batch_size == 0:
+                print(f"Completed batch {(idx + 1) // batch_size}, pausing...")
+                time.sleep(2)
+                
         except Exception as e:
             print(f"Error processing {i}: {e}")
     
-    # Save web-ready JSON
+    # Save web-ready JSON with index information
     with open('portfolio_ebitda_data.json', 'w') as f:
         json.dump(portfolio_data, f, indent=2)
     
-    # Create summary CSV for quick analysis
-    summary_data = []
+    # Create summary by index
+    summary_by_index = {}
     for company in portfolio_data:
-        summary_data.append({
-            'Symbol': company['symbol'],
-            'Company': company['company_name'],
-            'Latest_EBITDA': company['latest_ebitda'],
-            'EBITDA_Growth_%': company['ebitda_growth'],
-            'Annual_Periods': len(company['annual_data']),
-            'Quarterly_Periods': len(company['quarterly_data'])
-        })
+        primary_index = company['primary_index']
+        if primary_index not in summary_by_index:
+            summary_by_index[primary_index] = {
+                'count': 0,
+                'total_ebitda': 0,
+                'avg_growth': 0,
+                'companies': []
+            }
+        
+        summary_by_index[primary_index]['count'] += 1
+        summary_by_index[primary_index]['total_ebitda'] += company['latest_ebitda'] or 0
+        summary_by_index[primary_index]['companies'].append(company['symbol'])
+        
+        if company['ebitda_growth']:
+            summary_by_index[primary_index]['avg_growth'] += company['ebitda_growth']
     
-    summary_df = pd.DataFrame(summary_data)
-    summary_df.to_csv('portfolio_summary.csv', index=False)
+    # Calculate averages
+    for index_data in summary_by_index.values():
+        if index_data['count'] > 0:
+            index_data['avg_growth'] = index_data['avg_growth'] / index_data['count']
     
-    # Create detailed CSV table for visual comparison
-    detailed_rows = []
-    for company in portfolio_data:
-        for period_data in company['annual_data'] + company['quarterly_data']:
-            detailed_rows.append({
-                'Symbol': company['symbol'],
-                'Company': company['company_name'],
-                'Period': period_data['period'],
-                'Type': period_data['period_type'],
-                'Operating_Income': period_data['operating_income'],
-                'Depreciation': period_data['depreciation'],
-                'EBITDA': period_data['ebitda']
-            })
-    
-    detailed_df = pd.DataFrame(detailed_rows)
-    detailed_df.to_csv('ebitda_detailed_table.csv', index=False)
-    
-    # Create pivot table for side-by-side comparison
-    if detailed_rows:
-        pivot_df = detailed_df.pivot_table(
-            index=['Symbol', 'Company'], 
-            columns='Period', 
-            values='EBITDA', 
-            fill_value=None
-        )
-        pivot_df.to_csv('ebitda_comparison_table.csv')
+    with open('portfolio_summary_by_index.json', 'w') as f:
+        json.dump(summary_by_index, f, indent=2)
     
     print(f"\nGenerated portfolio data for {len(portfolio_data)} companies")
+    print(f"Summary by index saved to portfolio_summary_by_index.json")
+    
     return portfolio_data
 
 if __name__ == '__main__':

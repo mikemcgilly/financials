@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ company_data.company_name }} - Financial Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ company_data.company_name }} ({{ company_data.symbol }})</h1>
+            <nav>
+                <a href="/" class="back-link">← Back to Portfolio</a>
+            </nav>
+        </header>
+
+        <div class="company-overview">
+            <div class="disclaimer">
+                <strong>Important:</strong> This analysis is for informational purposes only. 
+                Quarterly EBITDA figures are annualized by multiplying by 4 for comparison with annual data. 
+                This may not reflect actual annual performance due to seasonality and other factors.
+            </div>
+            
+            <div class="stock-info">
+                <h2>Current Stock Info</h2>
+                <div class="stock-metrics">
+                    <div class="metric">
+                        <span class="label">Current Price:</span>
+                        <span class="value" id="current-price">Loading...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">Market Cap:</span>
+                        <span class="value" id="market-cap">Loading...</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">P/E Ratio:</span>
+                        <span class="value" id="pe-ratio">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-section">
+                <h3>EBITDA Trend</h3>
+                <canvas id="ebitdaChart"></canvas>
+            </div>
+            
+            <div class="chart-section">
+                <h3>Stock Price (6 Months)</h3>
+                <canvas id="stockChart"></canvas>
+            </div>
+        </div>
+
+        <div class="data-tables">
+            <div class="table-section">
+                <h3>Annual EBITDA Data</h3>
+                <table id="annual-data">
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Operating Income</th>
+                            <th>Depreciation</th>
+                            <th>EBITDA</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="table-section">
+                <h3>Quarterly EBITDA Data</h3>
+                <div class="disclaimer">
+                    <strong>Note:</strong> Quarterly figures are actual quarterly amounts. 
+                    Annualized figures multiply quarterly amounts by 4 for comparison purposes only.
+                </div>
+                <table id="quarterly-data">
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Operating Income</th>
+                            <th>Depreciation</th>
+                            <th>EBITDA (Quarterly)</th>
+                            <th>EBITDA (Annualized)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const companyData = {{ company_data | tojson }};
+        const symbol = '{{ company_data.symbol }}';
+    </script>
+    <script src="{{ url_for('static', filename='company.js') }}"></script>
+</body>
+</html>

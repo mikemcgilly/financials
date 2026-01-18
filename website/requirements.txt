@@ -1,0 +1,4 @@
+flask
+edgar
+pandas
+yfinance
