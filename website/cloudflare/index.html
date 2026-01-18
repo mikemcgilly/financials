@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBITDA Portfolio Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>EBITDA Portfolio Dashboard</h1>
+            <p>Real-time financial analysis from SEC data</p>
+        </header>
+
+        <div class="summary-cards">
+            <div class="card">
+                <h3>Total Companies</h3>
+                <span id="total-companies">-</span>
+            </div>
+            <div class="card">
+                <h3>Avg EBITDA Growth</h3>
+                <span id="avg-growth">-</span>
+            </div>
+            <div class="card">
+                <h3>Top Performer</h3>
+                <span id="top-performer">-</span>
+            </div>
+        </div>
+
+        <div class="filter-controls">
+            <h3>Filter by Index:</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="ALL">ALL</button>
+                <button class="filter-btn" data-filter="SP500_TOP30">S&P 500 TOP 30%</button>
+                <button class="filter-btn" data-filter="NASDAQ100_TOP30">NASDAQ 100 TOP 30%</button>
+                <button class="filter-btn" data-filter="DOW">DOW INDUSTRIALS</button>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search by symbol or company name...">
+            </div>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid">
+            <!-- Companies will be populated by JavaScript -->
+        </div>
+
+        <div class="chart-section">
+            <h2>Portfolio EBITDA Overview</h2>
+            <div id="chart-container">
+                <canvas id="portfolio-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/portfolio.js"></script>
+    <script>
+        // Embedded data to avoid fetch issues
+        window.PORTFOLIO_DATA = null;
+        
+        // Load data from external file or fallback
+        fetch('./data/portfolio_ebitda_data.json')
+            .then(response => response.json())
+            .then(data => {
+                window.PORTFOLIO_DATA = data;
+                console.log('Data loaded successfully');
+            })
+            .catch(error => {
+                console.error('Failed to load external data, using fallback');
+                // Fallback: you'll need to paste the JSON data here
+                window.PORTFOLIO_DATA = [];
+            });
+    </script>
+</body>
+</html>
