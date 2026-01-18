@@ -138,7 +138,7 @@ function displayCompanies(companies) {
             </div>` : 
             `<div class="metric">
                 <span class="label">Stock Price:</span>
-                <span class="value">N/A</span>
+                <span class="value">Data not available</span>
             </div>`;
         
         card.innerHTML = `

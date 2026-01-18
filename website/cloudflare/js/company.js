@@ -75,6 +75,7 @@ function formatMarketCap(marketCap) {
 function createEbitdaChart(companyData) {
     createAnnualChart(companyData);
     createQuarterlyChart(companyData);
+    createStockPriceChart(companyData.symbol);
 }
 
 function createAnnualChart(companyData) {
@@ -157,7 +158,7 @@ function createAnnualChart(companyData) {
 }
 
 function createQuarterlyChart(companyData) {
-    const ctx = document.getElementById('stockChart').getContext('2d');
+    const ctx = document.getElementById('quarterlyChart').getContext('2d');
     
     const quarterlyData = (companyData.quarterly_data || [])
         .sort((a, b) => a.period.localeCompare(b.period))
@@ -238,6 +239,140 @@ function createQuarterlyChart(companyData) {
     });
 }
 
+// Create stock price chart with 6 months of historical data
+async function createStockPriceChart(symbol) {
+    console.log(`[DEBUG] Creating stock chart for ${symbol}`);
+    const ctx = document.getElementById('stockChart').getContext('2d');
+    
+    try {
+        const historyData = await loadHistoricalPrices(symbol);
+        console.log(`[DEBUG] Received history data:`, historyData);
+        
+        if (!historyData || !historyData.length) {
+            console.log(`[DEBUG] No data available, showing unavailable message`);
+            ctx.canvas.parentElement.innerHTML = '<p style="color: #cccccc; text-align: center; padding: 20px;">Stock price data unavailable</p>';
+            return;
+        }
+        
+        console.log(`[DEBUG] Processing ${historyData.length} data points`);
+        const labels = historyData.map(item => item.date);
+        const prices = historyData.map(item => item.price);
+        console.log(`[DEBUG] Chart labels:`, labels.slice(0, 5), '...');
+        console.log(`[DEBUG] Chart prices:`, prices.slice(0, 5), '...');
+        
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Stock Price',
+                    data: prices,
+                    borderColor: '#ff6b35',
+                    backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                    tension: 0.1,
+                    fill: true,
+                    pointRadius: 1,
+                    pointHoverRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#1a1a1a',
+                        titleColor: '#ffffff',
+                        bodyColor: '#cccccc',
+                        borderColor: '#333333',
+                        borderWidth: 1
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#cccccc',
+                            font: {
+                                family: 'Courier New',
+                                size: 10
+                            },
+                            maxTicksLimit: 8
+                        },
+                        grid: {
+                            color: '#333333'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#cccccc',
+                            font: {
+                                family: 'Courier New',
+                                size: 10
+                            }
+                        },
+                        grid: {
+                            color: '#333333'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Stock Price (USD)',
+                            color: '#ffffff',
+                            font: {
+                                family: 'Courier New',
+                                size: 11
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        console.log(`[DEBUG] Stock chart created successfully`);
+    } catch (error) {
+        console.log('[DEBUG] Stock chart error:', error);
+        ctx.canvas.parentElement.innerHTML = '<p style="color: #cccccc; text-align: center; padding: 20px;">Stock price chart unavailable</p>';
+    }
+}
+
+// Load 6 months of historical stock prices
+async function loadHistoricalPrices(symbol) {
+    console.log(`[DEBUG] Loading historical prices for ${symbol}`);
+    
+    const paths = [
+        `./api/history?symbol=${encodeURIComponent(symbol)}`,
+        `/api/history?symbol=${encodeURIComponent(symbol)}`
+    ];
+
+    for (const path of paths) {
+        try {
+            console.log(`[DEBUG] Trying path: ${path}`);
+            const resp = await fetch(path, { cache: "no-store" });
+            console.log(`[DEBUG] Response status: ${resp.status}`);
+            
+            if (!resp.ok) {
+                console.log(`[DEBUG] Path failed with status ${resp.status}`);
+                continue;
+            }
+            
+            const responseText = await resp.text();
+            console.log(`[DEBUG] Raw response text:`, responseText.substring(0, 200));
+            console.log(`[DEBUG] Response content-type:`, resp.headers.get('content-type'));
+            
+            const result = JSON.parse(responseText);
+            console.log(`[DEBUG] API response:`, result);
+            console.log(`[DEBUG] Data array length: ${result.data?.length || 0}`);
+            
+            return result.data || [];
+        } catch (error) {
+            console.log(`[DEBUG] Path ${path} threw error:`, error.message);
+        }
+    }
+    
+    console.log(`[DEBUG] All paths failed, returning empty array`);
+    return [];
+}
+
 // Populate data tables
 function populateDataTables(companyData) {
     // Annual data table
@@ -290,21 +425,21 @@ document.addEventListener('DOMContentLoaded', async function() {
     try {
         const live = await loadLiveQuote(companyData.symbol);
         if (live) {
-            setText('current-price', live.price != null ? `$${Number(live.price).toFixed(2)}` : 'N/A');
-            setText('market-cap', live.marketCap != null ? formatMarketCap(Number(live.marketCap)) : 'N/A');
-            setText('pe-ratio', live.peRatio != null && Number(live.peRatio) !== 0 ? Number(live.peRatio).toFixed(2) : 'N/A');
+            setText('current-price', live.price != null ? `$${Number(live.price).toFixed(2)}` : 'Data not available');
+            setText('market-cap', live.marketCap != null ? formatMarketCap(Number(live.marketCap)) : 'Data not available');
+            setText('pe-ratio', live.peRatio != null && Number(live.peRatio) !== 0 ? Number(live.peRatio).toFixed(2) : 'Data not available');
         } else {
             const snapshot = await loadStockPriceSnapshot();
             const q = snapshot ? snapshot[companyData.symbol] : null;
 
-            setText('current-price', q?.current_price != null ? `$${Number(q.current_price).toFixed(2)}` : 'N/A');
-            setText('market-cap', q?.market_cap != null ? formatMarketCap(Number(q.market_cap)) : 'N/A');
-            setText('pe-ratio', q?.pe_ratio != null && Number(q.pe_ratio) !== 0 ? Number(q.pe_ratio).toFixed(2) : 'N/A');
+            setText('current-price', q?.current_price != null ? `$${Number(q.current_price).toFixed(2)}` : 'Data not available');
+            setText('market-cap', q?.market_cap != null ? formatMarketCap(Number(q.market_cap)) : 'Data not available');
+            setText('pe-ratio', q?.pe_ratio != null && Number(q.pe_ratio) !== 0 ? Number(q.pe_ratio).toFixed(2) : 'Data not available');
         }
     } catch (e) {
         console.log('Quote render failed:', e?.message || e);
-        setText('current-price', 'N/A');
-        setText('market-cap', 'N/A');
-        setText('pe-ratio', 'N/A');
+        setText('current-price', 'Data not available');
+        setText('market-cap', 'Data not available');
+        setText('pe-ratio', 'Data not available');
     }
 });
