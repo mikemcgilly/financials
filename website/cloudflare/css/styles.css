@@ -369,6 +369,11 @@ tr:hover {
     color: var(--bloomberg-black);
 }
 
+.loading {
+    color: #888;
+    font-style: italic;
+}
+
 .chart-section {
     background: var(--bloomberg-bg-panel);
     border: 1px solid var(--bloomberg-border);

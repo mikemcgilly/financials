@@ -19,8 +19,8 @@
         <div class="company-overview">
             <div class="disclaimer">
                 <strong>Important:</strong> This analysis is for informational purposes only. 
-                Quarterly EBITDA figures are annualized by multiplying by 4 for comparison with annual data. 
-                This may not reflect actual annual performance due to seasonality and other factors.
+                <p>Filing-based fundamentals from SEC EDGAR.</p>		
+		<p>Snapshot market prices (Yahoo Finance).</p>
             </div>
             
             <div class="stock-info">
@@ -44,15 +44,12 @@
 
         <div class="charts-container">
             <div class="chart-section">
-                <h3>EBITDA Trend</h3>
+                <h3>Annual EBITDA Trend</h3>
                 <canvas id="ebitdaChart"></canvas>
             </div>
             
             <div class="chart-section">
-                <h3>Stock Price (Historical)</h3>
-                <div class="disclaimer">
-                    <strong>Note:</strong> Real-time stock data not available in static version.
-                </div>
+                <h3>Quarterly EBITDA Trend</h3>
                 <canvas id="stockChart"></canvas>
             </div>
         </div>
@@ -75,18 +72,13 @@
 
             <div class="table-section">
                 <h3>Quarterly EBITDA Data</h3>
-                <div class="disclaimer">
-                    <strong>Note:</strong> Quarterly figures are actual quarterly amounts. 
-                    Annualized figures multiply quarterly amounts by 4 for comparison purposes only.
-                </div>
                 <table id="quarterly-data">
                     <thead>
                         <tr>
                             <th>Period</th>
                             <th>Operating Income</th>
                             <th>Depreciation</th>
-                            <th>EBITDA (Quarterly)</th>
-                            <th>EBITDA (Annualized)</th>
+                            <th>EBITDA</th>
                         </tr>
                     </thead>
                     <tbody></tbody>

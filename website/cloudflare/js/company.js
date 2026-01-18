@@ -9,6 +9,60 @@ function loadCompanyData() {
     return JSON.parse(companyDataStr);
 }
 
+// Load cached stock prices from a local JSON file (static snapshot)
+// Using a snapshot avoids CORS issues you'd hit trying to call Yahoo Finance directly from the browser.
+async function loadStockPriceSnapshot() {
+    const possiblePaths = [
+        './data/stock_prices.json',
+        '/data/stock_prices.json',
+        'data/stock_prices.json'
+    ];
+
+    let lastError = null;
+    for (const path of possiblePaths) {
+        try {
+            const response = await fetch(path, { cache: 'no-store' });
+            if (response.ok) {
+                return await response.json();
+            }
+        } catch (err) {
+            lastError = err;
+        }
+    }
+    console.log('Could not load stock price snapshot:', lastError?.message || 'Unknown error');
+    return null;
+}
+
+function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+}
+
+// Try to fetch a live quote via Cloudflare Pages Function (/api/quote).
+// Falls back gracefully if the endpoint is not deployed or rate-limited.
+async function loadLiveQuote(symbol) {
+    const paths = [
+        `./api/quote?symbol=${encodeURIComponent(symbol)}`,
+        `/api/quote?symbol=${encodeURIComponent(symbol)}`
+    ];
+
+    for (const p of paths) {
+        try {
+            const resp = await fetch(p, { cache: "no-store" });
+            if (!resp.ok) continue;
+            const q = await resp.json();
+            // Expected: { symbol, price, marketCap, peRatio }
+            if (q && (q.price != null || q.marketCap != null || q.peRatio != null)) {
+                return q;
+            }
+        } catch (_) {
+            // ignore and try next path
+        }
+    }
+    return null;
+}
+
+
 // Format market cap for display
 function formatMarketCap(marketCap) {
     if (marketCap >= 1e12) return `$${(marketCap / 1e12).toFixed(2)}T`;
@@ -17,124 +71,35 @@ function formatMarketCap(marketCap) {
     return `$${marketCap.toLocaleString()}`;
 }
 
-// Create EBITDA trend chart with Bloomberg styling
+// Create separate EBITDA charts for annual and quarterly data
 function createEbitdaChart(companyData) {
+    createAnnualChart(companyData);
+    createQuarterlyChart(companyData);
+}
+
+function createAnnualChart(companyData) {
     const ctx = document.getElementById('ebitdaChart').getContext('2d');
     
-    // Use annual data and annualized quarterly data for comparison
-    const annualData = (companyData.annual_data || []).map(item => ({
-        period: item.period,
-        ebitda: item.ebitda / 1e6,
-        type: 'Annual'
-    }));
+    const annualData = (companyData.annual_data || [])
+        .sort((a, b) => a.period.localeCompare(b.period))
+        .map(item => ({
+            period: item.period,
+            ebitda: item.ebitda / 1e6
+        }));
     
-    const quarterlyAnnualized = (companyData.quarterly_data || []).map(item => ({
-        period: item.period + ' (Ann.)',
-        ebitda: (item.ebitda * 4) / 1e6,  // Annualized
-        type: 'Quarterly (Annualized)'
-    }));
-    
-    const allData = [...annualData, ...quarterlyAnnualized];
-    allData.sort((a, b) => a.period.localeCompare(b.period));
-    
-    const labels = allData.map(item => item.period);
-    const ebitdaValues = allData.map(item => item.ebitda);
-    const colors = allData.map(item => item.type === 'Annual' ? '#0066cc' : '#00cc66');
+    const labels = annualData.map(item => item.period);
+    const ebitdaValues = annualData.map(item => item.ebitda);
     
     new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
             datasets: [{
-                label: 'EBITDA (Millions)',
+                label: 'Annual EBITDA (Millions)',
                 data: ebitdaValues,
-                backgroundColor: colors,
-                borderColor: colors,
+                backgroundColor: '#0066cc',
+                borderColor: '#0066cc',
                 borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    backgroundColor: '#1a1a1a',
-                    titleColor: '#ffffff',
-                    bodyColor: '#cccccc',
-                    borderColor: '#333333',
-                    borderWidth: 1,
-                    callbacks: {
-                        afterLabel: function(context) {
-                            const dataPoint = allData[context.dataIndex];
-                            return dataPoint.type === 'Quarterly (Annualized)' ? 
-                                'Note: Quarterly data annualized (×4)' : '';
-                        }
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        color: '#cccccc',
-                        font: {
-                            family: 'Courier New',
-                            size: 10
-                        }
-                    },
-                    grid: {
-                        color: '#333333'
-                    }
-                },
-                y: {
-                    beginAtZero: false,
-                    ticks: {
-                        color: '#cccccc',
-                        font: {
-                            family: 'Courier New',
-                            size: 10
-                        }
-                    },
-                    grid: {
-                        color: '#333333'
-                    },
-                    title: {
-                        display: true,
-                        text: 'EBITDA (Millions USD)',
-                        color: '#ffffff',
-                        font: {
-                            family: 'Courier New',
-                            size: 11
-                        }
-                    }
-                }
-            }
-        }
-    });
-}
-
-// Create placeholder stock chart
-function createStockChart() {
-    const ctx = document.getElementById('stockChart').getContext('2d');
-    
-    // Create sample data for demonstration
-    const labels = ['6M Ago', '5M Ago', '4M Ago', '3M Ago', '2M Ago', '1M Ago', 'Now'];
-    const samplePrices = [100, 105, 98, 110, 115, 108, 112]; // Sample data
-    
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Stock Price (Sample)',
-                data: samplePrices,
-                borderColor: '#ffcc00',
-                backgroundColor: 'rgba(255, 204, 0, 0.1)',
-                tension: 0.1,
-                fill: true,
-                pointRadius: 0,
-                pointHoverRadius: 3
             }]
         },
         options: {
@@ -178,7 +143,89 @@ function createStockChart() {
                     },
                     title: {
                         display: true,
-                        text: 'Price (USD)',
+                        text: 'Annual EBITDA (Millions USD)',
+                        color: '#ffffff',
+                        font: {
+                            family: 'Courier New',
+                            size: 11
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function createQuarterlyChart(companyData) {
+    const ctx = document.getElementById('stockChart').getContext('2d');
+    
+    const quarterlyData = (companyData.quarterly_data || [])
+        .sort((a, b) => a.period.localeCompare(b.period))
+        .map(item => ({
+            period: item.period,
+            ebitda: item.ebitda / 1e6
+        }));
+    
+    const labels = quarterlyData.map(item => item.period);
+    const ebitdaValues = quarterlyData.map(item => item.ebitda);
+    
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Quarterly EBITDA (Millions)',
+                data: ebitdaValues,
+                borderColor: '#00cc66',
+                backgroundColor: 'rgba(0, 204, 102, 0.1)',
+                tension: 0.1,
+                fill: true,
+                pointRadius: 3,
+                pointHoverRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: '#1a1a1a',
+                    titleColor: '#ffffff',
+                    bodyColor: '#cccccc',
+                    borderColor: '#333333',
+                    borderWidth: 1
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#cccccc',
+                        font: {
+                            family: 'Courier New',
+                            size: 10
+                        }
+                    },
+                    grid: {
+                        color: '#333333'
+                    }
+                },
+                y: {
+                    beginAtZero: false,
+                    ticks: {
+                        color: '#cccccc',
+                        font: {
+                            family: 'Courier New',
+                            size: 10
+                        }
+                    },
+                    grid: {
+                        color: '#333333'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Quarterly EBITDA (Millions USD)',
                         color: '#ffffff',
                         font: {
                             family: 'Courier New',
@@ -205,7 +252,7 @@ function populateDataTables(companyData) {
         `;
     });
     
-    // Quarterly data table with both quarterly and annualized figures
+    // Quarterly data table - removed annualized column
     const quarterlyTableBody = document.querySelector('#quarterly-data tbody');
     (companyData.quarterly_data || []).forEach(item => {
         const row = quarterlyTableBody.insertRow();
@@ -214,13 +261,12 @@ function populateDataTables(companyData) {
             <td>$${(item.operating_income / 1e6).toFixed(2)}M</td>
             <td>$${(item.depreciation / 1e6).toFixed(2)}M</td>
             <td>$${(item.ebitda / 1e6).toFixed(2)}M</td>
-            <td>$${(item.ebitda * 4 / 1e6).toFixed(2)}M</td>
         `;
     });
 }
 
 // Initialize page
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     const companyData = loadCompanyData();
     
     if (!companyData) {
@@ -233,11 +279,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Create charts
     createEbitdaChart(companyData);
-    createStockChart(); // Placeholder chart
     
     // Populate tables
     populateDataTables(companyData);
-    
-    // Note: Stock data would be fetched from API in a real implementation
-    // For static version, we show placeholder text
+
+
+    // Stock quote rendering
+    // 1) Try live Yahoo quote via Cloudflare Pages Function (/api/quote)
+    // 2) Fall back to the cached snapshot in /data/stock_prices.json
+    try {
+        const live = await loadLiveQuote(companyData.symbol);
+        if (live) {
+            setText('current-price', live.price != null ? `$${Number(live.price).toFixed(2)}` : 'N/A');
+            setText('market-cap', live.marketCap != null ? formatMarketCap(Number(live.marketCap)) : 'N/A');
+            setText('pe-ratio', live.peRatio != null && Number(live.peRatio) !== 0 ? Number(live.peRatio).toFixed(2) : 'N/A');
+        } else {
+            const snapshot = await loadStockPriceSnapshot();
+            const q = snapshot ? snapshot[companyData.symbol] : null;
+
+            setText('current-price', q?.current_price != null ? `$${Number(q.current_price).toFixed(2)}` : 'N/A');
+            setText('market-cap', q?.market_cap != null ? formatMarketCap(Number(q.market_cap)) : 'N/A');
+            setText('pe-ratio', q?.pe_ratio != null && Number(q.pe_ratio) !== 0 ? Number(q.pe_ratio).toFixed(2) : 'N/A');
+        }
+    } catch (e) {
+        console.log('Quote render failed:', e?.message || e);
+        setText('current-price', 'N/A');
+        setText('market-cap', 'N/A');
+        setText('pe-ratio', 'N/A');
+    }
 });

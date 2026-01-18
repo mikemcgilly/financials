@@ -2,6 +2,32 @@
 let currentFilter = 'ALL';
 let currentSearch = '';
 let allCompanies = [];
+let stockPrices = {};
+
+// Load cached stock prices from a local JSON file (static snapshot)
+async function loadStockPriceSnapshot() {
+    const possiblePaths = [
+        './data/stock_prices.json',
+        '/data/stock_prices.json',
+        'data/stock_prices.json'
+    ];
+
+    let lastError = null;
+    for (const path of possiblePaths) {
+        try {
+            const response = await fetch(path, { cache: 'no-store' });
+            if (response.ok) {
+                console.log(`Loaded stock prices from ${path}`);
+                return await response.json();
+            }
+        } catch (err) {
+            lastError = err;
+        }
+    }
+
+    console.log('Could not load stock price snapshot:', lastError?.message || 'Unknown error');
+    return null;
+}
 
 // Load portfolio data from JSON
 async function loadPortfolioData() {
@@ -104,10 +130,22 @@ function displayCompanies(companies) {
         const indexBadges = company.indices ? 
             company.indices.map(index => `<span class="index-badge">${index}</span>`).join('') : '';
         
+        const stockPrice = stockPrices[company.symbol];
+        const priceDisplay = (stockPrice != null) ? 
+            `<div class="metric">
+                <span class="label">Stock Price:</span>
+                <span class="value">$${stockPrice.toFixed(2)}</span>
+            </div>` : 
+            `<div class="metric">
+                <span class="label">Stock Price:</span>
+                <span class="value">N/A</span>
+            </div>`;
+        
         card.innerHTML = `
             <h3>${company.company_name}</h3>
             <div class="symbol">${company.symbol}</div>
             <div class="index-badges">${indexBadges}</div>
+            ${priceDisplay}
             <div class="metric">
                 <span class="label">Latest EBITDA:</span>
                 <span class="value">$${(company.latest_ebitda / 1000000).toFixed(2)}M</span>
@@ -120,6 +158,8 @@ function displayCompanies(companies) {
     
     // Update total companies count
     document.getElementById('total-companies').textContent = companies.length;
+    
+    // Prices are loaded once on page init (static snapshot)
 }
 
 function updateFilterCounts() {
@@ -260,10 +300,27 @@ function updateSummaryStats(companies = null) {
     }
 }
 
+// Preload stock price snapshot once (so we don't refetch on every filter/search)
+async function preloadStockPrices() {
+    const snapshot = await loadStockPriceSnapshot();
+    if (!snapshot) return;
+
+    // Store only the numeric price keyed by symbol (keeps rendering simple)
+    Object.keys(snapshot).forEach(symbol => {
+        const q = snapshot[symbol];
+        if (q && q.current_price != null) {
+            stockPrices[symbol] = Number(q.current_price);
+        }
+    });
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', async function() {
     // Load data
     allCompanies = await loadPortfolioData();
+
+    // Load stock prices snapshot (static)
+    await preloadStockPrices();
     
     if (allCompanies.length > 0) {
         displayCompanies(allCompanies);

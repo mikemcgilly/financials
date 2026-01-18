@@ -1,0 +1,647 @@
+{
+  "A": {
+    "current_price": 139.64,
+    "market_cap": 39587999744,
+    "pe_ratio": 30.555798
+  },
+  "AAPL": {
+    "current_price": 255.53,
+    "market_cap": 3775801327616,
+    "pe_ratio": 34.25335
+  },
+  "ABBV": {
+    "current_price": 214.35,
+    "market_cap": 378838908928,
+    "pe_ratio": 161.16542
+  },
+  "ABT": {
+    "current_price": 121.76,
+    "market_cap": 211918290944,
+    "pe_ratio": 15.296483
+  },
+  "ACN": {
+    "current_price": 286.21,
+    "market_cap": 177489936384,
+    "pe_ratio": 23.634186
+  },
+  "ADBE": {
+    "current_price": 296.12,
+    "market_cap": 123955830784,
+    "pe_ratio": 17.731735
+  },
+  "ADI": {
+    "current_price": 300.25,
+    "market_cap": 147018645504,
+    "pe_ratio": 65.8443
+  },
+  "ADSK": {
+    "current_price": 265.69,
+    "market_cap": 56591970304,
+    "pe_ratio": 51.59029
+  },
+  "ALGN": {
+    "current_price": 171.49,
+    "market_cap": 12430687232,
+    "pe_ratio": 33.234497
+  },
+  "AMAT": {
+    "current_price": 327.01,
+    "market_cap": 260510056448,
+    "pe_ratio": 37.71742
+  },
+  "AMD": {
+    "current_price": 231.83,
+    "market_cap": 377428901888,
+    "pe_ratio": 122.01579
+  },
+  "AMGN": {
+    "current_price": 330.41,
+    "market_cap": 177919393792,
+    "pe_ratio": 25.57353
+  },
+  "AMT": {
+    "current_price": 183.57,
+    "market_cap": 85956878336,
+    "pe_ratio": 29.230892
+  },
+  "AMZN": {
+    "current_price": 239.12,
+    "market_cap": 2556244262912,
+    "pe_ratio": 33.77401
+  },
+  "AON": {
+    "current_price": 343.86,
+    "market_cap": 74145357824,
+    "pe_ratio": 27.464853
+  },
+  "APD": {
+    "current_price": 267.53,
+    "market_cap": 59549974528,
+    "pe_ratio": 0
+  },
+  "APH": {
+    "current_price": 154.39,
+    "market_cap": 188981936128,
+    "pe_ratio": 51.463333
+  },
+  "AVGO": {
+    "current_price": 351.71,
+    "market_cap": 1667553296384,
+    "pe_ratio": 73.57949
+  },
+  "BA": {
+    "current_price": 247.68,
+    "market_cap": 193951072256,
+    "pe_ratio": 0
+  },
+  "BKNG": {
+    "current_price": 5115.91,
+    "market_cap": 165806063616,
+    "pe_ratio": 33.33275
+  },
+  "BLK": {
+    "current_price": 1163.17,
+    "market_cap": 180466892800,
+    "pe_ratio": 32.89508
+  },
+  "BSX": {
+    "current_price": 88.07,
+    "market_cap": 130609553408,
+    "pe_ratio": 47.096256
+  },
+  "CAT": {
+    "current_price": 646.89,
+    "market_cap": 303054323712,
+    "pe_ratio": 33.224964
+  },
+  "CDNS": {
+    "current_price": 317.45,
+    "market_cap": 86501949440,
+    "pe_ratio": 82.02843
+  },
+  "CDW": {
+    "current_price": 131.75,
+    "market_cap": 17267253248,
+    "pe_ratio": 16.677216
+  },
+  "CL": {
+    "current_price": 84.52,
+    "market_cap": 68310818816,
+    "pe_ratio": 23.67507
+  },
+  "CMCSA": {
+    "current_price": 27.82,
+    "market_cap": 109643194368,
+    "pe_ratio": 4.6212626
+  },
+  "CME": {
+    "current_price": 279.5,
+    "market_cap": 100787634176,
+    "pe_ratio": 27.109602
+  },
+  "COST": {
+    "current_price": 963.61,
+    "market_cap": 427802066944,
+    "pe_ratio": 51.557514
+  },
+  "CRM": {
+    "current_price": 227.11,
+    "market_cap": 216208719872,
+    "pe_ratio": 30.321764
+  },
+  "CSCO": {
+    "current_price": 75.19,
+    "market_cap": 297082814464,
+    "pe_ratio": 29.03089
+  },
+  "CTAS": {
+    "current_price": 195.42,
+    "market_cap": 78744100864,
+    "pe_ratio": 42.390453
+  },
+  "CTSH": {
+    "current_price": 84.74,
+    "market_cap": 41386672128,
+    "pe_ratio": 19.61574
+  },
+  "DE": {
+    "current_price": 514.4,
+    "market_cap": 139440717824,
+    "pe_ratio": 27.77538
+  },
+  "DECK": {
+    "current_price": 100.69,
+    "market_cap": 14936693760,
+    "pe_ratio": 14.961368
+  },
+  "DHR": {
+    "current_price": 235.99,
+    "market_cap": 168981020672,
+    "pe_ratio": 48.557613
+  },
+  "DIS": {
+    "current_price": 111.2,
+    "market_cap": 199930232832,
+    "pe_ratio": 16.233576
+  },
+  "DUK": {
+    "current_price": 119.22,
+    "market_cap": 92712771584,
+    "pe_ratio": 18.774803
+  },
+  "DXCM": {
+    "current_price": 69.54,
+    "market_cap": 27270477824,
+    "pe_ratio": 38.633335
+  },
+  "EA": {
+    "current_price": 204.25,
+    "market_cap": 51084177408,
+    "pe_ratio": 59.548103
+  },
+  "ELV": {
+    "current_price": 374.87,
+    "market_cap": 84412588032,
+    "pe_ratio": 15.269654
+  },
+  "ENPH": {
+    "current_price": 34.98,
+    "market_cap": 4577472512,
+    "pe_ratio": 23.958902
+  },
+  "EOG": {
+    "current_price": 105.32,
+    "market_cap": 57504026624,
+    "pe_ratio": 10.458789
+  },
+  "EPAM": {
+    "current_price": 212.61,
+    "market_cap": 11841720320,
+    "pe_ratio": 32.45954
+  },
+  "EQIX": {
+    "current_price": 801.78,
+    "market_cap": 78723637248,
+    "pe_ratio": 73.5578
+  },
+  "EW": {
+    "current_price": 84.35,
+    "market_cap": 49521885184,
+    "pe_ratio": 36.995613
+  },
+  "EXC": {
+    "current_price": 44.73,
+    "market_cap": 45176729600,
+    "pe_ratio": 16.032259
+  },
+  "FANG": {
+    "current_price": 151.28,
+    "market_cap": 43793457152,
+    "pe_ratio": 10.623595
+  },
+  "FAST": {
+    "current_price": 43.74,
+    "market_cap": 50215084032,
+    "pe_ratio": 41.264156
+  },
+  "FCX": {
+    "current_price": 58.71,
+    "market_cap": 84303486976,
+    "pe_ratio": 41.055946
+  },
+  "FTNT": {
+    "current_price": 75.38,
+    "market_cap": 57761132544,
+    "pe_ratio": 31.020575
+  },
+  "GILD": {
+    "current_price": 124.91,
+    "market_cap": 154989199360,
+    "pe_ratio": 19.335915
+  },
+  "GM": {
+    "current_price": 80.82,
+    "market_cap": 76946931712,
+    "pe_ratio": 15.423665
+  },
+  "GOOGL": {
+    "current_price": 330.0,
+    "market_cap": 3997000269824,
+    "pe_ratio": 32.576504
+  },
+  "HD": {
+    "current_price": 380.17,
+    "market_cap": 378463617024,
+    "pe_ratio": 25.914793
+  },
+  "ICE": {
+    "current_price": 173.98,
+    "market_cap": 99590168576,
+    "pe_ratio": 31.632727
+  },
+  "IDXX": {
+    "current_price": 715.37,
+    "market_cap": 57232957440,
+    "pe_ratio": 56.82049
+  },
+  "IEX": {
+    "current_price": 196.93,
+    "market_cap": 14826324992,
+    "pe_ratio": 31.159807
+  },
+  "INTC": {
+    "current_price": 46.96,
+    "market_cap": 223999197184,
+    "pe_ratio": 782.6667
+  },
+  "INTU": {
+    "current_price": 545.29,
+    "market_cap": 151808737280,
+    "pe_ratio": 37.451233
+  },
+  "ISRG": {
+    "current_price": 535.0,
+    "market_cap": 191784927232,
+    "pe_ratio": 70.95491
+  },
+  "ITW": {
+    "current_price": 263.47,
+    "market_cap": 76801507328,
+    "pe_ratio": 25.57961
+  },
+  "JBHT": {
+    "current_price": 204.38,
+    "market_cap": 19460724736,
+    "pe_ratio": 33.45008
+  },
+  "KEYS": {
+    "current_price": 214.2,
+    "market_cap": 36803227648,
+    "pe_ratio": 42.75449
+  },
+  "KMB": {
+    "current_price": 99.32,
+    "market_cap": 32963624960,
+    "pe_ratio": 16.805414
+  },
+  "KO": {
+    "current_price": 70.44,
+    "market_cap": 303150333952,
+    "pe_ratio": 23.324505
+  },
+  "KR": {
+    "current_price": 63.19,
+    "market_cap": 41874636800,
+    "pe_ratio": 55.920353
+  },
+  "LIN": {
+    "current_price": 438.96,
+    "market_cap": 205832519680,
+    "pe_ratio": 29.42091
+  },
+  "LOW": {
+    "current_price": 277.55,
+    "market_cap": 155692072960,
+    "pe_ratio": 22.99503
+  },
+  "LRCX": {
+    "current_price": 222.96,
+    "market_cap": 281159761920,
+    "pe_ratio": 49.218544
+  },
+  "LULU": {
+    "current_price": 201.87,
+    "market_cap": 23939592192,
+    "pe_ratio": 14.048017
+  },
+  "MA": {
+    "current_price": 539.49,
+    "market_cap": 487705346048,
+    "pe_ratio": 34.472206
+  },
+  "MAR": {
+    "current_price": 325.88,
+    "market_cap": 88462680064,
+    "pe_ratio": 34.37553
+  },
+  "MCD": {
+    "current_price": 307.43,
+    "market_cap": 219383398400,
+    "pe_ratio": 26.253628
+  },
+  "MCHP": {
+    "current_price": 74.7,
+    "market_cap": 40371376128,
+    "pe_ratio": 0
+  },
+  "MDT": {
+    "current_price": 96.76,
+    "market_cap": 124105932800,
+    "pe_ratio": 26.222223
+  },
+  "META": {
+    "current_price": 620.25,
+    "market_cap": 1563357216768,
+    "pe_ratio": 27.469
+  },
+  "MMC": {
+    "current_price": 182.7,
+    "market_cap": 89819709440,
+    "pe_ratio": 21.932774
+  },
+  "MMM": {
+    "current_price": 167.8,
+    "market_cap": 89375260672,
+    "pe_ratio": 26.719746
+  },
+  "MNST": {
+    "current_price": 78.17,
+    "market_cap": 76373745664,
+    "pe_ratio": 44.414772
+  },
+  "MPWR": {
+    "current_price": 1033.17,
+    "market_cap": 49496076288,
+    "pe_ratio": 26.525547
+  },
+  "MSFT": {
+    "current_price": 459.86,
+    "market_cap": 3418215677952,
+    "pe_ratio": 32.683723
+  },
+  "MSI": {
+    "current_price": 400.61,
+    "market_cap": 66743181312,
+    "pe_ratio": 32.151684
+  },
+  "MU": {
+    "current_price": 362.75,
+    "market_cap": 408278466560,
+    "pe_ratio": 34.481937
+  },
+  "NDSN": {
+    "current_price": 271.92,
+    "market_cap": 15179531264,
+    "pe_ratio": 31.952997
+  },
+  "NEE": {
+    "current_price": 83.63,
+    "market_cap": 174168637440,
+    "pe_ratio": 26.549204
+  },
+  "NFLX": {
+    "current_price": 88.0,
+    "market_cap": 372884439040,
+    "pe_ratio": 36.820084
+  },
+  "NOW": {
+    "current_price": 127.31,
+    "market_cap": 134330253312,
+    "pe_ratio": 76.69277
+  },
+  "NTAP": {
+    "current_price": 103.84,
+    "market_cap": 20728373248,
+    "pe_ratio": 18.090593
+  },
+  "NVDA": {
+    "current_price": 186.23,
+    "market_cap": 4534141714432,
+    "pe_ratio": 46.096535
+  },
+  "NXPI": {
+    "current_price": 237.11,
+    "market_cap": 59778891776,
+    "pe_ratio": 29.309023
+  },
+  "ODFL": {
+    "current_price": 175.65,
+    "market_cap": 36916031488,
+    "pe_ratio": 35.342052
+  },
+  "ON": {
+    "current_price": 60.33,
+    "market_cap": 24673400832,
+    "pe_ratio": 82.64384
+  },
+  "ORCL": {
+    "current_price": 191.09,
+    "market_cap": 549026398208,
+    "pe_ratio": 35.986816
+  },
+  "ORLY": {
+    "current_price": 94.7,
+    "market_cap": 80119259136,
+    "pe_ratio": 32.881943
+  },
+  "PANW": {
+    "current_price": 187.66,
+    "market_cap": 128356196352,
+    "pe_ratio": 118.77215
+  },
+  "PAYX": {
+    "current_price": 111.18,
+    "market_cap": 39910002688,
+    "pe_ratio": 25.153847
+  },
+  "PEP": {
+    "current_price": 146.32,
+    "market_cap": 200323399680,
+    "pe_ratio": 27.870478
+  },
+  "PG": {
+    "current_price": 144.53,
+    "market_cap": 338270355456,
+    "pe_ratio": 21.09927
+  },
+  "PLD": {
+    "current_price": 133.21,
+    "market_cap": 123734376448,
+    "pe_ratio": 38.72384
+  },
+  "PM": {
+    "current_price": 173.62,
+    "market_cap": 270263599104,
+    "pe_ratio": 24.767473
+  },
+  "POOL": {
+    "current_price": 267.99,
+    "market_cap": 10000852992,
+    "pe_ratio": 24.451641
+  },
+  "QCOM": {
+    "current_price": 159.42,
+    "market_cap": 172014190592,
+    "pe_ratio": 31.820358
+  },
+  "ROP": {
+    "current_price": 416.14,
+    "market_cap": 44792242176,
+    "pe_ratio": 28.65978
+  },
+  "RTX": {
+    "current_price": 201.92,
+    "market_cap": 270728675328,
+    "pe_ratio": 41.462013
+  },
+  "SHW": {
+    "current_price": 357.83,
+    "market_cap": 89218932736,
+    "pe_ratio": 34.978497
+  },
+  "SLB": {
+    "current_price": 46.73,
+    "market_cap": 69811044352,
+    "pe_ratio": 18.18288
+  },
+  "SMCI": {
+    "current_price": 32.64,
+    "market_cap": 19485136896,
+    "pe_ratio": 25.700787
+  },
+  "SNPS": {
+    "current_price": 516.31,
+    "market_cap": 98779504640,
+    "pe_ratio": 64.137886
+  },
+  "SO": {
+    "current_price": 88.9,
+    "market_cap": 97888223232,
+    "pe_ratio": 22.114428
+  },
+  "SPGI": {
+    "current_price": 546.35,
+    "market_cap": 166800654336,
+    "pe_ratio": 39.67683
+  },
+  "SWKS": {
+    "current_price": 57.77,
+    "market_cap": 8661470208,
+    "pe_ratio": 18.756495
+  },
+  "SYK": {
+    "current_price": 363.78,
+    "market_cap": 139118067712,
+    "pe_ratio": 47.86579
+  },
+  "T": {
+    "current_price": 23.49,
+    "market_cap": 167962558464,
+    "pe_ratio": 7.651466
+  },
+  "TGT": {
+    "current_price": 111.28,
+    "market_cap": 50565533696,
+    "pe_ratio": 13.488484
+  },
+  "TMO": {
+    "current_price": 618.72,
+    "market_cap": 232458076160,
+    "pe_ratio": 35.722862
+  },
+  "TMUS": {
+    "current_price": 186.32,
+    "market_cap": 209688084480,
+    "pe_ratio": 17.949903
+  },
+  "TSLA": {
+    "current_price": 437.5,
+    "market_cap": 1455045869568,
+    "pe_ratio": 303.81943
+  },
+  "TXN": {
+    "current_price": 191.58,
+    "market_cap": 174172504064,
+    "pe_ratio": 34.83273
+  },
+  "UBER": {
+    "current_price": 84.85,
+    "market_cap": 176947773440,
+    "pe_ratio": 43.73711
+  },
+  "UNH": {
+    "current_price": 331.02,
+    "market_cap": 299850694656,
+    "pe_ratio": 17.240623
+  },
+  "V": {
+    "current_price": 328.3,
+    "market_cap": 633585205248,
+    "pe_ratio": 32.15475
+  },
+  "VRSK": {
+    "current_price": 220.41,
+    "market_cap": 30794577920,
+    "pe_ratio": 33.909233
+  },
+  "VRTX": {
+    "current_price": 441.36,
+    "market_cap": 113160577024,
+    "pe_ratio": 31.059816
+  },
+  "VZ": {
+    "current_price": 38.91,
+    "market_cap": 164061118464,
+    "pe_ratio": 8.296375
+  },
+  "WM": {
+    "current_price": 221.23,
+    "market_cap": 89126273024,
+    "pe_ratio": 34.83937
+  },
+  "WMT": {
+    "current_price": 119.7,
+    "market_cap": 954350239744,
+    "pe_ratio": 41.853146
+  },
+  "XEL": {
+    "current_price": 75.61,
+    "market_cap": 44726321152,
+    "pe_ratio": 23.05183
+  },
+  "ZBRA": {
+    "current_price": 251.21,
+    "market_cap": 12772810752,
+    "pe_ratio": 25.32359
+  }
+}
