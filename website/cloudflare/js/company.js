@@ -62,6 +62,12 @@ async function loadLiveQuote(symbol) {
     return null;
 }
 
+// Parse periods like "Q3 2024" into sortable components
+function parseQuarterPeriod(period) {
+  const m = String(period).trim().match(/^Q([1-4])\s+(\d{4})$/i);
+  if (!m) return { year: 0, quarter: 0 };
+  return { quarter: Number(m[1]), year: Number(m[2]) };
+}
 
 // Format market cap for display
 function formatMarketCap(marketCap) {
@@ -161,7 +167,13 @@ function createQuarterlyChart(companyData) {
     const ctx = document.getElementById('quarterlyChart').getContext('2d');
     
     const quarterlyData = (companyData.quarterly_data || [])
-        .sort((a, b) => a.period.localeCompare(b.period))
+        .sort((a, b) => {
+            const pa = parseQuarterPeriod(a.period);
+            const pb = parseQuarterPeriod(b.period);
+            if (pa.year !== pb.year) return pa.year - pb.year;      // older -> newer
+            return pa.quarter - pb.quarter;                         // Q1 -> Q4
+            })
+
         .map(item => ({
             period: item.period,
             ebitda: item.ebitda / 1e6
