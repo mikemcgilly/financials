@@ -5379,6 +5379,13 @@
     "company_name": "General Motors Co",
     "annual_data": [
       {
+        "period": "FY 2025",
+        "operating_income": 2909000000.0,
+        "depreciation": 11980000000.0,
+        "ebitda": 14889000000.0,
+        "period_type": "annual"
+      },
+      {
         "period": "FY 2024",
         "operating_income": 12784000000.0,
         "depreciation": 11456000000.0,
@@ -5397,13 +5404,6 @@
         "operating_income": 10315000000.0,
         "depreciation": 11276000000.0,
         "ebitda": 21591000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 9324000000.0,
-        "depreciation": 12047000000.0,
-        "ebitda": 21371000000.0,
         "period_type": "annual"
       }
     ],
@@ -5993,6 +5993,13 @@
     "company_name": "INTEL CORP",
     "annual_data": [
       {
+        "period": "FY 2025",
+        "operating_income": -2214000000.0,
+        "depreciation": 10757000000.0,
+        "ebitda": 8543000000.0,
+        "period_type": "annual"
+      },
+      {
         "period": "FY 2024",
         "operating_income": -11678000000.0,
         "depreciation": 9951000000.0,
@@ -6011,13 +6018,6 @@
         "operating_income": 2334000000.0,
         "depreciation": 11128000000.0,
         "ebitda": 13462000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 19456000000.0,
-        "depreciation": 9953000000.0,
-        "ebitda": 29409000000.0,
         "period_type": "annual"
       }
     ],
@@ -8350,6 +8350,14 @@
     ],
     "quarterly_data": [
       {
+        "period": "Q2 2026",
+        "operating_income": 38275000000.0,
+        "depreciation": 7900000000.0,
+        "ebitda": 46175000000.0,
+        "ebitda_annualized": 184700000000.0,
+        "period_type": "quarterly"
+      },
+      {
         "period": "Q1 2026",
         "operating_income": 37961000000.0,
         "depreciation": 7100000000.0,
@@ -8358,8 +8366,8 @@
         "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 45061000000.0,
-    "ebitda_growth": -70.06470556972789,
+    "latest_ebitda": 46175000000.0,
+    "ebitda_growth": 2.4722043452209226,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -8801,6 +8809,13 @@
     "company_name": "NETFLIX INC",
     "annual_data": [
       {
+        "period": "FY 2025",
+        "operating_income": 13326603000.0,
+        "depreciation": 333389000.0,
+        "ebitda": 13659992000.0,
+        "period_type": "annual"
+      },
+      {
         "period": "FY 2024",
         "operating_income": 10417614000.0,
         "depreciation": 328914000.0,
@@ -8819,13 +8834,6 @@
         "operating_income": 5632831000.0,
         "depreciation": 336682000.0,
         "ebitda": 5969513000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 6194509000.0,
-        "depreciation": 208412000.0,
-        "ebitda": 6402921000.0,
         "period_type": "annual"
       }
     ],
@@ -10135,11 +10143,11 @@
         "period_type": "quarterly"
       },
       {
-        "period": "Q3 2023",
-        "operating_income": 4248000000.0,
-        "depreciation": 2008000000.0,
-        "ebitda": 6256000000.0,
-        "ebitda_annualized": 25024000000.0,
+        "period": "Q2 2026",
+        "operating_income": 5366000000.0,
+        "depreciation": 803000000.0,
+        "ebitda": 6169000000.0,
+        "ebitda_annualized": 24676000000.0,
         "period_type": "quarterly"
       },
       {
@@ -10904,13 +10912,6 @@
         "operating_income": 5011000000.0,
         "depreciation": 2147000000.0,
         "ebitda": 7158000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 3365000000.0,
-        "depreciation": 2120000000.0,
-        "ebitda": 5485000000.0,
         "period_type": "annual"
       }
     ],
