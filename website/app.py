@@ -4,6 +4,22 @@ import pandas as pd
 import json
 import time
 from stock_universe import get_all_stocks, get_stock_classifications
+import math
+import numpy as np
+
+def sanitize_for_json(obj):
+    """Recursively replace NaN/Inf with None so json.dump(..., allow_nan=False) works."""
+    if isinstance(obj, dict):
+        return {k: sanitize_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [sanitize_for_json(v) for v in obj]
+    # Handle numpy floats too
+    if isinstance(obj, (float, np.floating)):
+        if math.isnan(float(obj)) or math.isinf(float(obj)):
+            return None
+        return float(obj)
+    return obj
+
 
 def check_data_availability(symbols=None, batch_size=10):
     """Scans stocks for required EBITDA data availability with batch processing"""
@@ -249,10 +265,12 @@ def get_ebitda_combined(ticker=None, batch_size=5):
                 
         except Exception as e:
             print(f"Error processing {i}: {e}")
-    
+    portfolio_data = sanitize_for_json(portfolio_data)
+
     # Save web-ready JSON with index information
     with open('portfolio_ebitda_data.json', 'w') as f:
-        json.dump(portfolio_data, f, indent=2)
+        json.dump(portfolio_data, f, indent=2, allow_nan=False)
+
     
     # Create summary by index
     summary_by_index = {}
@@ -277,9 +295,9 @@ def get_ebitda_combined(ticker=None, batch_size=5):
     for index_data in summary_by_index.values():
         if index_data['count'] > 0:
             index_data['avg_growth'] = index_data['avg_growth'] / index_data['count']
-    
+    summary_by_index = sanitize_for_json(summary_by_index)
     with open('portfolio_summary_by_index.json', 'w') as f:
-        json.dump(summary_by_index, f, indent=2)
+        json.dump(summary_by_index, f, indent=2, allow_nan=False)
     
     print(f"\nGenerated portfolio data for {len(portfolio_data)} companies")
     print(f"Summary by index saved to portfolio_summary_by_index.json")
