@@ -181,11 +181,11 @@
         "period_type": "quarterly"
       },
       {
-        "period": "Q2 2023",
-        "operating_income": 28318000000.0,
-        "depreciation": 5814000000.0,
-        "ebitda": 34132000000.0,
-        "ebitda_annualized": 136528000000.0,
+        "period": "Q1 2026",
+        "operating_income": 50852000000.0,
+        "depreciation": 3214000000.0,
+        "ebitda": 54066000000.0,
+        "ebitda_annualized": 216264000000.0,
         "period_type": "quarterly"
       },
       {
@@ -1687,11 +1687,11 @@
         "period_type": "quarterly"
       },
       {
-        "period": "Q2 2023",
-        "operating_income": 459800000.0,
-        "depreciation": 661100000.0,
-        "ebitda": 1120900000.0,
-        "ebitda_annualized": 4483600000.0,
+        "period": "Q1 2026",
+        "operating_income": 734500000.0,
+        "depreciation": 370700000.0,
+        "ebitda": 1105200000.0,
+        "ebitda_annualized": 4420800000.0,
         "period_type": "quarterly"
       },
       {
@@ -1939,6 +1939,13 @@
     "company_name": "BOEING CO",
     "annual_data": [
       {
+        "period": "FY 2025",
+        "operating_income": 4281000000.0,
+        "depreciation": 1953000000.0,
+        "ebitda": 6234000000.0,
+        "period_type": "annual"
+      },
+      {
         "period": "FY 2024",
         "operating_income": -10707000000.0,
         "depreciation": 1836000000.0,
@@ -1957,13 +1964,6 @@
         "operating_income": -3547000000.0,
         "depreciation": 1979000000.0,
         "ebitda": -1568000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": -2902000000.0,
-        "depreciation": 2144000000.0,
-        "ebitda": -758000000.0,
         "period_type": "annual"
       }
     ],
@@ -2776,6 +2776,13 @@
     "company_name": "COMCAST CORP",
     "annual_data": [
       {
+        "period": "FY 2025",
+        "operating_income": 20672000000.0,
+        "depreciation": 16210000000.0,
+        "ebitda": 36882000000.0,
+        "period_type": "annual"
+      },
+      {
         "period": "FY 2024",
         "operating_income": 23297000000.0,
         "depreciation": 14802000000.0,
@@ -2794,13 +2801,6 @@
         "operating_income": 14041000000.0,
         "depreciation": 13821000000.0,
         "ebitda": 27862000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 20817000000.0,
-        "depreciation": 13804000000.0,
-        "ebitda": 34621000000.0,
         "period_type": "annual"
       }
     ],
@@ -3546,6 +3546,14 @@
     ],
     "quarterly_data": [
       {
+        "period": "Q3 2025",
+        "operating_income": 614366000.0,
+        "depreciation": 57141000.0,
+        "ebitda": 671507000.0,
+        "ebitda_annualized": 2686028000.0,
+        "period_type": "quarterly"
+      },
+      {
         "period": "Q3 2024",
         "operating_income": 567274000.0,
         "depreciation": 50911000.0,
@@ -3600,18 +3608,10 @@
         "ebitda": 149868000.0,
         "ebitda_annualized": 599472000.0,
         "period_type": "quarterly"
-      },
-      {
-        "period": "Q1 2023",
-        "operating_income": 70736000.0,
-        "depreciation": 12353000.0,
-        "ebitda": 83089000.0,
-        "ebitda_annualized": 332356000.0,
-        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 618185000.0,
-    "ebitda_growth": 16.90336611195159,
+    "latest_ebitda": 671507000.0,
+    "ebitda_growth": 8.625573250725916,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -3800,11 +3800,11 @@
         "period_type": "quarterly"
       },
       {
-        "period": "Q2 2023",
-        "operating_income": 3285000000.0,
-        "depreciation": 1310000000.0,
-        "ebitda": 4595000000.0,
-        "ebitda_annualized": 18380000000.0,
+        "period": "Q1 2026",
+        "operating_income": 4600000000.0,
+        "depreciation": 1316000000.0,
+        "ebitda": 5916000000.0,
+        "ebitda_annualized": 23664000000.0,
         "period_type": "quarterly"
       },
       {
@@ -7999,6 +7999,13 @@
     "company_name": "3M CO",
     "annual_data": [
       {
+        "period": "FY 2025",
+        "operating_income": 4629000000.0,
+        "depreciation": 1308000000.0,
+        "ebitda": 5937000000.0,
+        "period_type": "annual"
+      },
+      {
         "period": "FY 2024",
         "operating_income": 4822000000.0,
         "depreciation": 1363000000.0,
@@ -8017,13 +8024,6 @@
         "operating_income": 6539000000.0,
         "depreciation": 1831000000.0,
         "ebitda": 8370000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 7369000000.0,
-        "depreciation": 1915000000.0,
-        "ebitda": 9284000000.0,
         "period_type": "annual"
       }
     ],
@@ -9990,6 +9990,13 @@
     "company_name": "PEPSICO INC",
     "annual_data": [
       {
+        "period": "FY 2025",
+        "operating_income": 11498000000.0,
+        "depreciation": 3451000000.0,
+        "ebitda": 14949000000.0,
+        "period_type": "annual"
+      },
+      {
         "period": "FY 2024",
         "operating_income": 12887000000.0,
         "depreciation": 3160000000.0,
@@ -10008,13 +10015,6 @@
         "operating_income": 11512000000.0,
         "depreciation": 2763000000.0,
         "ebitda": 14275000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 11162000000.0,
-        "depreciation": 2710000000.0,
-        "ebitda": 13872000000.0,
         "period_type": "annual"
       }
     ],
@@ -12526,11 +12526,11 @@
         "period_type": "quarterly"
       },
       {
-        "period": "Q2 2023",
-        "operating_income": 5336000000.0,
-        "depreciation": 234000000.0,
-        "ebitda": 5570000000.0,
-        "ebitda_annualized": 22280000000.0,
+        "period": "Q1 2026",
+        "operating_income": 6737000000.0,
+        "depreciation": 326000000.0,
+        "ebitda": 7063000000.0,
+        "ebitda_annualized": 28252000000.0,
         "period_type": "quarterly"
       },
       {
