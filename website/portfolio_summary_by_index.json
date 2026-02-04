@@ -1,8 +1,8 @@
 {
   "SP500_TOP30": {
     "count": 123,
-    "total_ebitda": 557991359000.0,
-    "avg_growth": 6.259334389566029,
+    "total_ebitda": 557743359000.0,
+    "avg_growth": 5.758717426210542,
     "companies": [
       "A",
       "AAPL",
@@ -143,8 +143,8 @@
   },
   "NASDAQ100_TOP30": {
     "count": 1,
-    "total_ebitda": 2787900000.0,
-    "avg_growth": 29.7421816827997,
+    "total_ebitda": 3545500000.0,
+    "avg_growth": 27.174575845618566,
     "companies": [
       "ISRG"
     ]
