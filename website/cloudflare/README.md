@@ -41,10 +41,29 @@ cloudflare/
 - **No data updates** (data is pre-generated)
 - **Company pages use localStorage** for navigation
 
-### To Update Data:
-1. Run the Python data generation scripts
-2. Copy new `portfolio_ebitda_data.json` to `data/` folder
-3. Re-deploy to Cloudflare Pages
+### Data Updates (Automatic Current Periods):
+
+**Initial Setup:**
+```bash
+python generate_portfolio_data.py
+```
+
+**Regular Updates:**
+```bash
+python update_data.py              # Checks if update needed
+# OR
+update_portfolio_data.bat          # Windows batch file
+```
+
+**Automation:**
+- Schedule `update_portfolio_data.bat` to run weekly
+- Data automatically includes current quarter periods
+- Only updates when data is >7 days old or missing current quarter
+
+**Manual Force Update:**
+```bash
+python generate_portfolio_data.py  # Always generates fresh data
+```
 
 ### Browser Compatibility:
 - Modern browsers with ES6+ support
