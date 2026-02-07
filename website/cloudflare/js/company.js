@@ -272,27 +272,107 @@ async function createStockPriceChart(symbol) {
         
         const labels = last252.map(item => item.date);
         const closePrices = last252.map(item => item.close);
+        const ma252 = last252.map(item => item.ma252);
+        const upper1 = last252.map(item => item.upper1);
+        const lower1 = last252.map(item => item.lower1);
+        const upper2 = last252.map(item => item.upper2);
+        const lower2 = last252.map(item => item.lower2);
+        const upper3 = last252.map(item => item.upper3);
+        const lower3 = last252.map(item => item.lower3);
         
         new Chart(ctx, {
             type: 'line',
             data: {
                 labels: labels,
-                datasets: [{
-                    label: 'Stock Price',
-                    data: closePrices,
-                    borderColor: '#ff6b35',
-                    backgroundColor: 'rgba(255, 107, 53, 0.1)',
-                    tension: 0.1,
-                    fill: true,
-                    pointRadius: 0,
-                    pointHoverRadius: 4
-                }]
+                datasets: [
+                    {
+                        label: '+3σ',
+                        data: upper3,
+                        borderColor: 'rgba(255, 0, 0, 0.3)',
+                        borderWidth: 1,
+                        borderDash: [5, 5],
+                        fill: false,
+                        pointRadius: 0
+                    },
+                    {
+                        label: '+2σ',
+                        data: upper2,
+                        borderColor: 'rgba(255, 100, 0, 0.4)',
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                        fill: false,
+                        pointRadius: 0
+                    },
+                    {
+                        label: '+1σ',
+                        data: upper1,
+                        borderColor: 'rgba(255, 200, 0, 0.5)',
+                        borderWidth: 1,
+                        fill: false,
+                        pointRadius: 0
+                    },
+                    {
+                        label: '252-Day MA',
+                        data: ma252,
+                        borderColor: '#ffffff',
+                        borderWidth: 2,
+                        fill: false,
+                        pointRadius: 0
+                    },
+                    {
+                        label: '-1σ',
+                        data: lower1,
+                        borderColor: 'rgba(255, 200, 0, 0.5)',
+                        borderWidth: 1,
+                        fill: false,
+                        pointRadius: 0
+                    },
+                    {
+                        label: '-2σ',
+                        data: lower2,
+                        borderColor: 'rgba(255, 100, 0, 0.4)',
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                        fill: false,
+                        pointRadius: 0
+                    },
+                    {
+                        label: '-3σ',
+                        data: lower3,
+                        borderColor: 'rgba(255, 0, 0, 0.3)',
+                        borderWidth: 1,
+                        borderDash: [5, 5],
+                        fill: false,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'Stock Price',
+                        data: closePrices,
+                        borderColor: '#ff6b35',
+                        backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                        tension: 0.1,
+                        fill: true,
+                        pointRadius: 0,
+                        pointHoverRadius: 4
+                    }
+                ]
             },
             options: {
                 responsive: true,
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
                 plugins: {
                     legend: {
-                        display: false
+                        display: true,
+                        labels: {
+                            color: '#cccccc',
+                            font: {
+                                family: 'Courier New',
+                                size: 10
+                            }
+                        }
                     },
                     tooltip: {
                         backgroundColor: '#1a1a1a',
