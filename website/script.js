@@ -48,14 +48,22 @@ function displayPortfolioTable(data) {
             ? company.ebitda_growth.toFixed(1) + '%'
             : 'N/A';
         
+        const maSlope = company.ma_slope !== null && company.ma_slope !== undefined
+            ? company.ma_slope.toFixed(2)
+            : 'N/A';
+        
         const growthClass = company.ebitda_growth > 0 ? 'positive' : 
                           company.ebitda_growth < 0 ? 'negative' : '';
+        
+        const slopeClass = company.ma_slope > 0 ? 'positive' : 
+                          company.ma_slope < 0 ? 'negative' : '';
 
         row.innerHTML = `
             <td><strong>${company.symbol}</strong></td>
             <td>${company.company_name}</td>
             <td>${latestEbitda}</td>
             <td class="${growthClass}">${growth}</td>
+            <td class="${slopeClass}">${maSlope}</td>
             <td>${company.data_quality}</td>
         `;
         
@@ -67,10 +75,35 @@ function createChart(data) {
     const canvas = document.getElementById('ebitda-chart');
     const ctx = canvas.getContext('2d');
     
-    // Simple bar chart for EBITDA values
-    const companies = data.slice(0, 10); // Show top 10 companies
-    const labels = companies.map(c => c.symbol);
-    const values = companies.map(c => c.latest_ebitda || 0);
+    // Get first company with annual data for histogram
+    const company = data.find(c => c.annual_data && c.annual_data.length > 0);
+    if (!company) {
+        ctx.fillStyle = '#666';
+        ctx.font = '16px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('No annual data available', canvas.width/2, canvas.height/2);
+        return;
+    }
+    
+    // Sort annual data by year
+    const annualData = [...company.annual_data].sort((a, b) => {
+        const yearA = parseInt(a.period.replace('FY ', ''));
+        const yearB = parseInt(b.period.replace('FY ', ''));
+        return yearA - yearB;
+    });
+    
+    const labels = annualData.map(d => d.period);
+    const values = annualData.map(d => d.ebitda || 0);
+    
+    // Calculate 2-period moving average
+    const movingAvg = [];
+    for (let i = 0; i < values.length; i++) {
+        if (i === 0) {
+            movingAvg.push(null);
+        } else {
+            movingAvg.push((values[i-1] + values[i]) / 2);
+        }
+    }
     
     // Set canvas size
     canvas.width = 800;
@@ -106,11 +139,56 @@ function createChart(data) {
         ctx.fillStyle = '#667eea';
     });
     
+    // Draw moving average line
+    ctx.strokeStyle = '#f56565';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    
+    let firstPoint = true;
+    movingAvg.forEach((ma, index) => {
+        if (ma !== null) {
+            const x = 50 + index * barWidth + barWidth / 2;
+            const y = canvas.height - 50 - (ma / maxValue) * chartHeight;
+            
+            if (firstPoint) {
+                ctx.moveTo(x, y);
+                firstPoint = false;
+            } else {
+                ctx.lineTo(x, y);
+            }
+            
+            // Draw point
+            ctx.fillStyle = '#f56565';
+            ctx.beginPath();
+            ctx.arc(x, y, 4, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    });
+    
+    ctx.stroke();
+    
     // Draw title
     ctx.fillStyle = '#333';
     ctx.font = 'bold 16px Arial';
     ctx.textAlign = 'center';
-    ctx.fillText('Latest EBITDA by Company', canvas.width/2, 30);
+    ctx.fillText(`Yearly EBITDA - ${company.symbol}`, canvas.width/2, 30);
+    
+    // Draw legend
+    ctx.font = '12px Arial';
+    ctx.fillStyle = '#667eea';
+    ctx.fillRect(canvas.width - 180, 50, 15, 15);
+    ctx.fillStyle = '#333';
+    ctx.textAlign = 'left';
+    ctx.fillText('EBITDA', canvas.width - 160, 62);
+    
+    ctx.strokeStyle = '#f56565';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(canvas.width - 180, 80);
+    ctx.lineTo(canvas.width - 165, 80);
+    ctx.stroke();
+    ctx.fillStyle = '#333';
+    ctx.fillText('2-Period MA', canvas.width - 160, 85);
 }
 
 function formatCurrency(value, short = false) {

@@ -189,6 +189,25 @@ def generate_portfolio_data():
                 if previous_annual != 0:
                     company_data['ebitda_growth'] = ((latest_annual - previous_annual) / abs(previous_annual)) * 100
             
+            # Calculate 2-period moving average slope
+            company_data['ma_slope'] = None
+            if len(company_data['annual_data']) >= 3:
+                # Sort by year
+                annual_sorted = sorted(company_data['annual_data'], key=lambda x: x['period'])
+                
+                # Calculate moving averages
+                moving_avgs = []
+                for i in range(1, len(annual_sorted)):
+                    if annual_sorted[i-1]['ebitda'] is not None and annual_sorted[i]['ebitda'] is not None:
+                        ma = (annual_sorted[i-1]['ebitda'] + annual_sorted[i]['ebitda']) / 2
+                        moving_avgs.append(ma)
+                
+                # Calculate slope of moving average (last MA - first MA) / number of periods
+                if len(moving_avgs) >= 2:
+                    slope = (moving_avgs[-1] - moving_avgs[0]) / (len(moving_avgs) - 1)
+                    # Normalize slope to billions for readability
+                    company_data['ma_slope'] = slope / 1e9
+            
             portfolio_data.append(company_data)
             print(f"Processed {symbol}")
             
