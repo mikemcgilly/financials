@@ -288,16 +288,17 @@ async function createStockPriceChart(symbol) {
                     {
                         label: '+3σ',
                         data: upper3,
-                        borderColor: 'rgba(255, 0, 0, 0.3)',
+                        borderColor: 'rgba(255, 0, 0, 0.5)',
+                        backgroundColor: 'rgba(255, 0, 0, 0.15)',
                         borderWidth: 1,
                         borderDash: [5, 5],
-                        fill: false,
+                        fill: '+1',
                         pointRadius: 0
                     },
                     {
                         label: '+2σ',
                         data: upper2,
-                        borderColor: 'rgba(255, 100, 0, 0.4)',
+                        borderColor: 'rgba(255, 100, 0, 0.6)',
                         borderWidth: 1,
                         borderDash: [3, 3],
                         fill: false,
@@ -306,9 +307,10 @@ async function createStockPriceChart(symbol) {
                     {
                         label: '+1σ',
                         data: upper1,
-                        borderColor: 'rgba(255, 200, 0, 0.5)',
+                        borderColor: 'rgba(255, 200, 0, 0.7)',
+                        backgroundColor: 'rgba(255, 165, 0, 0.2)',
                         borderWidth: 1,
-                        fill: false,
+                        fill: '+1',
                         pointRadius: 0
                     },
                     {
@@ -322,15 +324,16 @@ async function createStockPriceChart(symbol) {
                     {
                         label: '-1σ',
                         data: lower1,
-                        borderColor: 'rgba(255, 200, 0, 0.5)',
+                        borderColor: 'rgba(255, 200, 0, 0.7)',
+                        backgroundColor: 'rgba(255, 165, 0, 0.2)',
                         borderWidth: 1,
-                        fill: false,
+                        fill: '-1',
                         pointRadius: 0
                     },
                     {
                         label: '-2σ',
                         data: lower2,
-                        borderColor: 'rgba(255, 100, 0, 0.4)',
+                        borderColor: 'rgba(255, 100, 0, 0.6)',
                         borderWidth: 1,
                         borderDash: [3, 3],
                         fill: false,
@@ -339,19 +342,19 @@ async function createStockPriceChart(symbol) {
                     {
                         label: '-3σ',
                         data: lower3,
-                        borderColor: 'rgba(255, 0, 0, 0.3)',
+                        borderColor: 'rgba(255, 0, 0, 0.5)',
+                        backgroundColor: 'rgba(0, 255, 0, 0.15)',
                         borderWidth: 1,
                         borderDash: [5, 5],
-                        fill: false,
+                        fill: '-1',
                         pointRadius: 0
                     },
                     {
                         label: 'Stock Price',
                         data: closePrices,
                         borderColor: '#ff6b35',
-                        backgroundColor: 'rgba(255, 107, 53, 0.1)',
-                        tension: 0.1,
-                        fill: true,
+                        borderWidth: 2,
+                        fill: false,
                         pointRadius: 0,
                         pointHoverRadius: 4
                     }
