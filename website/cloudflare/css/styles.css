@@ -530,7 +530,7 @@ tr:hover {
     color: var(--bloomberg-black);
 }
 
-.badge.in_value {
+.badge.fair_value {
     background: var(--bloomberg-yellow);
     color: var(--bloomberg-black);
 }

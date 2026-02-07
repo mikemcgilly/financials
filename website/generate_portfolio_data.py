@@ -85,8 +85,10 @@ def generate_portfolio_data():
             
             # Process annual data
             if income_annual is not None and cash_annual is not None:
-                op_income = income_annual[income_annual['label'].str.contains('Operating Income', na=False)]
-                depreciation = cash_annual[cash_annual['label'].str.contains('Depreciation', na=False)]
+                # Try multiple variations of operating income labels
+                op_income = income_annual[income_annual['label'].str.contains('Operating Income|Income from Operations|Operating Profit', case=False, na=False)]
+                # Try multiple variations of depreciation labels
+                depreciation = cash_annual[cash_annual['label'].str.contains('Depreciation|Amortization', case=False, na=False)]
                 
                 if not op_income.empty and not depreciation.empty:
                     year_cols = sorted([col for col in op_income.columns if 'FY' in str(col) and col in depreciation.columns], reverse=True)
@@ -104,8 +106,10 @@ def generate_portfolio_data():
             
             # Process quarterly data
             if income_quarterly is not None and cash_quarterly is not None:
-                op_income = income_quarterly[income_quarterly['label'].str.contains('Operating Income', na=False)]
-                depreciation = cash_quarterly[cash_quarterly['label'].str.contains('Depreciation', na=False)]
+                # Try multiple variations of operating income labels
+                op_income = income_quarterly[income_quarterly['label'].str.contains('Operating Income|Income from Operations|Operating Profit', case=False, na=False)]
+                # Try multiple variations of depreciation labels
+                depreciation = cash_quarterly[cash_quarterly['label'].str.contains('Depreciation|Amortization', case=False, na=False)]
                 
                 if not op_income.empty and not depreciation.empty:
                     quarter_cols = sorted([col for col in op_income.columns if 'Q' in str(col) and col in depreciation.columns], reverse=True)
@@ -199,7 +203,7 @@ def generate_portfolio_data():
                         elif z_score > 1:
                             valuation = 'above_value'
                         elif z_score > -1:
-                            valuation = 'in_value'
+                            valuation = 'fair_value'
                         elif z_score > -2:
                             valuation = 'below_value'
                         else:

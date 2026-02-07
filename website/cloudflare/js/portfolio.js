@@ -299,7 +299,7 @@ function updateSummaryStats(companies = null) {
 }
 
 function displayTopTen() {
-    // Score companies: positive EBITDA growth + discount/below value/in value only
+    // Score companies: positive EBITDA growth + discount/below value/fair value only
     const scored = allCompanies
         .filter(c => c.ebitda_growth && c.valuation_band && 
                      c.valuation_band !== 'premium' && c.valuation_band !== 'above_value')
@@ -308,7 +308,7 @@ function displayTopTen() {
             // Bonus for discount/below value
             if (c.valuation_band === 'discount') score += 20;
             else if (c.valuation_band === 'below_value') score += 10;
-            else if (c.valuation_band === 'in_value') score += 5;
+            else if (c.valuation_band === 'fair_value') score += 5;
             return { ...c, score };
         })
         .sort((a, b) => b.score - a.score)
