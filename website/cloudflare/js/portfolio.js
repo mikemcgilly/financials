@@ -299,9 +299,10 @@ function updateSummaryStats(companies = null) {
 }
 
 function displayTopTen() {
-    // Score companies: positive EBITDA growth + discount/below value valuation
+    // Score companies: positive EBITDA growth + discount/below value/in value only
     const scored = allCompanies
-        .filter(c => c.ebitda_growth && c.valuation_band)
+        .filter(c => c.ebitda_growth && c.valuation_band && 
+                     c.valuation_band !== 'premium' && c.valuation_band !== 'above_value')
         .map(c => {
             let score = c.ebitda_growth || 0;
             // Bonus for discount/below value
