@@ -199,7 +199,7 @@ function displayCompanies(companies) {
 
 function updateFilterCounts() {
     // Update index filter counts
-    const indexButtons = document.querySelectorAll('.filter-btn:not(.valuation-btn)');
+    const indexButtons = document.querySelectorAll('.filter-btn:not(.valuation-btn):not(.slope-filter-btn)');
     indexButtons.forEach(btn => {
         const filter = btn.dataset.filter;
         let count;
@@ -229,6 +229,38 @@ function updateFilterCounts() {
             count = allCompanies.filter(company => 
                 company.valuation_band === valuation
             ).length;
+        }
+        
+        const text = btn.textContent.split('(')[0].trim();
+        btn.textContent = `${text} (${count}}`;
+    });
+    
+    // Update slope filter counts
+    const slopeButtons = document.querySelectorAll('.slope-filter-btn');
+    slopeButtons.forEach(btn => {
+        const slope = btn.dataset.slope;
+        let count;
+        
+        if (slope === 'ALL') {
+            count = allCompanies.length;
+        } else {
+            count = allCompanies.filter(company => {
+                const maSlope = company.ma_slope;
+                if (maSlope === null || maSlope === undefined) return false;
+                
+                switch(slope) {
+                    case 'POSITIVE':
+                        return maSlope > 0;
+                    case 'NEGATIVE':
+                        return maSlope < 0;
+                    case 'STRONG_POSITIVE':
+                        return maSlope > 1;
+                    case 'STRONG_NEGATIVE':
+                        return maSlope < -1;
+                    default:
+                        return true;
+                }
+            }).length;
         }
         
         const text = btn.textContent.split('(')[0].trim();
@@ -416,10 +448,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         updateSummaryStats();
         updateFilterCounts();
         
-        // Add event listeners
-        document.querySelectorAll('.filter-btn:not(.valuation-btn)').forEach(btn => {
+        // Add event listeners for index filters
+        document.querySelectorAll('.filter-btn:not(.valuation-btn):not(.slope-filter-btn)').forEach(btn => {
             btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn:not(.valuation-btn)').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.filter-btn:not(.valuation-btn):not(.slope-filter-btn)').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 currentFilter = this.dataset.filter;
                 const filteredData = filterCompanies();

@@ -34,12 +34,18 @@
                 Past performance does not guarantee future results. Please conduct your own research and consult with a qualified financial advisor before making investment decisions.
             </div>
             <div class="methodology">
-                <p><strong>Methodology:</strong> Current valuation relative to 252-day (one trading year) moving average. Value is one standard deviation above and below the moving average with premium and discount levels exceeding +/- 2 standard deviations. 
-                Valuation bands: <span class="badge discount">Discount</span> (>2σ below), 
-                <span class="badge below_value">Below Value</span> (1-2σ below), 
-                <span class="badge fair_value">Fair Value</span> (±1σ), 
-                <span class="badge above_value">Above Value</span> (1-2σ above), 
-                <span class="badge premium">Premium</span> (>2σ above).</p>
+                <p><strong>Data Sources:</strong> Financial data from SEC EDGAR filings (10-K, 10-Q). Stock prices from Yahoo Finance (2 years daily data).</p>
+                
+                <p><strong>EBITDA Calculation:</strong> Earnings Before Interest, Taxes, Depreciation, and Amortization. For industrial companies, calculated as Operating Income + Depreciation & Amortization. For financial companies (banks, insurance), uses Pre-Tax Income as a proxy since traditional EBITDA doesn't apply.</p>
+                
+                <p><strong>EBITDA Y/Y Trend (Smoothed):</strong> Measures the average annual change in EBITDA using a 2-period moving average. Expressed in billions per year. Positive values indicate growing earnings, negative values indicate declining earnings. Strong trends are >$1B or <-$1B per year.</p>
+                
+                <p><strong>Valuation Bands:</strong> Based on current price relative to 252-day (one trading year) moving average with standard deviation bands:
+                <span class="badge discount">Discount</span> (>2σ below MA), 
+                <span class="badge below_value">Below Value</span> (1-2σ below MA), 
+                <span class="badge fair_value">Fair Value</span> (±1σ from MA), 
+                <span class="badge above_value">Above Value</span> (1-2σ above MA), 
+                <span class="badge premium">Premium</span> (>2σ above MA). Lower bands may indicate buying opportunities; higher bands may indicate overvaluation.</p>
             </div>
         </div>
 
