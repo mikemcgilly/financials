@@ -1,5 +1,6 @@
 // Global variables
 let currentFilter = 'ALL';
+let currentSlopeFilter = 'ALL';
 let currentSearch = '';
 let allCompanies = [];
 
@@ -13,6 +14,27 @@ function filterCompanies() {
             company.primary_index === currentFilter || 
             (company.indices && company.indices.includes(currentFilter))
         );
+    }
+    
+    // Apply MA slope filter
+    if (currentSlopeFilter !== 'ALL') {
+        filteredCompanies = filteredCompanies.filter(company => {
+            const slope = company.ma_slope;
+            if (slope === null || slope === undefined) return false;
+            
+            switch(currentSlopeFilter) {
+                case 'POSITIVE':
+                    return slope > 0;
+                case 'NEGATIVE':
+                    return slope < 0;
+                case 'STRONG_POSITIVE':
+                    return slope > 1;
+                case 'STRONG_NEGATIVE':
+                    return slope < -1;
+                default:
+                    return true;
+            }
+        });
     }
     
     // Apply search filter
@@ -200,6 +222,40 @@ function updateSummaryStats(companies = null) {
     }
 }
 
+// Get filtered data based on current filters
+function getFilteredData() {
+    let filtered = allCompanies;
+    
+    if (currentFilter !== 'ALL') {
+        filtered = filtered.filter(company => 
+            company.primary_index === currentFilter || 
+            (company.indices && company.indices.includes(currentFilter))
+        );
+    }
+    
+    if (currentSlopeFilter !== 'ALL') {
+        filtered = filtered.filter(company => {
+            const slope = company.ma_slope;
+            if (slope === null || slope === undefined) return false;
+            
+            switch(currentSlopeFilter) {
+                case 'POSITIVE':
+                    return slope > 0;
+                case 'NEGATIVE':
+                    return slope < 0;
+                case 'STRONG_POSITIVE':
+                    return slope > 1;
+                case 'STRONG_NEGATIVE':
+                    return slope < -1;
+                default:
+                    return true;
+            }
+        });
+    }
+    
+    return filtered;
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     allCompanies = portfolioData;
@@ -219,11 +275,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 filterCompanies();
                 
                 // Update chart with filtered data
-                const filteredData = currentFilter === 'ALL' ? allCompanies : 
-                    allCompanies.filter(company => 
-                        company.primary_index === currentFilter || 
-                        (company.indices && company.indices.includes(currentFilter))
-                    );
+                const filteredData = getFilteredData();
+                createPortfolioChart(filteredData);
+                updateSummaryStats(filteredData);
+            });
+        });
+        
+        document.querySelectorAll('.slope-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.slope-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentSlopeFilter = this.dataset.slope;
+                filterCompanies();
+                
+                // Update chart with filtered data
+                const filteredData = getFilteredData();
                 createPortfolioChart(filteredData);
                 updateSummaryStats(filteredData);
             });

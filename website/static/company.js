@@ -28,43 +28,67 @@ function formatMarketCap(marketCap) {
 function createEbitdaChart() {
     const ctx = document.getElementById('ebitdaChart').getContext('2d');
     
-    // Use annual data and annualized quarterly data for comparison
+    // Use annual data only for the histogram and moving average
     const annualData = (companyData.ebitda_data.annual_data || []).map(item => ({
         period: item.period,
         ebitda: item.ebitda / 1e6,
         type: 'Annual'
     }));
     
-    const quarterlyAnnualized = (companyData.ebitda_data.quarterly_data || []).map(item => ({
-        period: item.period + ' (Ann.)',
-        ebitda: (item.ebitda * 4) / 1e6,  // Annualized
-        type: 'Quarterly (Annualized)'
-    }));
+    // Sort by period
+    annualData.sort((a, b) => a.period.localeCompare(b.period));
     
-    const allData = [...annualData, ...quarterlyAnnualized];
-    allData.sort((a, b) => a.period.localeCompare(b.period));
+    const labels = annualData.map(item => item.period);
+    const ebitdaValues = annualData.map(item => item.ebitda);
     
-    const labels = allData.map(item => item.period);
-    const ebitdaValues = allData.map(item => item.ebitda);
-    const colors = allData.map(item => item.type === 'Annual' ? '#0066cc' : '#00cc66');
+    // Calculate 2-period moving average
+    const movingAvg = [];
+    for (let i = 0; i < ebitdaValues.length; i++) {
+        if (i === 0) {
+            movingAvg.push(null);
+        } else {
+            movingAvg.push((ebitdaValues[i-1] + ebitdaValues[i]) / 2);
+        }
+    }
     
     new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
-            datasets: [{
-                label: 'EBITDA (Millions)',
-                data: ebitdaValues,
-                backgroundColor: colors,
-                borderColor: colors,
-                borderWidth: 1
-            }]
+            datasets: [
+                {
+                    label: 'EBITDA (Millions)',
+                    data: ebitdaValues,
+                    backgroundColor: '#0066cc',
+                    borderColor: '#0066cc',
+                    borderWidth: 1,
+                    order: 2
+                },
+                {
+                    label: '2-Period Moving Average',
+                    data: movingAvg,
+                    type: 'line',
+                    borderColor: '#ff8800',
+                    backgroundColor: 'transparent',
+                    borderWidth: 3,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#ff8800',
+                    order: 1
+                }
+            ]
         },
         options: {
             responsive: true,
             plugins: {
                 legend: {
-                    display: false
+                    display: true,
+                    labels: {
+                        color: '#ffffff',
+                        font: {
+                            family: 'Courier New',
+                            size: 11
+                        }
+                    }
                 },
                 tooltip: {
                     backgroundColor: '#1a1a1a',
@@ -73,10 +97,13 @@ function createEbitdaChart() {
                     borderColor: '#333333',
                     borderWidth: 1,
                     callbacks: {
-                        afterLabel: function(context) {
-                            const dataPoint = allData[context.dataIndex];
-                            return dataPoint.type === 'Quarterly (Annualized)' ? 
-                                'Note: Quarterly data annualized (×4)' : '';
+                        label: function(context) {
+                            const label = context.dataset.label || '';
+                            const value = context.parsed.y;
+                            if (value !== null) {
+                                return `${label}: $${value.toFixed(2)}M`;
+                            }
+                            return '';
                         }
                     }
                 }
