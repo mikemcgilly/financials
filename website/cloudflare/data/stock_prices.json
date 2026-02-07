@@ -94,6 +94,11 @@
     "market_cap": 190862901248,
     "pe_ratio": 97.995964
   },
+  "BIIB": {
+    "current_price": 201.18,
+    "market_cap": 29513562112,
+    "pe_ratio": 22.887371
+  },
   "BKNG": {
     "current_price": 4457.17,
     "market_cap": 144456368128,
@@ -273,6 +278,11 @@
     "current_price": 385.15,
     "market_cap": 383421251584,
     "pe_ratio": 26.25426
+  },
+  "HON": {
+    "current_price": 238.38,
+    "market_cap": 160637059072,
+    "pe_ratio": 31.44855
   },
   "ICE": {
     "current_price": 169.0,
@@ -518,6 +528,11 @@
     "current_price": 362.42,
     "market_cap": 39009959936,
     "pe_ratio": 25.504576
+  },
+  "ROST": {
+    "current_price": 190.74,
+    "market_cap": 62033661952,
+    "pe_ratio": 29.756632
   },
   "RTX": {
     "current_price": 198.66,

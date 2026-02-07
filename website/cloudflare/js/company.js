@@ -251,26 +251,27 @@ function createQuarterlyChart(companyData) {
     });
 }
 
-// Create stock price chart with 6 months of historical data
+// Create stock price chart with candlestick data (last 252 trading days)
 async function createStockPriceChart(symbol) {
     console.log(`[DEBUG] Creating stock chart for ${symbol}`);
     const ctx = document.getElementById('stockChart').getContext('2d');
     
     try {
-        const historyData = await loadHistoricalPrices(symbol);
-        console.log(`[DEBUG] Received history data:`, historyData);
+        const ohlcData = await loadOHLCData(symbol);
+        console.log(`[DEBUG] Received OHLC data:`, ohlcData?.length || 0, 'days');
         
-        if (!historyData || !historyData.length) {
+        if (!ohlcData || !ohlcData.length) {
             console.log(`[DEBUG] No data available, showing unavailable message`);
             ctx.canvas.parentElement.innerHTML = '<p style="color: #cccccc; text-align: center; padding: 20px;">Stock price data unavailable</p>';
             return;
         }
         
-        console.log(`[DEBUG] Processing ${historyData.length} data points`);
-        const labels = historyData.map(item => item.date);
-        const prices = historyData.map(item => item.price);
-        console.log(`[DEBUG] Chart labels:`, labels.slice(0, 5), '...');
-        console.log(`[DEBUG] Chart prices:`, prices.slice(0, 5), '...');
+        // Get last 252 trading days
+        const last252 = ohlcData.slice(-252);
+        console.log(`[DEBUG] Using last ${last252.length} trading days`);
+        
+        const labels = last252.map(item => item.date);
+        const closePrices = last252.map(item => item.close);
         
         new Chart(ctx, {
             type: 'line',
@@ -278,12 +279,12 @@ async function createStockPriceChart(symbol) {
                 labels: labels,
                 datasets: [{
                     label: 'Stock Price',
-                    data: prices,
+                    data: closePrices,
                     borderColor: '#ff6b35',
                     backgroundColor: 'rgba(255, 107, 53, 0.1)',
                     tension: 0.1,
                     fill: true,
-                    pointRadius: 1,
+                    pointRadius: 0,
                     pointHoverRadius: 4
                 }]
             },
@@ -298,7 +299,20 @@ async function createStockPriceChart(symbol) {
                         titleColor: '#ffffff',
                         bodyColor: '#cccccc',
                         borderColor: '#333333',
-                        borderWidth: 1
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(context) {
+                                const idx = context.dataIndex;
+                                const data = last252[idx];
+                                return [
+                                    `Close: $${data.close}`,
+                                    `Open: $${data.open}`,
+                                    `High: $${data.high}`,
+                                    `Low: $${data.low}`,
+                                    `Volume: ${(data.volume / 1e6).toFixed(2)}M`
+                                ];
+                            }
+                        }
                     }
                 },
                 scales: {
@@ -309,7 +323,7 @@ async function createStockPriceChart(symbol) {
                                 family: 'Courier New',
                                 size: 10
                             },
-                            maxTicksLimit: 8
+                            maxTicksLimit: 10
                         },
                         grid: {
                             color: '#333333'
@@ -328,7 +342,7 @@ async function createStockPriceChart(symbol) {
                         },
                         title: {
                             display: true,
-                            text: 'Stock Price (USD)',
+                            text: 'Stock Price (USD) - Last 252 Trading Days',
                             color: '#ffffff',
                             font: {
                                 family: 'Courier New',
@@ -347,13 +361,14 @@ async function createStockPriceChart(symbol) {
     }
 }
 
-// Load 6 months of historical stock prices
-async function loadHistoricalPrices(symbol) {
-    console.log(`[DEBUG] Loading historical prices for ${symbol}`);
+// Load OHLC data from local file
+async function loadOHLCData(symbol) {
+    console.log(`[DEBUG] Loading OHLC data for ${symbol}`);
     
     const paths = [
-        `./api/history?symbol=${encodeURIComponent(symbol)}`,
-        `/api/history?symbol=${encodeURIComponent(symbol)}`
+        './data/stock_ohlc.json',
+        '/data/stock_ohlc.json',
+        'data/stock_ohlc.json'
     ];
 
     for (const path of paths) {
@@ -362,20 +377,11 @@ async function loadHistoricalPrices(symbol) {
             const resp = await fetch(path, { cache: "no-store" });
             console.log(`[DEBUG] Response status: ${resp.status}`);
             
-            if (!resp.ok) {
-                console.log(`[DEBUG] Path failed with status ${resp.status}`);
-                continue;
-            }
+            if (!resp.ok) continue;
             
-            const responseText = await resp.text();
-            console.log(`[DEBUG] Raw response text:`, responseText.substring(0, 200));
-            console.log(`[DEBUG] Response content-type:`, resp.headers.get('content-type'));
-            
-            const result = JSON.parse(responseText);
-            console.log(`[DEBUG] API response:`, result);
-            console.log(`[DEBUG] Data array length: ${result.data?.length || 0}`);
-            
-            return result.data || [];
+            const allData = await resp.json();
+            console.log(`[DEBUG] Loaded OHLC data for ${Object.keys(allData).length} symbols`);
+            return allData[symbol] || [];
         } catch (error) {
             console.log(`[DEBUG] Path ${path} threw error:`, error.message);
         }
