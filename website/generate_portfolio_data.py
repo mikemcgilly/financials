@@ -86,7 +86,16 @@ def generate_portfolio_data():
             # Process annual data
             if income_annual is not None and cash_annual is not None:
                 # Try multiple variations of operating income labels
-                op_income = income_annual[income_annual['label'].str.contains('Operating Income|Income from Operations|Operating Profit|Net Interest Income|Insurance Revenue', case=False, na=False)]
+                op_income = income_annual[income_annual['label'].str.contains('Operating Income|Income from Operations|Operating Profit', case=False, na=False)]
+                
+                # If no operating income found, try pre-tax income (common for financial companies)
+                if op_income.empty:
+                    op_income = income_annual[income_annual['label'].str.contains('Income.*from Continuing Operations before.*Tax', case=False, na=False, regex=True)]
+                
+                # If still empty, try total revenue (for financial companies)
+                if op_income.empty:
+                    op_income = income_annual[income_annual['label'].str.contains('^Total Revenue$', case=False, na=False, regex=True)]
+                
                 # Try multiple variations of depreciation labels
                 depreciation = cash_annual[cash_annual['label'].str.contains('Depreciation|Amortization', case=False, na=False)]
                 
@@ -115,7 +124,16 @@ def generate_portfolio_data():
             # Process quarterly data
             if income_quarterly is not None and cash_quarterly is not None:
                 # Try multiple variations of operating income labels
-                op_income = income_quarterly[income_quarterly['label'].str.contains('Operating Income|Income from Operations|Operating Profit|Net Interest Income|Insurance Revenue', case=False, na=False)]
+                op_income = income_quarterly[income_quarterly['label'].str.contains('Operating Income|Income from Operations|Operating Profit', case=False, na=False)]
+                
+                # If no operating income found, try pre-tax income (common for financial companies)
+                if op_income.empty:
+                    op_income = income_quarterly[income_quarterly['label'].str.contains('Income.*from Continuing Operations before.*Tax', case=False, na=False, regex=True)]
+                
+                # If still empty, try total revenue (for financial companies)
+                if op_income.empty:
+                    op_income = income_quarterly[income_quarterly['label'].str.contains('^Total Revenue$', case=False, na=False, regex=True)]
+                
                 # Try multiple variations of depreciation labels
                 depreciation = cash_quarterly[cash_quarterly['label'].str.contains('Depreciation|Amortization', case=False, na=False)]
                 

@@ -1,9 +1,11 @@
 # EBITDA Portfolio Dashboard - Static Version
 
-## Bloomberg Terminal-styled financial dashboard with 129 companies
+## Bloomberg Terminal-styled financial dashboard with 157 companies
 
 ### Features:
-- **129 Companies** from S&P 500 top 30%, NASDAQ 100 top 30%, and all DOW stocks
+- **157 Companies** from S&P 500 top 30%, NASDAQ 100 top 30%, and all DOW stocks
+- **Financial Companies Supported** - Banks, insurance, and other financial institutions
+- **EBITDA Y/Y Trend Analysis** - 2-period moving average slope with filtering
 - **Bloomberg Terminal Styling** - Dark theme with professional colors
 - **Portfolio Filtering** - Filter by index (S&P 500, NASDAQ, DOW)
 - **Search Functionality** - Search by symbol or company name
@@ -22,7 +24,9 @@ cloudflare/
 │   ├── portfolio.js        # Portfolio functionality
 │   └── company.js          # Company page functionality
 └── data/
-    └── portfolio_ebitda_data.json  # 129 companies with EBITDA data
+    ├── portfolio_ebitda_data.json  # 157 companies with EBITDA data
+    ├── stock_ohlc.json             # 2 years daily prices + valuation bands
+    └── stock_prices.json           # Current prices and metrics
 ```
 
 ### Deployment to Cloudflare Pages:
@@ -32,38 +36,38 @@ cloudflare/
 3. **No build process required** - pure static HTML/CSS/JS
 
 ### Data Source:
-- **SEC EDGAR API** - Official financial data
-- **Pre-generated JSON** - 129 companies with complete EBITDA data
+- **SEC EDGAR API** - Official financial data from 10-K and 10-Q filings
+- **Yahoo Finance API** - 2 years of daily stock prices with valuation bands
+- **Pre-generated JSON** - 157 companies with complete EBITDA data
 - **Index Classifications** - S&P 500, NASDAQ 100, DOW Industrial
 
 ### Limitations (Static Version):
-- **No real-time stock prices** (would require API calls)
-- **No data updates** (data is pre-generated)
+- **No real-time stock prices** (data refreshed manually)
 - **Company pages use localStorage** for navigation
 
-### Data Updates (Automatic Current Periods):
+### Data Updates:
 
-**Initial Setup:**
+**Step 1: Generate EBITDA Data** (from project root)
 ```bash
+cd financials/website
 python generate_portfolio_data.py
 ```
+This fetches financial data from SEC EDGAR for all 157 companies.
 
-**Regular Updates:**
+**Step 2: Update Stock Prices** (from project root)
 ```bash
-python update_data.py              # Checks if update needed
-# OR
-update_portfolio_data.bat          # Windows batch file
+python update_stock_prices.py
 ```
+This fetches 2 years of daily stock prices and calculates valuation bands.
 
-**Automation:**
-- Schedule `update_portfolio_data.bat` to run weekly
-- Data automatically includes current quarter periods
-- Only updates when data is >7 days old or missing current quarter
+**What Gets Updated:**
+- `portfolio_ebitda_data.json` - EBITDA metrics, growth rates, MA slopes (~500KB)
+- `stock_ohlc.json` - 2 years daily close prices with 252-day MA and std dev (~3-5MB)
+- `stock_prices.json` - Current prices, market cap, P/E ratios (~15KB)
 
-**Manual Force Update:**
-```bash
-python generate_portfolio_data.py  # Always generates fresh data
-```
+**Recommended Schedule:**
+- Run after quarterly earnings season (Jan, Apr, Jul, Oct)
+- Stock prices can be updated weekly if desired
 
 ### Browser Compatibility:
 - Modern browsers with ES6+ support
