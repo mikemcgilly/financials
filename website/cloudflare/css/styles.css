@@ -552,3 +552,28 @@ tr:hover {
 .value.negative {
     color: var(--bloomberg-red);
 }
+
+
+/* Valuation filter buttons */
+.valuation-filters {
+    margin-top: 10px;
+}
+
+.valuation-btn {
+    padding: 6px 10px;
+    font-size: 9px;
+}
+
+.valuation-btn.active {
+    border: 2px solid var(--bloomberg-orange);
+    box-shadow: 0 0 5px var(--bloomberg-orange);
+}
+
+
+/* Methodology Section */
+.methodology-section {
+    background: var(--bloomberg-bg-panel);
+    border: 1px solid var(--bloomberg-border);
+    padding: 15px;
+    margin-bottom: 20px;
+}

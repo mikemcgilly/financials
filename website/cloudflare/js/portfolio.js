@@ -1,5 +1,6 @@
 // Global variables
 let currentFilter = 'ALL';
+let currentValuationFilter = 'ALL';
 let currentSearch = '';
 let allCompanies = [];
 let stockPrices = {};
@@ -95,6 +96,13 @@ function filterCompanies() {
         );
     }
     
+    // Apply valuation filter
+    if (currentValuationFilter !== 'ALL') {
+        filteredCompanies = filteredCompanies.filter(company => 
+            company.valuation_band === currentValuationFilter
+        );
+    }
+    
     // Apply search filter
     if (currentSearch) {
         filteredCompanies = filteredCompanies.filter(company => 
@@ -161,8 +169,9 @@ function displayCompanies(companies) {
 }
 
 function updateFilterCounts() {
-    const buttons = document.querySelectorAll('.filter-btn');
-    buttons.forEach(btn => {
+    // Update index filter counts
+    const indexButtons = document.querySelectorAll('.filter-btn:not(.valuation-btn)');
+    indexButtons.forEach(btn => {
         const filter = btn.dataset.filter;
         let count;
         
@@ -172,6 +181,24 @@ function updateFilterCounts() {
             count = allCompanies.filter(company => 
                 company.primary_index === filter || 
                 (company.indices && company.indices.includes(filter))
+            ).length;
+        }
+        
+        const text = btn.textContent.split('(')[0].trim();
+        btn.textContent = `${text} (${count})`;
+    });
+    
+    // Update valuation filter counts
+    const valuationButtons = document.querySelectorAll('.valuation-btn');
+    valuationButtons.forEach(btn => {
+        const valuation = btn.dataset.valuation;
+        let count;
+        
+        if (valuation === 'ALL') {
+            count = allCompanies.length;
+        } else {
+            count = allCompanies.filter(company => 
+                company.valuation_band === valuation
             ).length;
         }
         
@@ -355,18 +382,31 @@ document.addEventListener('DOMContentLoaded', async function() {
     allCompanies = await loadPortfolioData();
     
     if (allCompanies.length > 0) {
-        displayTopTen();
         displayCompanies(allCompanies);
         createPortfolioChart();
         updateSummaryStats();
         updateFilterCounts();
         
         // Add event listeners
-        document.querySelectorAll('.filter-btn').forEach(btn => {
+        document.querySelectorAll('.filter-btn:not(.valuation-btn)').forEach(btn => {
             btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.filter-btn:not(.valuation-btn)').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 currentFilter = this.dataset.filter;
+                const filteredData = filterCompanies();
+                
+                // Update chart with filtered data
+                createPortfolioChart(filteredData);
+                updateSummaryStats(filteredData);
+            });
+        });
+        
+        // Add valuation filter listeners
+        document.querySelectorAll('.valuation-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.valuation-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentValuationFilter = this.dataset.valuation;
                 const filteredData = filterCompanies();
                 
                 // Update chart with filtered data

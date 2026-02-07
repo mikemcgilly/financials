@@ -86,16 +86,24 @@ def generate_portfolio_data():
             # Process annual data
             if income_annual is not None and cash_annual is not None:
                 # Try multiple variations of operating income labels
-                op_income = income_annual[income_annual['label'].str.contains('Operating Income|Income from Operations|Operating Profit', case=False, na=False)]
+                op_income = income_annual[income_annual['label'].str.contains('Operating Income|Income from Operations|Operating Profit|Net Interest Income|Insurance Revenue', case=False, na=False)]
                 # Try multiple variations of depreciation labels
                 depreciation = cash_annual[cash_annual['label'].str.contains('Depreciation|Amortization', case=False, na=False)]
                 
-                if not op_income.empty and not depreciation.empty:
-                    year_cols = sorted([col for col in op_income.columns if 'FY' in str(col) and col in depreciation.columns], reverse=True)
+                # For financial companies without depreciation, use 0
+                if not op_income.empty:
+                    year_cols = sorted([col for col in op_income.columns if 'FY' in str(col)], reverse=True)
+                    
                     for year in year_cols:
-                        if not op_income[year].isna().all() and not depreciation[year].isna().all():
+                        if not op_income[year].isna().all():
                             op_val = float(op_income[year].iloc[0])
-                            depr_val = float(depreciation[year].iloc[0])
+                            
+                            # Try to get depreciation, use 0 if not available (for financial companies)
+                            depr_val = 0.0
+                            if not depreciation.empty and year in depreciation.columns:
+                                if not depreciation[year].isna().all():
+                                    depr_val = float(depreciation[year].iloc[0])
+                            
                             company_data['annual_data'].append({
                                 'period': year,
                                 'operating_income': op_val,
@@ -107,16 +115,24 @@ def generate_portfolio_data():
             # Process quarterly data
             if income_quarterly is not None and cash_quarterly is not None:
                 # Try multiple variations of operating income labels
-                op_income = income_quarterly[income_quarterly['label'].str.contains('Operating Income|Income from Operations|Operating Profit', case=False, na=False)]
+                op_income = income_quarterly[income_quarterly['label'].str.contains('Operating Income|Income from Operations|Operating Profit|Net Interest Income|Insurance Revenue', case=False, na=False)]
                 # Try multiple variations of depreciation labels
                 depreciation = cash_quarterly[cash_quarterly['label'].str.contains('Depreciation|Amortization', case=False, na=False)]
                 
-                if not op_income.empty and not depreciation.empty:
-                    quarter_cols = sorted([col for col in op_income.columns if 'Q' in str(col) and col in depreciation.columns], reverse=True)
+                # For financial companies without depreciation, use 0
+                if not op_income.empty:
+                    quarter_cols = sorted([col for col in op_income.columns if 'Q' in str(col)], reverse=True)
+                    
                     for period in quarter_cols:
-                        if not op_income[period].isna().all() and not depreciation[period].isna().all():
+                        if not op_income[period].isna().all():
                             op_val = float(op_income[period].iloc[0])
-                            depr_val = float(depreciation[period].iloc[0])
+                            
+                            # Try to get depreciation, use 0 if not available (for financial companies)
+                            depr_val = 0.0
+                            if not depreciation.empty and period in depreciation.columns:
+                                if not depreciation[period].isna().all():
+                                    depr_val = float(depreciation[period].iloc[0])
+                            
                             ebitda_val = op_val + depr_val
                             company_data['quarterly_data'].append({
                                 'period': period,

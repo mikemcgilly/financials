@@ -28,22 +28,18 @@
             </div>
         </div>
 
-        <div class="top-ten-section">
-            <h2>Featured Stocks Based on EBITDA Growth and Price Relative Value</h2>
+        <div class="methodology-section">
             <div class="disclaimer">
                 <strong>Disclaimer:</strong> This information is for informational purposes only and does not constitute investment advice. 
                 Past performance does not guarantee future results. Please conduct your own research and consult with a qualified financial advisor before making investment decisions.
             </div>
             <div class="methodology">
-                <p><strong>Methodology:</strong> Companies ranked by Y/Y EBITDA growth trend and current valuation relative to 252-day (one trading year) moving average. Value is one standard deviation above and below the moving average with premium and discount levels exceeding +/- 2 standard deviations. The top 10 are filtered to exclude stocks trading above value. 
+                <p><strong>Methodology:</strong> Current valuation relative to 252-day (one trading year) moving average. Value is one standard deviation above and below the moving average with premium and discount levels exceeding +/- 2 standard deviations. 
                 Valuation bands: <span class="badge discount">Discount</span> (>2σ below), 
                 <span class="badge below_value">Below Value</span> (1-2σ below), 
                 <span class="badge fair_value">Fair Value</span> (±1σ), 
                 <span class="badge above_value">Above Value</span> (1-2σ above), 
                 <span class="badge premium">Premium</span> (>2σ above).</p>
-            </div>
-            <div id="top-ten-grid" class="top-ten-grid">
-                <!-- Top 10 will be populated by JavaScript -->
             </div>
         </div>
 
@@ -54,6 +50,15 @@
                 <button class="filter-btn" data-filter="SP500_TOP30">S&P 500 TOP 30%</button>
                 <button class="filter-btn" data-filter="NASDAQ100_TOP30">NASDAQ 100 TOP 30%</button>
                 <button class="filter-btn" data-filter="DOW">DOW INDUSTRIALS</button>
+            </div>
+            <h3>Filter by Valuation:</h3>
+            <div class="filter-buttons valuation-filters">
+                <button class="filter-btn valuation-btn active" data-valuation="ALL">ALL</button>
+                <button class="filter-btn valuation-btn badge discount" data-valuation="discount">Discount</button>
+                <button class="filter-btn valuation-btn badge below_value" data-valuation="below_value">Below Value</button>
+                <button class="filter-btn valuation-btn badge fair_value" data-valuation="fair_value">Fair Value</button>
+                <button class="filter-btn valuation-btn badge above_value" data-valuation="above_value">Above Value</button>
+                <button class="filter-btn valuation-btn badge premium" data-valuation="premium">Premium</button>
             </div>
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="Search by symbol or company name...">

@@ -6924,6 +6924,13 @@
         "depreciation": 11946000000.0,
         "ebitda": 96239000000.0,
         "period_type": "annual"
+      },
+      {
+        "period": "FY 2022",
+        "operating_income": 74842000000.0,
+        "depreciation": 0.0,
+        "ebitda": 74842000000.0,
+        "period_type": "annual"
       }
     ],
     "quarterly_data": [
@@ -6944,6 +6951,14 @@
         "period_type": "quarterly"
       },
       {
+        "period": "Q3 2023",
+        "operating_income": 21343000000.0,
+        "depreciation": 0.0,
+        "ebitda": 21343000000.0,
+        "ebitda_annualized": 85372000000.0,
+        "period_type": "quarterly"
+      },
+      {
         "period": "Q2 2025",
         "operating_income": 31271000000.0,
         "depreciation": 9485000000.0,
@@ -6957,6 +6972,14 @@
         "depreciation": 7121000000.0,
         "ebitda": 34546000000.0,
         "ebitda_annualized": 138184000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2023",
+        "operating_income": 21838000000.0,
+        "depreciation": 0.0,
+        "ebitda": 21838000000.0,
+        "ebitda_annualized": 87352000000.0,
         "period_type": "quarterly"
       },
       {
@@ -8896,6 +8919,14 @@
         "period_type": "quarterly"
       },
       {
+        "period": "Q1 2025",
+        "operating_income": 3659000000.0,
+        "depreciation": 0.0,
+        "ebitda": 3659000000.0,
+        "ebitda_annualized": 14636000000.0,
+        "period_type": "quarterly"
+      },
+      {
         "period": "Q1 2024",
         "operating_income": 2141000000.0,
         "depreciation": 262000000.0,
@@ -9797,8 +9828,81 @@
         "period_type": "annual"
       }
     ],
-    "quarterly_data": [],
-    "latest_ebitda": 4022000000.0,
+    "quarterly_data": [
+      {
+        "period": "Q3 2025",
+        "operating_income": 1180000000.0,
+        "depreciation": 0.0,
+        "ebitda": 1180000000.0,
+        "ebitda_annualized": 4720000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q3 2024",
+        "operating_income": 944000000.0,
+        "depreciation": 0.0,
+        "ebitda": 944000000.0,
+        "ebitda_annualized": 3776000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q3 2023",
+        "operating_income": 1099000000.0,
+        "depreciation": 0.0,
+        "ebitda": 1099000000.0,
+        "ebitda_annualized": 4396000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2025",
+        "operating_income": 1236000000.0,
+        "depreciation": 0.0,
+        "ebitda": 1236000000.0,
+        "ebitda_annualized": 4944000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2024",
+        "operating_income": 1195000000.0,
+        "depreciation": 0.0,
+        "ebitda": 1195000000.0,
+        "ebitda_annualized": 4780000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2023",
+        "operating_income": 1096000000.0,
+        "depreciation": 0.0,
+        "ebitda": 1096000000.0,
+        "ebitda_annualized": 4384000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q1 2025",
+        "operating_income": 948000000.0,
+        "depreciation": 0.0,
+        "ebitda": 948000000.0,
+        "ebitda_annualized": 3792000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q1 2024",
+        "operating_income": 876000000.0,
+        "depreciation": 0.0,
+        "ebitda": 876000000.0,
+        "ebitda_annualized": 3504000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 752000000.0,
+        "depreciation": 255000000.0,
+        "ebitda": 1007000000.0,
+        "ebitda_annualized": 4028000000.0,
+        "period_type": "quarterly"
+      }
+    ],
+    "latest_ebitda": 1007000000.0,
     "ebitda_growth": null,
     "data_quality": "complete",
     "indices": [
@@ -13539,6 +13643,13 @@
         "depreciation": 1398000000.0,
         "ebitda": 12954000000.0,
         "period_type": "annual"
+      },
+      {
+        "period": "FY 2022",
+        "operating_income": 12246000000.0,
+        "depreciation": 0.0,
+        "ebitda": 12246000000.0,
+        "period_type": "annual"
       }
     ],
     "quarterly_data": [
@@ -13714,6 +13825,14 @@
         "depreciation": 4237000.0,
         "ebitda": 331246000.0,
         "ebitda_annualized": 1324984000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q1 2025",
+        "operating_income": 77538000.0,
+        "depreciation": 0.0,
+        "ebitda": 77538000.0,
+        "ebitda_annualized": 310152000.0,
         "period_type": "quarterly"
       },
       {
