@@ -173,6 +173,44 @@ def generate_portfolio_data():
         except Exception as e:
             print(f"Error processing {symbol}: {e}")
     
+    # Add valuation metrics from stock data
+    print("\nAdding valuation metrics...")
+    try:
+        with open('cloudflare/data/stock_ohlc.json', 'r') as f:
+            ohlc_data = json.load(f)
+        
+        for company in portfolio_data:
+            symbol = company['symbol']
+            if symbol in ohlc_data and ohlc_data[symbol]:
+                # Get latest price data with bands
+                latest = ohlc_data[symbol][-1]
+                if 'ma252' in latest and latest['ma252'] is not None:
+                    price = latest['close']
+                    ma = latest['ma252']
+                    std = latest.get('std252', 0)
+                    
+                    # Determine valuation band
+                    if std and std > 0:
+                        z_score = (price - ma) / std
+                        if z_score > 2:
+                            valuation = 'premium'
+                        elif z_score > 1:
+                            valuation = 'above_value'
+                        elif z_score > -1:
+                            valuation = 'in_value'
+                        elif z_score > -2:
+                            valuation = 'below_value'
+                        else:
+                            valuation = 'discount'
+                    else:
+                        valuation = 'unknown'
+                    
+                    company['valuation_band'] = valuation
+                    company['current_price'] = price
+                    company['ma252'] = ma
+    except Exception as e:
+        print(f"Could not add valuation metrics: {e}")
+    
     return portfolio_data
 
 if __name__ == '__main__':

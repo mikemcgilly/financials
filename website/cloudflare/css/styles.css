@@ -428,3 +428,127 @@ tr:hover {
         padding: 5px;
     }
 }
+
+
+/* Top 10 Section */
+.top-ten-section {
+    background: var(--bloomberg-bg-panel);
+    border: 2px solid var(--bloomberg-orange);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.top-ten-section h2 {
+    color: var(--bloomberg-orange);
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.methodology {
+    background: var(--bloomberg-bg-dark);
+    border-left: 3px solid var(--bloomberg-blue);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 10px;
+    color: var(--bloomberg-text-secondary);
+}
+
+.methodology strong {
+    color: var(--bloomberg-text-primary);
+}
+
+.top-ten-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+}
+
+.top-ten-card {
+    background: var(--bloomberg-bg-dark);
+    border: 2px solid var(--bloomberg-border);
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.top-ten-card:hover {
+    border-color: var(--bloomberg-orange);
+    transform: translateY(-2px);
+}
+
+.top-ten-card .rank {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--bloomberg-orange);
+    color: var(--bloomberg-black);
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.top-ten-card h3 {
+    color: var(--bloomberg-yellow);
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.top-ten-card .company-name {
+    color: var(--bloomberg-text-secondary);
+    font-size: 10px;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+}
+
+.top-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Valuation Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.badge.discount {
+    background: var(--bloomberg-green);
+    color: var(--bloomberg-black);
+}
+
+.badge.below_value {
+    background: #66cc99;
+    color: var(--bloomberg-black);
+}
+
+.badge.in_value {
+    background: var(--bloomberg-yellow);
+    color: var(--bloomberg-black);
+}
+
+.badge.above_value {
+    background: #ff9966;
+    color: var(--bloomberg-black);
+}
+
+.badge.premium {
+    background: var(--bloomberg-red);
+    color: var(--bloomberg-text-primary);
+}
+
+.value.positive {
+    color: var(--bloomberg-green);
+}
+
+.value.negative {
+    color: var(--bloomberg-red);
+}

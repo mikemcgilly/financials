@@ -116,30 +116,30 @@ function displayCompanies(companies) {
         const card = document.createElement('div');
         card.className = 'company-card';
         card.onclick = () => {
-            // Store company data for company page
             localStorage.setItem('selectedCompany', JSON.stringify(company));
             window.location.href = 'company.html';
         };
         
         const growthDisplay = company.ebitda_growth ? 
             `<div class="metric">
-                <span class="label">Growth:</span>
-                <span class="value">${company.ebitda_growth.toFixed(1)}%</span>
+                <span class="label">EBITDA Growth:</span>
+                <span class="value ${company.ebitda_growth > 0 ? 'positive' : 'negative'}">${company.ebitda_growth.toFixed(1)}%</span>
+            </div>` : '';
+        
+        const valuationDisplay = company.valuation_band ?
+            `<div class="metric">
+                <span class="label">Valuation:</span>
+                <span class="badge ${company.valuation_band}">${company.valuation_band.replace('_', ' ')}</span>
             </div>` : '';
         
         const indexBadges = company.indices ? 
             company.indices.map(index => `<span class="index-badge">${index}</span>`).join('') : '';
         
-        const stockPrice = stockPrices[company.symbol];
-        const priceDisplay = (stockPrice != null) ? 
+        const priceDisplay = company.current_price ?
             `<div class="metric">
-                <span class="label">Stock Price:</span>
-                <span class="value">$${stockPrice.toFixed(2)}</span>
-            </div>` : 
-            `<div class="metric">
-                <span class="label">Stock Price:</span>
-                <span class="value">Data not available</span>
-            </div>`;
+                <span class="label">Price:</span>
+                <span class="value">$${company.current_price.toFixed(2)}</span>
+            </div>` : '';
         
         card.innerHTML = `
             <h3>${company.company_name}</h3>
@@ -151,15 +151,13 @@ function displayCompanies(companies) {
                 <span class="value">$${(company.latest_ebitda / 1000000).toFixed(2)}M</span>
             </div>
             ${growthDisplay}
+            ${valuationDisplay}
         `;
         
         portfolioGrid.appendChild(card);
     });
     
-    // Update total companies count
     document.getElementById('total-companies').textContent = companies.length;
-    
-    // Prices are loaded once on page init (static snapshot)
 }
 
 function updateFilterCounts() {
@@ -300,17 +298,53 @@ function updateSummaryStats(companies = null) {
     }
 }
 
-// Preload stock price snapshot once (so we don't refetch on every filter/search)
-async function preloadStockPrices() {
-    const snapshot = await loadStockPriceSnapshot();
-    if (!snapshot) return;
-
-    // Store only the numeric price keyed by symbol (keeps rendering simple)
-    Object.keys(snapshot).forEach(symbol => {
-        const q = snapshot[symbol];
-        if (q && q.current_price != null) {
-            stockPrices[symbol] = Number(q.current_price);
-        }
+function displayTopTen() {
+    // Score companies: positive EBITDA growth + discount/below value valuation
+    const scored = allCompanies
+        .filter(c => c.ebitda_growth && c.valuation_band)
+        .map(c => {
+            let score = c.ebitda_growth || 0;
+            // Bonus for discount/below value
+            if (c.valuation_band === 'discount') score += 20;
+            else if (c.valuation_band === 'below_value') score += 10;
+            else if (c.valuation_band === 'in_value') score += 5;
+            return { ...c, score };
+        })
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 10);
+    
+    const topTenGrid = document.getElementById('top-ten-grid');
+    topTenGrid.innerHTML = '';
+    
+    scored.forEach((company, index) => {
+        const card = document.createElement('div');
+        card.className = 'top-ten-card';
+        card.onclick = () => {
+            localStorage.setItem('selectedCompany', JSON.stringify(company));
+            window.location.href = 'company.html';
+        };
+        
+        card.innerHTML = `
+            <div class="rank">#${index + 1}</div>
+            <h3>${company.symbol}</h3>
+            <p class="company-name">${company.company_name}</p>
+            <div class="top-metrics">
+                <div class="metric">
+                    <span class="label">EBITDA Growth:</span>
+                    <span class="value positive">${company.ebitda_growth.toFixed(1)}%</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Valuation:</span>
+                    <span class="badge ${company.valuation_band}">${company.valuation_band.replace('_', ' ')}</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Price:</span>
+                    <span class="value">$${company.current_price.toFixed(2)}</span>
+                </div>
+            </div>
+        `;
+        
+        topTenGrid.appendChild(card);
     });
 }
 
@@ -318,11 +352,9 @@ async function preloadStockPrices() {
 document.addEventListener('DOMContentLoaded', async function() {
     // Load data
     allCompanies = await loadPortfolioData();
-
-    // Load stock prices snapshot (static)
-    await preloadStockPrices();
     
     if (allCompanies.length > 0) {
+        displayTopTen();
         displayCompanies(allCompanies);
         createPortfolioChart();
         updateSummaryStats();
