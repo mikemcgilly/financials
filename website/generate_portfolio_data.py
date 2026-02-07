@@ -161,11 +161,13 @@ def generate_portfolio_data():
             all_periods.sort(key=lambda x: x['period'], reverse=True)
             company_data['latest_ebitda'] = all_periods[0]['ebitda']
             
-            if len(all_periods) >= 2:
-                latest = all_periods[0]['ebitda']
-                previous = all_periods[1]['ebitda']
-                if previous != 0:
-                    company_data['ebitda_growth'] = ((latest - previous) / abs(previous)) * 100
+            # Calculate growth using annual data only for consistency
+            if len(company_data['annual_data']) >= 2:
+                annual_sorted = sorted(company_data['annual_data'], key=lambda x: x['period'], reverse=True)
+                latest_annual = annual_sorted[0]['ebitda']
+                previous_annual = annual_sorted[1]['ebitda']
+                if previous_annual != 0:
+                    company_data['ebitda_growth'] = ((latest_annual - previous_annual) / abs(previous_annual)) * 100
             
             portfolio_data.append(company_data)
             print(f"Processed {symbol}")
