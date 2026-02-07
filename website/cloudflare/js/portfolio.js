@@ -366,24 +366,195 @@ function updateSummaryStats(companies = null) {
     
     if (dataToUse.length === 0) return;
     
-    // Calculate average growth
-    const growthValues = dataToUse
-        .filter(company => company.ebitda_growth !== null)
-        .map(company => company.ebitda_growth);
+    // Update total companies
+    document.getElementById('total-companies').textContent = dataToUse.length;
     
-    if (growthValues.length > 0) {
-        const avgGrowth = growthValues.reduce((sum, growth) => sum + growth, 0) / growthValues.length;
-        document.getElementById('avg-growth').textContent = `${avgGrowth.toFixed(1)}%`;
-    }
+    // Create EBITDA trend distribution histogram
+    createTrendHistogram(dataToUse);
     
-    // Find top performer
-    const topPerformer = dataToUse.reduce((top, company) => {
-        return (company.ebitda_growth || 0) > (top.ebitda_growth || 0) ? company : top;
+    // Create valuation distribution histogram
+    createValuationHistogram(dataToUse);
+}
+
+function createTrendHistogram(companies) {
+    const ctx = document.getElementById('trend-chart').getContext('2d');
+    
+    // Count companies in each trend category
+    const counts = {
+        'strong_negative': 0,
+        'negative': 0,
+        'positive': 0,
+        'strong_positive': 0
+    };
+    
+    companies.forEach(company => {
+        const slope = company.ma_slope;
+        if (slope !== null && slope !== undefined) {
+            if (slope < -1) counts.strong_negative++;
+            else if (slope < 0) counts.negative++;
+            else if (slope > 1) counts.strong_positive++;
+            else if (slope > 0) counts.positive++;
+        }
     });
     
-    if (topPerformer.ebitda_growth) {
-        document.getElementById('top-performer').textContent = `${topPerformer.symbol} (${topPerformer.ebitda_growth.toFixed(1)}%)`;
+    // Clear existing chart
+    if (window.trendChart) {
+        window.trendChart.destroy();
     }
+    
+    window.trendChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Strong Neg', 'Negative', 'Positive', 'Strong Pos'],
+            datasets: [{
+                data: [counts.strong_negative, counts.negative, counts.positive, counts.strong_positive],
+                backgroundColor: ['#ff0000', '#ff9999', '#99ff99', '#00ff00'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    backgroundColor: '#1a1a1a',
+                    titleColor: '#ffffff',
+                    bodyColor: '#cccccc',
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.parsed.y} companies (click to filter)`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#cccccc',
+                        font: { size: 9 }
+                    },
+                    grid: { display: false }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#cccccc',
+                        font: { size: 9 },
+                        stepSize: 1
+                    },
+                    grid: { color: '#333333' }
+                }
+            },
+            onClick: (event, elements) => {
+                if (elements.length > 0) {
+                    const index = elements[0].index;
+                    const filters = ['STRONG_NEGATIVE', 'NEGATIVE', 'POSITIVE', 'STRONG_POSITIVE'];
+                    const slopeFilter = filters[index];
+                    
+                    // Update the slope filter
+                    document.querySelectorAll('.slope-filter-btn').forEach(b => b.classList.remove('active'));
+                    const targetBtn = document.querySelector(`[data-slope="${slopeFilter}"]`);
+                    if (targetBtn) {
+                        targetBtn.classList.add('active');
+                        currentSlopeFilter = slopeFilter;
+                        const filteredData = filterCompanies();
+                        createPortfolioChart(filteredData);
+                        updateSummaryStats(filteredData);
+                    }
+                }
+            }
+        }
+    });
+}
+
+function createValuationHistogram(companies) {
+    const ctx = document.getElementById('valuation-chart').getContext('2d');
+    
+    // Count companies in each valuation band
+    const counts = {
+        'discount': 0,
+        'below_value': 0,
+        'fair_value': 0,
+        'above_value': 0,
+        'premium': 0
+    };
+    
+    companies.forEach(company => {
+        if (company.valuation_band && counts.hasOwnProperty(company.valuation_band)) {
+            counts[company.valuation_band]++;
+        }
+    });
+    
+    // Clear existing chart
+    if (window.valuationChart) {
+        window.valuationChart.destroy();
+    }
+    
+    window.valuationChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Discount', 'Below Value', 'Fair Value', 'Above Value', 'Premium'],
+            datasets: [{
+                data: [counts.discount, counts.below_value, counts.fair_value, counts.above_value, counts.premium],
+                backgroundColor: ['#00ff00', '#66ff66', '#ffff00', '#ff9900', '#ff0000'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    backgroundColor: '#1a1a1a',
+                    titleColor: '#ffffff',
+                    bodyColor: '#cccccc',
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.parsed.y} companies (click to filter)`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#cccccc',
+                        font: { size: 9 }
+                    },
+                    grid: { display: false }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#cccccc',
+                        font: { size: 9 },
+                        stepSize: 1
+                    },
+                    grid: { color: '#333333' }
+                }
+            },
+            onClick: (event, elements) => {
+                if (elements.length > 0) {
+                    const index = elements[0].index;
+                    const valuations = ['discount', 'below_value', 'fair_value', 'above_value', 'premium'];
+                    const valuation = valuations[index];
+                    
+                    // Update the valuation filter
+                    document.querySelectorAll('.valuation-btn').forEach(b => b.classList.remove('active'));
+                    const targetBtn = document.querySelector(`[data-valuation="${valuation}"]`);
+                    if (targetBtn) {
+                        targetBtn.classList.add('active');
+                        currentValuationFilter = valuation;
+                        const filteredData = filterCompanies();
+                        createPortfolioChart(filteredData);
+                        updateSummaryStats(filteredData);
+                    }
+                }
+            }
+        }
+    });
 }
 
 function displayTopTen() {
@@ -492,6 +663,32 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         document.getElementById('search-input').addEventListener('input', function() {
             currentSearch = this.value;
+            const filteredData = filterCompanies();
+            createPortfolioChart(filteredData);
+            updateSummaryStats(filteredData);
+        });
+        
+        // Clear filters button
+        document.getElementById('clear-filters-btn').addEventListener('click', function() {
+            // Reset all filters
+            currentFilter = 'ALL';
+            currentValuationFilter = 'ALL';
+            currentSlopeFilter = 'ALL';
+            currentSearch = '';
+            
+            // Reset UI
+            document.querySelectorAll('.filter-btn:not(.valuation-btn):not(.slope-filter-btn)').forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-filter="ALL"]').classList.add('active');
+            
+            document.querySelectorAll('.valuation-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-valuation="ALL"]').classList.add('active');
+            
+            document.querySelectorAll('.slope-filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-slope="ALL"]').classList.add('active');
+            
+            document.getElementById('search-input').value = '';
+            
+            // Refresh display
             const filteredData = filterCompanies();
             createPortfolioChart(filteredData);
             updateSummaryStats(filteredData);

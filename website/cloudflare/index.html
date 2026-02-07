@@ -18,13 +18,13 @@
                 <h3>Total Companies</h3>
                 <span id="total-companies">-</span>
             </div>
-            <div class="card">
-                <h3>Avg EBITDA Growth</h3>
-                <span id="avg-growth">-</span>
+            <div class="card valuation-histogram">
+                <h3>EBITDA Trend Distribution</h3>
+                <canvas id="trend-chart"></canvas>
             </div>
-            <div class="card">
-                <h3>Top Performer</h3>
-                <span id="top-performer">-</span>
+            <div class="card valuation-histogram">
+                <h3>Valuation Distribution</h3>
+                <canvas id="valuation-chart"></canvas>
             </div>
         </div>
 
@@ -50,6 +50,10 @@
         </div>
 
         <div class="filter-controls">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h3 style="margin: 0;">Filters</h3>
+                <button id="clear-filters-btn" class="clear-filters-btn">Clear All Filters</button>
+            </div>
             <h3>Filter by Index:</h3>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="ALL">ALL</button>
