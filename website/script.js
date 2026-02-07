@@ -2,7 +2,7 @@
 async function loadPortfolioData() {
     try {
         // Try to load the JSON data
-        const response = await fetch('portfolio_ebitda_data.json');
+        const response = await fetch('cloudflare/data/portfolio_ebitda_data.json');
         const portfolioData = await response.json();
         
         displaySummaryCards(portfolioData);

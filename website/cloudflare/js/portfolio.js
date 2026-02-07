@@ -1,6 +1,7 @@
 // Global variables
 let currentFilter = 'ALL';
 let currentValuationFilter = 'ALL';
+let currentSlopeFilter = 'ALL';
 let currentSearch = '';
 let allCompanies = [];
 let stockPrices = {};
@@ -103,6 +104,27 @@ function filterCompanies() {
         );
     }
     
+    // Apply MA slope filter
+    if (currentSlopeFilter !== 'ALL') {
+        filteredCompanies = filteredCompanies.filter(company => {
+            const slope = company.ma_slope;
+            if (slope === null || slope === undefined) return false;
+            
+            switch(currentSlopeFilter) {
+                case 'POSITIVE':
+                    return slope > 0;
+                case 'NEGATIVE':
+                    return slope < 0;
+                case 'STRONG_POSITIVE':
+                    return slope > 1;
+                case 'STRONG_NEGATIVE':
+                    return slope < -1;
+                default:
+                    return true;
+            }
+        });
+    }
+    
     // Apply search filter
     if (currentSearch) {
         filteredCompanies = filteredCompanies.filter(company => 
@@ -134,6 +156,12 @@ function displayCompanies(companies) {
                 <span class="value ${company.ebitda_growth > 0 ? 'positive' : 'negative'}">${company.ebitda_growth.toFixed(1)}%</span>
             </div>` : '';
         
+        const maSlopeDisplay = company.ma_slope !== null && company.ma_slope !== undefined ?
+            `<div class="metric">
+                <span class="label">EBITDA Y/Y Trend (Smoothed):</span>
+                <span class="value ${company.ma_slope > 0 ? 'positive' : 'negative'}">${company.ma_slope.toFixed(2)}B</span>
+            </div>` : '';
+        
         const valuationDisplay = company.valuation_band ?
             `<div class="metric">
                 <span class="label">Valuation:</span>
@@ -159,6 +187,7 @@ function displayCompanies(companies) {
                 <span class="value">$${(company.latest_ebitda / 1000000).toFixed(2)}M</span>
             </div>
             ${growthDisplay}
+            ${maSlopeDisplay}
             ${valuationDisplay}
         `;
         
@@ -407,6 +436,20 @@ document.addEventListener('DOMContentLoaded', async function() {
                 document.querySelectorAll('.valuation-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 currentValuationFilter = this.dataset.valuation;
+                const filteredData = filterCompanies();
+                
+                // Update chart with filtered data
+                createPortfolioChart(filteredData);
+                updateSummaryStats(filteredData);
+            });
+        });
+        
+        // Add MA slope filter listeners
+        document.querySelectorAll('.slope-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.slope-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentSlopeFilter = this.dataset.slope;
                 const filteredData = filterCompanies();
                 
                 // Update chart with filtered data

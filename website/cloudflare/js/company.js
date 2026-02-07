@@ -97,30 +97,71 @@ function createAnnualChart(companyData) {
     const labels = annualData.map(item => item.period);
     const ebitdaValues = annualData.map(item => item.ebitda);
     
+    // Calculate 2-period moving average
+    const movingAvg = [];
+    for (let i = 0; i < ebitdaValues.length; i++) {
+        if (i === 0) {
+            movingAvg.push(null);
+        } else {
+            movingAvg.push((ebitdaValues[i-1] + ebitdaValues[i]) / 2);
+        }
+    }
+    
     new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
-            datasets: [{
-                label: 'Annual EBITDA (Millions)',
-                data: ebitdaValues,
-                backgroundColor: '#0066cc',
-                borderColor: '#0066cc',
-                borderWidth: 1
-            }]
+            datasets: [
+                {
+                    label: 'Annual EBITDA (Millions)',
+                    data: ebitdaValues,
+                    backgroundColor: '#0066cc',
+                    borderColor: '#0066cc',
+                    borderWidth: 1,
+                    order: 2
+                },
+                {
+                    label: '2-Period Moving Average',
+                    data: movingAvg,
+                    type: 'line',
+                    borderColor: '#ff8800',
+                    backgroundColor: 'transparent',
+                    borderWidth: 3,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#ff8800',
+                    order: 1
+                }
+            ]
         },
         options: {
             responsive: true,
             plugins: {
                 legend: {
-                    display: false
+                    display: true,
+                    labels: {
+                        color: '#ffffff',
+                        font: {
+                            family: 'Courier New',
+                            size: 11
+                        }
+                    }
                 },
                 tooltip: {
                     backgroundColor: '#1a1a1a',
                     titleColor: '#ffffff',
                     bodyColor: '#cccccc',
                     borderColor: '#333333',
-                    borderWidth: 1
+                    borderWidth: 1,
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.dataset.label || '';
+                            const value = context.parsed.y;
+                            if (value !== null) {
+                                return `${label}: $${value.toFixed(2)}M`;
+                            }
+                            return '';
+                        }
+                    }
                 }
             },
             scales: {
