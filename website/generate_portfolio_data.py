@@ -46,13 +46,8 @@ def generate_portfolio_data():
     """Generate portfolio data with current periods"""
     set_identity("mikemcgilly@gmail.com")
     
-    # Get stocks with complete data
-    try:
-        availability_df = pd.read_csv('stock_data_availability_report.csv')
-        symbols = availability_df[availability_df['Complete_Data'] == True]['Symbol'].tolist()
-    except:
-        symbols = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'A', 'ABBV']
-    
+    # Get all stocks from universe
+    symbols = get_all_stocks()
     portfolio_data = []
     classifications = get_stock_classifications()
     expected_quarters, expected_years = get_current_periods()
@@ -66,6 +61,15 @@ def generate_portfolio_data():
             cash_annual = company.cash_flow(periods=4, annual=True, as_dataframe=True)
             income_quarterly = company.income_statement(periods=8, annual=False, as_dataframe=True)
             cash_quarterly = company.cash_flow(periods=8, annual=False, as_dataframe=True)
+            
+            # Check if we have the required data
+            if income_annual is None or cash_annual is None:
+                print(f"Skipping {symbol} - missing annual data")
+                continue
+                
+            if income_quarterly is None or cash_quarterly is None:
+                print(f"Skipping {symbol} - missing quarterly data")
+                continue
             
             company_data = {
                 'symbol': symbol.upper(),
@@ -119,17 +123,49 @@ def generate_portfolio_data():
                                 'period_type': 'quarterly'
                             })
             
+            # Calculate Q4 from annual data (Q4 = FY - Q1 - Q2 - Q3)
+            for annual in company_data['annual_data']:
+                fy_year = annual['period'].replace('FY ', '')
+                q4_period = f"Q4 {fy_year}"
+                
+                # Check if Q4 already exists
+                if any(q['period'] == q4_period for q in company_data['quarterly_data']):
+                    continue
+                
+                # Find Q1, Q2, Q3 for this year
+                quarters = [q for q in company_data['quarterly_data'] if fy_year in q['period']]
+                if len(quarters) == 3:  # Have all three quarters
+                    q_sum_op = sum(q['operating_income'] for q in quarters)
+                    q_sum_depr = sum(q['depreciation'] for q in quarters)
+                    q_sum_ebitda = sum(q['ebitda'] for q in quarters)
+                    
+                    q4_op = annual['operating_income'] - q_sum_op
+                    q4_depr = annual['depreciation'] - q_sum_depr
+                    q4_ebitda = annual['ebitda'] - q_sum_ebitda
+                    
+                    company_data['quarterly_data'].append({
+                        'period': q4_period,
+                        'operating_income': q4_op,
+                        'depreciation': q4_depr,
+                        'ebitda': q4_ebitda,
+                        'ebitda_annualized': q4_ebitda * 4,
+                        'period_type': 'quarterly'
+                    })
+            
             # Calculate latest EBITDA and growth
             all_periods = company_data['annual_data'] + company_data['quarterly_data']
-            if all_periods:
-                all_periods.sort(key=lambda x: x['period'], reverse=True)
-                company_data['latest_ebitda'] = all_periods[0]['ebitda']
+            if not all_periods:
+                print(f"Skipping {symbol} - no valid periods found")
+                continue
                 
-                if len(all_periods) >= 2:
-                    latest = all_periods[0]['ebitda']
-                    previous = all_periods[1]['ebitda']
-                    if previous != 0:
-                        company_data['ebitda_growth'] = ((latest - previous) / abs(previous)) * 100
+            all_periods.sort(key=lambda x: x['period'], reverse=True)
+            company_data['latest_ebitda'] = all_periods[0]['ebitda']
+            
+            if len(all_periods) >= 2:
+                latest = all_periods[0]['ebitda']
+                previous = all_periods[1]['ebitda']
+                if previous != 0:
+                    company_data['ebitda_growth'] = ((latest - previous) / abs(previous)) * 100
             
             portfolio_data.append(company_data)
             print(f"Processed {symbol}")

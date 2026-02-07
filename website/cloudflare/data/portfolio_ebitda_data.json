@@ -96,10 +96,26 @@
         "ebitda": 446000000.0,
         "ebitda_annualized": 1784000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 443000000.0,
+        "depreciation": -146000000.0,
+        "ebitda": 297000000.0,
+        "ebitda_annualized": 1188000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 408000000.0,
+        "depreciation": -118000000.0,
+        "ebitda": 290000000.0,
+        "ebitda_annualized": 1160000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 577000000.0,
-    "ebitda_growth": 10.748560460652591,
+    "latest_ebitda": 297000000.0,
+    "ebitda_growth": 2.413793103448276,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -203,10 +219,26 @@
         "ebitda": 43221000000.0,
         "ebitda_annualized": 172884000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 32427000000.0,
+        "depreciation": -5694000000.0,
+        "ebitda": 26733000000.0,
+        "ebitda_annualized": 106932000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 29591000000.0,
+        "depreciation": -5621000000.0,
+        "ebitda": 23970000000.0,
+        "ebitda_annualized": 95880000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 36773000000.0,
-    "ebitda_growth": 8.519742666587971,
+    "latest_ebitda": 26733000000.0,
+    "ebitda_growth": 11.526908635794744,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -312,10 +344,18 @@
         "ebitda": 2981000000.0,
         "ebitda_annualized": 11924000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": -1490000000.0,
+        "depreciation": 206000000.0,
+        "ebitda": -1284000000.0,
+        "ebitda_annualized": -5136000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2096000000.0,
-    "ebitda_growth": -47.886623570363,
+    "latest_ebitda": -1284000000.0,
+    "ebitda_growth": -161.25954198473283,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -419,10 +459,18 @@
         "ebitda": 1719000000.0,
         "ebitda_annualized": 6876000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1911000000.0,
+        "depreciation": -658000000.0,
+        "ebitda": 1253000000.0,
+        "ebitda_annualized": 5012000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2428000000.0,
-    "ebitda_growth": -15.015750787539378,
+    "latest_ebitda": 1253000000.0,
+    "ebitda_growth": -48.39373970345964,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -526,10 +574,26 @@
         "ebitda": 2698132000.0,
         "ebitda_annualized": 10792528000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 2049691000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2353668000.0,
+        "depreciation": 1036851000.0,
+        "ebitda": 3390519000.0,
+        "ebitda_annualized": 13562076000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3121588000.0,
-    "ebitda_growth": 12.7335276997411,
+    "latest_ebitda": null,
+    "ebitda_growth": null,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -633,10 +697,26 @@
         "ebitda": 1119000000.0,
         "ebitda_annualized": 4476000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 2261000000.0,
+        "depreciation": -459000000.0,
+        "ebitda": 1802000000.0,
+        "ebitda_annualized": 7208000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1957000000.0,
+        "depreciation": -420000000.0,
+        "ebitda": 1537000000.0,
+        "ebitda_annualized": 6148000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2807000000.0,
-    "ebitda_growth": 6.68947168377043,
+    "latest_ebitda": 1802000000.0,
+    "ebitda_growth": 17.24137931034483,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -740,10 +820,26 @@
         "ebitda": 670312000.0,
         "ebitda_annualized": 2681248000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 945211000.0,
+        "depreciation": -191750000.0,
+        "ebitda": 753461000.0,
+        "ebitda_annualized": 3013844000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 569392000.0,
+        "depreciation": -160279000.0,
+        "ebitda": 409113000.0,
+        "ebitda_annualized": 1636452000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1119351000.0,
-    "ebitda_growth": 47.896211793898125,
+    "latest_ebitda": 753461000.0,
+    "ebitda_growth": 84.16941040739356,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -848,10 +944,26 @@
         "ebitda": 339000000.0,
         "ebitda_annualized": 1356000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 207000000.0,
+        "depreciation": 35000000.0,
+        "ebitda": 242000000.0,
+        "ebitda_annualized": 968000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 140000000.0,
+        "depreciation": 5000000.0,
+        "ebitda": 145000000.0,
+        "ebitda_annualized": 580000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 520000000.0,
-    "ebitda_growth": 31.979695431472084,
+    "latest_ebitda": 242000000.0,
+    "ebitda_growth": 66.89655172413794,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -955,10 +1067,18 @@
         "ebitda": 187081000.0,
         "ebitda_annualized": 748324000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 144149000.0,
+        "depreciation": 38129000.0,
+        "ebitda": 182278000.0,
+        "ebitda_annualized": 729112000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 152015000.0,
-    "ebitda_growth": -24.027067684203686,
+    "latest_ebitda": 182278000.0,
+    "ebitda_growth": 19.9079038252804,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -1062,10 +1182,26 @@
         "ebitda": 2058000000.0,
         "ebitda_annualized": 8232000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 1712000000.0,
+        "depreciation": -199000000.0,
+        "ebitda": 1513000000.0,
+        "ebitda_annualized": 6052000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2046000000.0,
+        "depreciation": -168000000.0,
+        "ebitda": 1878000000.0,
+        "ebitda_annualized": 7512000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2554000000.0,
-    "ebitda_growth": 14.838129496402876,
+    "latest_ebitda": 1513000000.0,
+    "ebitda_growth": -19.435569755058573,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -1166,6 +1302,22 @@
       {
         "period": "Q1 2024",
         "operating_income": 36000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 1752000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 871000000.0,
         "depreciation": null,
         "ebitda": null,
         "ebitda_annualized": null,
@@ -1278,10 +1430,18 @@
         "ebitda": 2390000000.0,
         "ebitda_annualized": 9560000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2311000000.0,
+        "depreciation": -2801000000.0,
+        "ebitda": -490000000.0,
+        "ebitda_annualized": -1960000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 6561000000.0,
-    "ebitda_growth": 5.1105414931111826,
+    "latest_ebitda": -490000000.0,
+    "ebitda_growth": -107.46837372351776,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -1387,6 +1547,14 @@
         "ebitda": null,
         "ebitda_annualized": null,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 856400000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
       }
     ],
     "latest_ebitda": null,
@@ -1401,6 +1569,13 @@
     "symbol": "AMZN",
     "company_name": "AMAZON COM INC",
     "annual_data": [
+      {
+        "period": "FY 2025",
+        "operating_income": 79975000000.0,
+        "depreciation": 65756000000.0,
+        "ebitda": 145731000000.0,
+        "period_type": "annual"
+      },
       {
         "period": "FY 2024",
         "operating_income": 68593000000.0,
@@ -1420,13 +1595,6 @@
         "operating_income": 12248000000.0,
         "depreciation": 41921000000.0,
         "ebitda": 54169000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 24879000000.0,
-        "depreciation": 34296000000.0,
-        "ebitda": 59175000000.0,
         "period_type": "annual"
       }
     ],
@@ -1494,10 +1662,26 @@
         "ebitda": 26991000000.0,
         "ebitda_annualized": 107964000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 24977000000.0,
+        "depreciation": 19471000000.0,
+        "ebitda": 44448000000.0,
+        "ebitda_annualized": 177792000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 21203000000.0,
+        "depreciation": 15631000000.0,
+        "ebitda": 36834000000.0,
+        "ebitda_annualized": 147336000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 34218000000.0,
-    "ebitda_growth": 10.9065568988429,
+    "latest_ebitda": 44448000000.0,
+    "ebitda_growth": 20.671119074767876,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -1602,10 +1786,18 @@
         "ebitda": 1509000000.0,
         "ebitda_annualized": 6036000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1091000000.0,
+        "depreciation": 47000000.0,
+        "ebitda": 1138000000.0,
+        "ebitda_annualized": 4552000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 863000000.0,
-    "ebitda_growth": 28.805970149253728,
+    "latest_ebitda": 1138000000.0,
+    "ebitda_growth": 31.86558516801854,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -1709,10 +1901,26 @@
         "ebitda": 1016100000.0,
         "ebitda_annualized": 4064400000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 16800000.0,
+        "depreciation": -704400000.0,
+        "ebitda": -687600000.0,
+        "ebitda_annualized": -2750400000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2424400000.0,
+        "depreciation": -678400000.0,
+        "ebitda": 1746000000.0,
+        "ebitda_annualized": 6984000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1942000000.0,
-    "ebitda_growth": 7.4174456551800425,
+    "latest_ebitda": -687600000.0,
+    "ebitda_growth": -139.38144329896906,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -1816,10 +2024,18 @@
         "ebitda": 788600000.0,
         "ebitda_annualized": 3154400000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 953800000.0,
+        "depreciation": 143900000.0,
+        "ebitda": 1097700000.0,
+        "ebitda_annualized": 4390800000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1930000000.0,
-    "ebitda_growth": 89.08592142647203,
+    "latest_ebitda": 1097700000.0,
+    "ebitda_growth": -43.12435233160622,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -1923,10 +2139,26 @@
         "ebitda": 2222000000.0,
         "ebitda_annualized": 8888000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 7508000000.0,
+        "depreciation": -278000000.0,
+        "ebitda": 7230000000.0,
+        "ebitda_annualized": 28920000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 4627000000.0,
+        "depreciation": -271000000.0,
+        "ebitda": 4356000000.0,
+        "ebitda_annualized": 17424000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 6313000000.0,
-    "ebitda_growth": 49.42011834319527,
+    "latest_ebitda": 7230000000.0,
+    "ebitda_growth": 65.97796143250689,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -2031,15 +2263,109 @@
         "ebitda": 356000000.0,
         "ebitda_annualized": 1424000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 8777000000.0,
+        "depreciation": 536000000.0,
+        "ebitda": 9313000000.0,
+        "ebitda_annualized": 37252000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": -3770000000.0,
+        "depreciation": -816000000.0,
+        "ebitda": -4586000000.0,
+        "ebitda_annualized": -18344000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": -4290000000.0,
-    "ebitda_growth": 3.247631935047361,
+    "latest_ebitda": 9313000000.0,
+    "ebitda_growth": 303.0745747928478,
     "data_quality": "complete",
     "indices": [
       "DOW"
     ],
     "primary_index": "DOW"
+  },
+  {
+    "symbol": "BIIB",
+    "company_name": "BIOGEN INC.",
+    "annual_data": [],
+    "quarterly_data": [
+      {
+        "period": "Q3 2025",
+        "operating_income": -34100000.0,
+        "depreciation": 579700000.0,
+        "ebitda": 545600000.0,
+        "ebitda_annualized": 2182400000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q3 2024",
+        "operating_income": -14800000.0,
+        "depreciation": 489200000.0,
+        "ebitda": 474400000.0,
+        "ebitda_annualized": 1897600000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q3 2023",
+        "operating_income": -300000000.0,
+        "depreciation": 354700000.0,
+        "ebitda": 54700000.0,
+        "ebitda_annualized": 218800000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2025",
+        "operating_income": -48700000.0,
+        "depreciation": 377500000.0,
+        "ebitda": 328800000.0,
+        "ebitda_annualized": 1315200000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2024",
+        "operating_income": -85200000.0,
+        "depreciation": 306400000.0,
+        "ebitda": 221200000.0,
+        "ebitda_annualized": 884800000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2023",
+        "operating_income": 121200000.0,
+        "depreciation": 229700000.0,
+        "ebitda": 350900000.0,
+        "ebitda_annualized": 1403600000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q1 2025",
+        "operating_income": -68400000.0,
+        "depreciation": 183200000.0,
+        "ebitda": 114800000.0,
+        "ebitda_annualized": 459200000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q1 2024",
+        "operating_income": -93700000.0,
+        "depreciation": 147500000.0,
+        "ebitda": 53800000.0,
+        "ebitda_annualized": 215200000.0,
+        "period_type": "quarterly"
+      }
+    ],
+    "latest_ebitda": 545600000.0,
+    "ebitda_growth": 15.008431703204048,
+    "data_quality": "complete",
+    "indices": [
+      "SP500_TOP30"
+    ],
+    "primary_index": "SP500_TOP30"
   },
   {
     "symbol": "BKNG",
@@ -2138,10 +2464,18 @@
         "ebitda": 928000000.0,
         "ebitda_annualized": 3712000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1729000000.0,
+        "depreciation": -259000000.0,
+        "ebitda": 1470000000.0,
+        "ebitda_annualized": 5880000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3955000000.0,
-    "ebitda_growth": 9.465817879878218,
+    "latest_ebitda": 1470000000.0,
+    "ebitda_growth": -62.83185840707964,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -2224,10 +2558,18 @@
         "ebitda": 1804000000.0,
         "ebitda_annualized": 7216000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2075000000.0,
+        "depreciation": -389000000.0,
+        "ebitda": 1686000000.0,
+        "ebitda_annualized": 6744000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2712000000.0,
-    "ebitda_growth": 16.14561027837259,
+    "latest_ebitda": 1686000000.0,
+    "ebitda_growth": -37.83185840707964,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -2331,10 +2673,18 @@
         "ebitda": 979000000.0,
         "ebitda_annualized": 3916000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 675000000.0,
+        "depreciation": -571000000.0,
+        "ebitda": 104000000.0,
+        "ebitda_annualized": 416000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2051000000.0,
-    "ebitda_growth": 24.00241837968561,
+    "latest_ebitda": 104000000.0,
+    "ebitda_growth": -94.92930277913213,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -2438,10 +2788,18 @@
         "ebitda": 4043000000.0,
         "ebitda_annualized": 16172000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2924000000.0,
+        "depreciation": 555000000.0,
+        "ebitda": 3479000000.0,
+        "ebitda_annualized": 13916000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3622000000.0,
-    "ebitda_growth": -1.842818428184282,
+    "latest_ebitda": 3479000000.0,
+    "ebitda_growth": -3.94809497515185,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -2546,10 +2904,18 @@
         "ebitda": 289512000.0,
         "ebitda_annualized": 1158048000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 456875000.0,
+        "depreciation": -72075000.0,
+        "ebitda": 384800000.0,
+        "ebitda_annualized": 1539200000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 588659000.0,
-    "ebitda_growth": 19.5712846429471,
+    "latest_ebitda": 384800000.0,
+    "ebitda_growth": -34.63108522930933,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -2654,10 +3020,18 @@
         "ebitda": 395300000.0,
         "ebitda_annualized": 1581200000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 408600000.0,
+        "depreciation": 69500000.0,
+        "ebitda": 478100000.0,
+        "ebitda_annualized": 1912400000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 516600000.0,
-    "ebitda_growth": -6.192119121118576,
+    "latest_ebitda": 478100000.0,
+    "ebitda_growth": -7.452574525745257,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -2761,10 +3135,18 @@
         "ebitda": 1197000000.0,
         "ebitda_annualized": 4788000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1064000000.0,
+        "depreciation": -309000000.0,
+        "ebitda": 755000000.0,
+        "ebitda_annualized": 3020000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1217000000.0,
-    "ebitda_growth": -20.039421813403415,
+    "latest_ebitda": 755000000.0,
+    "ebitda_growth": -37.96220213640098,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -2868,10 +3250,26 @@
         "ebitda": 9361000000.0,
         "ebitda_annualized": 37444000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 3488000000.0,
+        "depreciation": -7665000000.0,
+        "ebitda": -4177000000.0,
+        "ebitda_annualized": -16708000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 4993000000.0,
+        "depreciation": -6809000000.0,
+        "ebitda": -1816000000.0,
+        "ebitda_annualized": -7264000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 17557000000.0,
-    "ebitda_growth": 4.332065604944141,
+    "latest_ebitda": -4177000000.0,
+    "ebitda_growth": -130.01101321585904,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -2976,10 +3374,18 @@
         "ebitda": 989700000.0,
         "ebitda_annualized": 3958800000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 947100000.0,
+        "depreciation": 28100000.0,
+        "ebitda": 975200000.0,
+        "ebitda_annualized": 3900800000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 999000000.0,
-    "ebitda_growth": -5.074116305587229,
+    "latest_ebitda": 975200000.0,
+    "ebitda_growth": -2.3823823823823824,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -3083,10 +3489,26 @@
         "ebitda": 2485000000.0,
         "ebitda_annualized": 9940000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 3341000000.0,
+        "depreciation": -874000000.0,
+        "ebitda": 2467000000.0,
+        "ebitda_annualized": 9868000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 3042000000.0,
+        "depreciation": -810000000.0,
+        "ebitda": 2232000000.0,
+        "ebitda_annualized": 8928000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 4182000000.0,
-    "ebitda_growth": 12.178111587982833,
+    "latest_ebitda": 2467000000.0,
+    "ebitda_growth": 10.528673835125447,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -3191,10 +3613,26 @@
         "ebitda": 2588000000.0,
         "ebitda_annualized": 10352000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 743000000.0,
+        "depreciation": -1511000000.0,
+        "ebitda": -768000000.0,
+        "ebitda_annualized": -3072000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": -374000000.0,
+        "depreciation": -1500000000.0,
+        "ebitda": -1874000000.0,
+        "ebitda_annualized": -7496000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3039000000.0,
-    "ebitda_growth": 12.26449944588105,
+    "latest_ebitda": -768000000.0,
+    "ebitda_growth": 59.01814300960512,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -3342,6 +3780,22 @@
         "ebitda": null,
         "ebitda_annualized": null,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 597452000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 547594000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
       }
     ],
     "latest_ebitda": null,
@@ -3449,10 +3903,18 @@
         "ebitda": 828000000.0,
         "ebitda_annualized": 3312000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 751000000.0,
+        "depreciation": -256000000.0,
+        "ebitda": 495000000.0,
+        "ebitda_annualized": 1980000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1276000000.0,
-    "ebitda_growth": 12.225153913808267,
+    "latest_ebitda": 495000000.0,
+    "ebitda_growth": -61.206896551724135,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -3608,10 +4070,26 @@
         "ebitda": 149868000.0,
         "ebitda_annualized": 599472000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 72918000.0,
+        "depreciation": -48157000.0,
+        "ebitda": 24761000.0,
+        "ebitda_annualized": 99044000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": -77653000.0,
+        "depreciation": -46764000.0,
+        "ebitda": -124417000.0,
+        "ebitda_annualized": -497668000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 671507000.0,
-    "ebitda_growth": 8.625573250725916,
+    "latest_ebitda": 24761000.0,
+    "ebitda_growth": 119.90162116109535,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -3715,10 +4193,18 @@
         "ebitda": 1491000000.0,
         "ebitda_annualized": 5964000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1425000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1343000000.0,
-    "ebitda_growth": -9.986595174262733,
+    "latest_ebitda": null,
+    "ebitda_growth": null,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -3822,10 +4308,26 @@
         "ebitda": 5119000000.0,
         "ebitda_annualized": 20476000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 3480000000.0,
+        "depreciation": 1394000000.0,
+        "ebitda": 4874000000.0,
+        "ebitda_annualized": 19496000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 3655000000.0,
+        "depreciation": 1285000000.0,
+        "ebitda": 4940000000.0,
+        "ebitda_annualized": 19760000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 5907000000.0,
-    "ebitda_growth": 8.484848484848486,
+    "latest_ebitda": 4874000000.0,
+    "ebitda_growth": -1.3360323886639678,
     "data_quality": "complete",
     "indices": [
       "DOW"
@@ -3929,10 +4431,18 @@
         "ebitda": 3497000000.0,
         "ebitda_annualized": 13988000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2112000000.0,
+        "depreciation": -3007000000.0,
+        "ebitda": -895000000.0,
+        "ebitda_annualized": -3580000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 8078000000.0,
-    "ebitda_growth": 16.46482122260669,
+    "latest_ebitda": -895000000.0,
+    "ebitda_growth": -111.07947511760337,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -4036,10 +4546,18 @@
         "ebitda": 153600000.0,
         "ebitda_annualized": 614400000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 188900000.0,
+        "depreciation": -99300000.0,
+        "ebitda": 89600000.0,
+        "ebitda_annualized": 358400000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 306100000.0,
-    "ebitda_growth": -1.8595703751202306,
+    "latest_ebitda": 89600000.0,
+    "ebitda_growth": -70.72852009147338,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -4143,10 +4661,26 @@
         "ebitda": 415000000.0,
         "ebitda_annualized": 1660000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 922000000.0,
+        "depreciation": 46000000.0,
+        "ebitda": 968000000.0,
+        "ebitda_annualized": 3872000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 393000000.0,
+        "depreciation": 43000000.0,
+        "ebitda": 436000000.0,
+        "ebitda_annualized": 1744000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 180000000.0,
-    "ebitda_growth": -57.943925233644855,
+    "latest_ebitda": 968000000.0,
+    "ebitda_growth": 122.01834862385321,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -4157,6 +4691,13 @@
     "symbol": "ELV",
     "company_name": "Elevance Health, Inc.",
     "annual_data": [
+      {
+        "period": "FY 2025",
+        "operating_income": 7199000000.0,
+        "depreciation": 1546000000.0,
+        "ebitda": 8745000000.0,
+        "period_type": "annual"
+      },
       {
         "period": "FY 2024",
         "operating_income": 7862000000.0,
@@ -4176,13 +4717,6 @@
         "operating_income": 8452000000.0,
         "depreciation": 1675000000.0,
         "ebitda": 10127000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 7489000000.0,
-        "depreciation": 1302000000.0,
-        "ebitda": 8791000000.0,
         "period_type": "annual"
       }
     ],
@@ -4246,6 +4780,22 @@
       {
         "period": "Q1 2024",
         "operating_income": 3016000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 309000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 673000000.0,
         "depreciation": null,
         "ebitda": null,
         "ebitda_annualized": null,
@@ -4357,10 +4907,18 @@
         "ebitda": -8962000.0,
         "ebitda_annualized": -35848000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 54804000.0,
+        "depreciation": -40093000.0,
+        "ebitda": 14711000.0,
+        "ebitda_annualized": 58844000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 126377000.0,
-    "ebitda_growth": 14.355907050818011,
+    "latest_ebitda": 14711000.0,
+    "ebitda_growth": -88.35943249167174,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -4539,10 +5097,18 @@
         "ebitda": 132678000.0,
         "ebitda_annualized": 530712000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 136512000.0,
+        "depreciation": 26556000.0,
+        "ebitda": 163068000.0,
+        "ebitda_annualized": 652272000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 176256000.0,
-    "ebitda_growth": -10.400325343771447,
+    "latest_ebitda": 163068000.0,
+    "ebitda_growth": -7.482298474945534,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -4646,10 +5212,18 @@
         "ebitda": 890000000.0,
         "ebitda_annualized": 3560000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 103000000.0,
+        "depreciation": 498000000.0,
+        "ebitda": 601000000.0,
+        "ebitda_annualized": 2404000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1004000000.0,
-    "ebitda_growth": 9.011943539630836,
+    "latest_ebitda": 601000000.0,
+    "ebitda_growth": -40.1394422310757,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -4753,10 +5327,18 @@
         "ebitda": 426000000.0,
         "ebitda_annualized": 1704000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 271500000.0,
+        "depreciation": -74000000.0,
+        "ebitda": 197500000.0,
+        "ebitda_annualized": 790000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 421000000.0,
-    "ebitda_growth": -9.110535405872193,
+    "latest_ebitda": 197500000.0,
+    "ebitda_growth": -53.087885985748215,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -4860,10 +5442,18 @@
         "ebitda": 1825000000.0,
         "ebitda_annualized": 7300000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1096000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3770000000.0,
-    "ebitda_growth": 12.068965517241379,
+    "latest_ebitda": null,
+    "ebitda_growth": null,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -4967,10 +5557,18 @@
         "ebitda": 1587000000.0,
         "ebitda_annualized": 6348000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1412000000.0,
+        "depreciation": 1156000000.0,
+        "ebitda": 2568000000.0,
+        "ebitda_annualized": 10272000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2522000000.0,
-    "ebitda_growth": 73.69146005509641,
+    "latest_ebitda": 2568000000.0,
+    "ebitda_growth": 1.8239492466296592,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -4981,6 +5579,13 @@
     "symbol": "FAST",
     "company_name": "FASTENAL CO",
     "annual_data": [
+      {
+        "period": "FY 2025",
+        "operating_income": 1655700000.0,
+        "depreciation": 179200000.0,
+        "ebitda": 1834900000.0,
+        "period_type": "annual"
+      },
       {
         "period": "FY 2024",
         "operating_income": 1510000000.0,
@@ -4998,13 +5603,6 @@
       {
         "period": "FY 2022",
         "operating_income": 1453600000.0,
-        "depreciation": null,
-        "ebitda": null,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 1217400000.0,
         "depreciation": null,
         "ebitda": null,
         "period_type": "annual"
@@ -5074,10 +5672,26 @@
         "ebitda": 430400000.0,
         "ebitda_annualized": 1721600000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 384200000.0,
+        "depreciation": 52500000.0,
+        "ebitda": 436700000.0,
+        "ebitda_annualized": 1746800000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 344800000.0,
+        "depreciation": 52400000.0,
+        "ebitda": 397200000.0,
+        "ebitda_annualized": 1588800000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 483800000.0,
-    "ebitda_growth": 12.537799488253082,
+    "latest_ebitda": 436700000.0,
+    "ebitda_growth": 9.944612286002014,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -5256,10 +5870,18 @@
         "ebitda": 349800000.0,
         "ebitda_annualized": 1399200000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 574100000.0,
+        "depreciation": -51200000.0,
+        "ebitda": 522900000.0,
+        "ebitda_annualized": 2091600000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 585700000.0,
-    "ebitda_growth": 4.8701880035810206,
+    "latest_ebitda": 522900000.0,
+    "ebitda_growth": -10.722212736896022,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -5363,10 +5985,18 @@
         "ebitda": -4228000000.0,
         "ebitda_annualized": -16912000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2452000000.0,
+        "depreciation": -191000000.0,
+        "ebitda": 2261000000.0,
+        "ebitda_annualized": 9044000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3417000000.0,
-    "ebitda_growth": 191.05621805792163,
+    "latest_ebitda": 2261000000.0,
+    "ebitda_growth": -33.83084577114428,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -5471,10 +6101,26 @@
         "ebitda": 6536000000.0,
         "ebitda_annualized": 26144000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": -3646000000.0,
+        "depreciation": 2954000000.0,
+        "ebitda": -692000000.0,
+        "ebitda_annualized": -2768000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1522000000.0,
+        "depreciation": 2905000000.0,
+        "ebitda": 4427000000.0,
+        "ebitda_annualized": 17708000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 4142000000.0,
-    "ebitda_growth": -36.5113427345187,
+    "latest_ebitda": -692000000.0,
+    "ebitda_growth": -115.63135306076349,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -5485,6 +6131,13 @@
     "symbol": "GOOGL",
     "company_name": "Alphabet Inc.",
     "annual_data": [
+      {
+        "period": "FY 2025",
+        "operating_income": 129039000000.0,
+        "depreciation": 21136000000.0,
+        "ebitda": 150175000000.0,
+        "period_type": "annual"
+      },
       {
         "period": "FY 2024",
         "operating_income": 112390000000.0,
@@ -5548,10 +6201,26 @@
         "ebitda": 28885000000.0,
         "ebitda_annualized": 115540000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 35934000000.0,
+        "depreciation": -7932000000.0,
+        "ebitda": 28002000000.0,
+        "ebitda_annualized": 112008000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 30972000000.0,
+        "depreciation": -6329000000.0,
+        "ebitda": 24643000000.0,
+        "ebitda_annualized": 98572000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 46324000000.0,
-    "ebitda_growth": 16.900093370681606,
+    "latest_ebitda": 28002000000.0,
+    "ebitda_growth": 13.630645619445684,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -5656,10 +6325,18 @@
         "ebitda": 5916000000.0,
         "ebitda_annualized": 23664000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 4658000000.0,
+        "depreciation": -1863000000.0,
+        "ebitda": 2795000000.0,
+        "ebitda_annualized": 11180000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 7959000000.0,
-    "ebitda_growth": 0.8745247148288974,
+    "latest_ebitda": 2795000000.0,
+    "ebitda_growth": -64.88252293001634,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -5668,9 +6345,112 @@
     "primary_index": "SP500_TOP30"
   },
   {
+    "symbol": "HON",
+    "company_name": "HONEYWELL INTERNATIONAL INC",
+    "annual_data": [
+      {
+        "period": "FY 2024",
+        "operating_income": 8699000000.0,
+        "depreciation": 1334000000.0,
+        "ebitda": 10033000000.0,
+        "period_type": "annual"
+      }
+    ],
+    "quarterly_data": [
+      {
+        "period": "Q3 2025",
+        "operating_income": 2407000000.0,
+        "depreciation": 397000000.0,
+        "ebitda": 2804000000.0,
+        "ebitda_annualized": 11216000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q3 2024",
+        "operating_income": 2296000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q3 2023",
+        "operating_income": 2082000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2025",
+        "operating_income": 2366000000.0,
+        "depreciation": 404000000.0,
+        "ebitda": 2770000000.0,
+        "ebitda_annualized": 11080000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2024",
+        "operating_income": 2199000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2023",
+        "operating_income": 2052000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q1 2025",
+        "operating_income": 2258000000.0,
+        "depreciation": 374000000.0,
+        "ebitda": 2632000000.0,
+        "ebitda_annualized": 10528000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q1 2024",
+        "operating_income": 2021000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2183000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
+      }
+    ],
+    "latest_ebitda": null,
+    "ebitda_growth": null,
+    "data_quality": "complete",
+    "indices": [
+      "SP500_TOP30",
+      "NASDAQ100_TOP30",
+      "DOW"
+    ],
+    "primary_index": "SP500_TOP30"
+  },
+  {
     "symbol": "ICE",
     "company_name": "Intercontinental Exchange, Inc.",
     "annual_data": [
+      {
+        "period": "FY 2025",
+        "operating_income": 4929000000.0,
+        "depreciation": 1560000000.0,
+        "ebitda": 6489000000.0,
+        "period_type": "annual"
+      },
       {
         "period": "FY 2024",
         "operating_income": 4309000000.0,
@@ -5690,13 +6470,6 @@
         "operating_income": 3638000000.0,
         "depreciation": 1031000000.0,
         "ebitda": 4669000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 3449000000.0,
-        "depreciation": 1009000000.0,
-        "ebitda": 4458000000.0,
         "period_type": "annual"
       }
     ],
@@ -5764,10 +6537,26 @@
         "ebitda": 1444000000.0,
         "ebitda_annualized": 5776000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 1237000000.0,
+        "depreciation": 389000000.0,
+        "ebitda": 1626000000.0,
+        "ebitda_annualized": 6504000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1077000000.0,
+        "depreciation": 389000000.0,
+        "ebitda": 1466000000.0,
+        "ebitda_annualized": 5864000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1561000000.0,
-    "ebitda_growth": 4.8354600402955,
+    "latest_ebitda": 1626000000.0,
+    "ebitda_growth": 10.914051841746248,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -5871,10 +6660,18 @@
         "ebitda": 328862000.0,
         "ebitda_annualized": 1315448000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 261686000.0,
+        "depreciation": -58295000.0,
+        "ebitda": 203391000.0,
+        "ebitda_annualized": 813564000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 461308000.0,
-    "ebitda_growth": 15.291835990023042,
+    "latest_ebitda": 203391000.0,
+    "ebitda_growth": -55.909934360557365,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -5977,6 +6774,14 @@
         "depreciation": 16200000.0,
         "ebitda": 177400000.0,
         "ebitda_annualized": 709600000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 165300000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
         "period_type": "quarterly"
       }
     ],
@@ -6085,10 +6890,26 @@
         "ebitda": 1131000000.0,
         "ebitda_annualized": 4524000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 580000000.0,
+        "depreciation": -4852000000.0,
+        "ebitda": -4272000000.0,
+        "ebitda_annualized": -17088000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 412000000.0,
+        "depreciation": -4303000000.0,
+        "ebitda": -3891000000.0,
+        "ebitda_annualized": -15564000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 8654000000.0,
-    "ebitda_growth": 715.5049786628733,
+    "latest_ebitda": -4272000000.0,
+    "ebitda_growth": -9.79182729375482,
     "data_quality": "complete",
     "indices": [
       "DOW"
@@ -6192,10 +7013,26 @@
         "ebitda": 340000000.0,
         "ebitda_annualized": 1360000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 339000000.0,
+        "depreciation": -87000000.0,
+        "ebitda": 252000000.0,
+        "ebitda_annualized": 1008000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": -151000000.0,
+        "depreciation": -54000000.0,
+        "ebitda": -205000000.0,
+        "ebitda_annualized": -820000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3849000000.0,
-    "ebitda_growth": 19.682835820895523,
+    "latest_ebitda": 252000000.0,
+    "ebitda_growth": 222.9268292682927,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -6342,10 +7179,18 @@
         "ebitda": 1199000000.0,
         "ebitda_annualized": 4796000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1031000000.0,
+        "depreciation": -141000000.0,
+        "ebitda": 890000000.0,
+        "ebitda_annualized": 3560000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1346000000.0,
-    "ebitda_growth": 5.4858934169279,
+    "latest_ebitda": 890000000.0,
+    "ebitda_growth": -33.87815750371471,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -6449,10 +7294,18 @@
         "ebitda": 377365000.0,
         "ebitda_annualized": 1509460000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 207039000.0,
+        "depreciation": -345147000.0,
+        "ebitda": -138108000.0,
+        "ebitda_annualized": -552432000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 778238000.0,
-    "ebitda_growth": -0.19326831207638395,
+    "latest_ebitda": -138108000.0,
+    "ebitda_growth": -117.7462421521437,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -6556,10 +7409,26 @@
         "ebitda": 251000000.0,
         "ebitda_annualized": 1004000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 217000000.0,
+        "depreciation": -61000000.0,
+        "ebitda": 156000000.0,
+        "ebitda_annualized": 624000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 230000000.0,
+        "depreciation": -60000000.0,
+        "ebitda": 170000000.0,
+        "ebitda_annualized": 680000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 331000000.0,
-    "ebitda_growth": 10.702341137123746,
+    "latest_ebitda": 156000000.0,
+    "ebitda_growth": -8.235294117647058,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -6663,10 +7532,18 @@
         "ebitda": 1038000000.0,
         "ebitda_annualized": 4152000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 548000000.0,
+        "depreciation": -341000000.0,
+        "ebitda": 207000000.0,
+        "ebitda_annualized": 828000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1237000000.0,
-    "ebitda_growth": -27.9976717112922,
+    "latest_ebitda": 207000000.0,
+    "ebitda_growth": -83.26596604688763,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -6762,10 +7639,18 @@
         "ebitda": 2403000000.0,
         "ebitda_annualized": 9612000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2709000000.0,
+        "depreciation": -517000000.0,
+        "ebitda": 2192000000.0,
+        "ebitda_annualized": 8768000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 4250000000.0,
-    "ebitda_growth": 28.437594439407675,
+    "latest_ebitda": 2192000000.0,
+    "ebitda_growth": -48.423529411764704,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -6870,10 +7755,26 @@
         "ebitda": 2272000000.0,
         "ebitda_annualized": 9088000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 3205000000.0,
+        "depreciation": 635000000.0,
+        "ebitda": 3840000000.0,
+        "ebitda_annualized": 15360000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 159000000.0,
+        "depreciation": 639000000.0,
+        "ebitda": 798000000.0,
+        "ebitda_annualized": 3192000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": -759000000.0,
-    "ebitda_growth": -147.8864353312303,
+    "latest_ebitda": 3840000000.0,
+    "ebitda_growth": 381.203007518797,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -6977,10 +7878,18 @@
         "ebitda": 3044000000.0,
         "ebitda_annualized": 12176000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2270000000.0,
+        "depreciation": 913000000.0,
+        "ebitda": 3183000000.0,
+        "ebitda_annualized": 12732000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3328000000.0,
-    "ebitda_growth": 9.258043335521995,
+    "latest_ebitda": 3183000000.0,
+    "ebitda_growth": -4.356971153846153,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -7084,10 +7993,18 @@
         "ebitda": 3139000000.0,
         "ebitda_annualized": 12556000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2921000000.0,
+        "depreciation": -991000000.0,
+        "ebitda": 1930000000.0,
+        "ebitda_annualized": 7720000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 4038000000.0,
-    "ebitda_growth": 1.0257693269952466,
+    "latest_ebitda": 1930000000.0,
+    "ebitda_growth": -52.20406141654285,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -7191,10 +8108,26 @@
         "ebitda": 1113508000.0,
         "ebitda_annualized": 4454032000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 1741128000.0,
+        "depreciation": -186351000.0,
+        "ebitda": 1554777000.0,
+        "ebitda_annualized": 6219108000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1126560000.0,
+        "depreciation": -183542000.0,
+        "ebitda": 943018000.0,
+        "ebitda_annualized": 3772072000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1849597000.0,
-    "ebitda_growth": 39.229284566872465,
+    "latest_ebitda": 1554777000.0,
+    "ebitda_growth": 64.87246266773275,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -7299,10 +8232,18 @@
         "ebitda": 528401000.0,
         "ebitda_annualized": 2113604000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 669147000.0,
+        "depreciation": 66453000.0,
+        "ebitda": 735600000.0,
+        "ebitda_annualized": 2942400000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 563345000.0,
-    "ebitda_growth": -6.771091914076723,
+    "latest_ebitda": 735600000.0,
+    "ebitda_growth": 30.577177395734406,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -7406,10 +8347,18 @@
         "ebitda": 3820000000.0,
         "ebitda_annualized": 15280000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 3938000000.0,
+        "depreciation": 231000000.0,
+        "ebitda": 4169000000.0,
+        "ebitda_annualized": 16676000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 5351000000.0,
-    "ebitda_growth": 26.531094821470795,
+    "latest_ebitda": 4169000000.0,
+    "ebitda_growth": -22.089329097364978,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -7555,10 +8504,18 @@
         "ebitda": 2835000000.0,
         "ebitda_annualized": 11340000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2868000000.0,
+        "depreciation": 136000000.0,
+        "ebitda": 3004000000.0,
+        "ebitda_annualized": 12016000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3478000000.0,
-    "ebitda_growth": 5.425886632312822,
+    "latest_ebitda": 3004000000.0,
+    "ebitda_growth": -13.628522139160438,
     "data_quality": "complete",
     "indices": [
       "DOW"
@@ -7599,6 +8556,14 @@
       }
     ],
     "quarterly_data": [
+      {
+        "period": "Q3 2025",
+        "operating_income": 151700000.0,
+        "depreciation": 515600000.0,
+        "ebitda": 667300000.0,
+        "ebitda_annualized": 2669200000.0,
+        "period_type": "quarterly"
+      },
       {
         "period": "Q3 2024",
         "operating_income": 30900000.0,
@@ -7656,16 +8621,24 @@
         "period_type": "quarterly"
       },
       {
-        "period": "Q1 2023",
-        "operating_income": 903100000.0,
-        "depreciation": 222900000.0,
-        "ebitda": 1126000000.0,
-        "ebitda_annualized": 4504000000.0,
+        "period": "Q4 2025",
+        "operating_income": 23600000.0,
+        "depreciation": -280400000.0,
+        "ebitda": -256800000.0,
+        "ebitda_annualized": -1027200000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2174400000.0,
+        "depreciation": -248600000.0,
+        "ebitda": 1925800000.0,
+        "ebitda_annualized": 7703200000.0,
         "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 594000000.0,
-    "ebitda_growth": -50.11337868480725,
+    "latest_ebitda": -256800000.0,
+    "ebitda_growth": -113.33471803925642,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -7769,10 +8742,26 @@
         "ebitda": 1940000000.0,
         "ebitda_annualized": 7760000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 1436000000.0,
+        "depreciation": -1159000000.0,
+        "ebitda": 277000000.0,
+        "ebitda_annualized": 1108000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1053000000.0,
+        "depreciation": -1362000000.0,
+        "ebitda": -309000000.0,
+        "ebitda_annualized": -1236000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3667000000.0,
-    "ebitda_growth": 5.4948216340621405,
+    "latest_ebitda": 277000000.0,
+    "ebitda_growth": 189.6440129449838,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -7876,10 +8865,26 @@
         "ebitda": 17192000000.0,
         "ebitda_annualized": 68768000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 24745000000.0,
+        "depreciation": -6731000000.0,
+        "ebitda": 18014000000.0,
+        "ebitda_annualized": 72056000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 23365000000.0,
+        "depreciation": -5925000000.0,
+        "ebitda": 17440000000.0,
+        "ebitda_annualized": 69760000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 33740000000.0,
-    "ebitda_growth": 18.853036494293363,
+    "latest_ebitda": 18014000000.0,
+    "ebitda_growth": 3.2912844036697244,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -7984,9 +8989,17 @@
         "ebitda": null,
         "ebitda_annualized": null,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1142000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1261000000.0,
+    "latest_ebitda": null,
     "ebitda_growth": null,
     "data_quality": "complete",
     "indices": [
@@ -8091,10 +9104,26 @@
         "ebitda": 1931000000.0,
         "ebitda_annualized": 7724000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 796000000.0,
+        "depreciation": -440000000.0,
+        "ebitda": 356000000.0,
+        "ebitda_annualized": 1424000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 733000000.0,
+        "depreciation": -839000000.0,
+        "ebitda": -106000000.0,
+        "ebitda_annualized": -424000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2325000000.0,
-    "ebitda_growth": -1.3576580398812048,
+    "latest_ebitda": 356000000.0,
+    "ebitda_growth": 435.84905660377353,
     "data_quality": "complete",
     "indices": [
       "DOW"
@@ -8198,10 +9227,18 @@
         "ebitda": 562466000.0,
         "ebitda_annualized": 2249864000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 381224000.0,
+        "depreciation": -39776000.0,
+        "ebitda": 341448000.0,
+        "ebitda_annualized": 1365792000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 757375000.0,
-    "ebitda_growth": 40.32271213070045,
+    "latest_ebitda": 341448000.0,
+    "ebitda_growth": -54.9169169830005,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -8305,10 +9342,18 @@
         "ebitda": 103738000.0,
         "ebitda_annualized": 414952000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 163307000.0,
+        "depreciation": -15150000.0,
+        "ebitda": 148157000.0,
+        "ebitda_annualized": 592628000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 233453000.0,
-    "ebitda_growth": 22.602210960270988,
+    "latest_ebitda": 148157000.0,
+    "ebitda_growth": -36.53669046874531,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -8473,10 +9518,18 @@
         "ebitda": 602000000.0,
         "ebitda_annualized": 2408000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 814000000.0,
+        "depreciation": -163000000.0,
+        "ebitda": 651000000.0,
+        "ebitda_annualized": 2604000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1052000000.0,
-    "ebitda_growth": 9.469302809573362,
+    "latest_ebitda": 651000000.0,
+    "ebitda_growth": -38.11787072243346,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -8580,10 +9633,26 @@
         "ebitda": 787000000.0,
         "ebitda_annualized": 3148000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 3654000000.0,
+        "depreciation": -3990000000.0,
+        "ebitda": -336000000.0,
+        "ebitda_annualized": -1344000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1522000000.0,
+        "depreciation": -3768000000.0,
+        "ebitda": -2246000000.0,
+        "ebitda_annualized": -8984000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 8372000000.0,
-    "ebitda_growth": 28.542914171656687,
+    "latest_ebitda": -336000000.0,
+    "ebitda_growth": 85.04007123775601,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -8687,10 +9756,26 @@
         "ebitda": 192979000.0,
         "ebitda_annualized": 771916000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 214261000.0,
+        "depreciation": -144829000.0,
+        "ebitda": 69432000.0,
+        "ebitda_annualized": 277728000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 178892000.0,
+        "depreciation": -63279000.0,
+        "ebitda": 115613000.0,
+        "ebitda_annualized": 462452000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 300221000.0,
-    "ebitda_growth": 12.567115603815465,
+    "latest_ebitda": 69432000.0,
+    "ebitda_growth": -39.94446991255309,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -8794,10 +9879,18 @@
         "ebitda": 2911000000.0,
         "ebitda_annualized": 11644000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 940000000.0,
+        "depreciation": -1692000000.0,
+        "ebitda": -752000000.0,
+        "ebitda_annualized": -3008000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 7491000000.0,
-    "ebitda_growth": 10.080822924320353,
+    "latest_ebitda": -752000000.0,
+    "ebitda_growth": -110.03871312241355,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -8901,10 +9994,26 @@
         "ebitda": 2719768000.0,
         "ebitda_annualized": 10879072000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 2956663000.0,
+        "depreciation": 85983000.0,
+        "ebitda": 3042646000.0,
+        "ebitda_annualized": 12170584000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2272766000.0,
+        "depreciation": 79539000.0,
+        "ebitda": 2352305000.0,
+        "ebitda_annualized": 9409220000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3335573000.0,
-    "ebitda_growth": 11.543039020649807,
+    "latest_ebitda": 3042646000.0,
+    "ebitda_growth": 29.347427310659118,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -9009,10 +10118,26 @@
         "ebitda": 462000000.0,
         "ebitda_annualized": 1848000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 443000000.0,
+        "depreciation": -280000000.0,
+        "ebitda": 163000000.0,
+        "ebitda_annualized": 652000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 374000000.0,
+        "depreciation": -242000000.0,
+        "ebitda": 132000000.0,
+        "ebitda_annualized": 528000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1098000000.0,
-    "ebitda_growth": 32.608695652173914,
+    "latest_ebitda": 163000000.0,
+    "ebitda_growth": 23.484848484848484,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -9116,10 +10241,26 @@
         "ebitda": 242000000.0,
         "ebitda_annualized": 968000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 348000000.0,
+        "depreciation": -183000000.0,
+        "ebitda": 165000000.0,
+        "ebitda_annualized": 660000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 366000000.0,
+        "depreciation": -185000000.0,
+        "ebitda": 181000000.0,
+        "ebitda_annualized": 724000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 552000000.0,
-    "ebitda_growth": -0.8976660682226212,
+    "latest_ebitda": 165000000.0,
+    "ebitda_growth": -8.83977900552486,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -9223,10 +10364,26 @@
         "ebitda": 17319000000.0,
         "ebitda_annualized": 69276000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": -4635000000.0,
+        "depreciation": -2058000000.0,
+        "ebitda": -6693000000.0,
+        "ebitda_annualized": -26772000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": -24448000000.0,
+        "depreciation": -1066000000.0,
+        "ebitda": -25514000000.0,
+        "ebitda_annualized": -102056000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 38041000000.0,
-    "ebitda_growth": 64.04053471323846,
+    "latest_ebitda": -6693000000.0,
+    "ebitda_growth": 73.76734341929921,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -9331,10 +10488,18 @@
         "ebitda": 1091000000.0,
         "ebitda_annualized": 4364000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 675000000.0,
+        "depreciation": 259000000.0,
+        "ebitda": 934000000.0,
+        "ebitda_annualized": 3736000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1094000000.0,
-    "ebitda_growth": -9.437086092715232,
+    "latest_ebitda": 934000000.0,
+    "ebitda_growth": -14.625228519195613,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -9438,10 +10603,18 @@
         "ebitda": 470957000.0,
         "ebitda_annualized": 1883828000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 334020000.0,
+        "depreciation": 88808000.0,
+        "ebitda": 422828000.0,
+        "ebitda_annualized": 1691312000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 453063000.0,
-    "ebitda_growth": -7.259373586311504,
+    "latest_ebitda": 422828000.0,
+    "ebitda_growth": -6.673464838223382,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -9545,10 +10718,18 @@
         "ebitda": 680100000.0,
         "ebitda_annualized": 2720400000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 408600000.0,
+        "depreciation": -302800000.0,
+        "ebitda": 105800000.0,
+        "ebitda_annualized": 423200000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 735500000.0,
-    "ebitda_growth": -20.201801019854617,
+    "latest_ebitda": 105800000.0,
+    "ebitda_growth": -85.61522773623386,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -9652,10 +10833,26 @@
         "ebitda": 4008000000.0,
         "ebitda_annualized": 16032000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 5109000000.0,
+        "depreciation": -1364000000.0,
+        "ebitda": 3745000000.0,
+        "ebitda_annualized": 14980000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 4685000000.0,
+        "depreciation": -1411000000.0,
+        "ebitda": 3274000000.0,
+        "ebitda_annualized": 13096000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 7073000000.0,
-    "ebitda_growth": 16.562294001318392,
+    "latest_ebitda": 3745000000.0,
+    "ebitda_growth": 14.386072083078801,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -9759,10 +10956,18 @@
         "ebitda": 862129000.0,
         "ebitda_annualized": 3448516000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 738650000.0,
+        "depreciation": -209965000.0,
+        "ebitda": 528685000.0,
+        "ebitda_annualized": 2114740000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1351892000.0,
-    "ebitda_growth": 9.37177400303547,
+    "latest_ebitda": 528685000.0,
+    "ebitda_growth": -60.89295594618505,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -9867,10 +11072,26 @@
         "ebitda": 279500000.0,
         "ebitda_annualized": 1118000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 497200000.0,
+        "depreciation": -171600000.0,
+        "ebitda": 325600000.0,
+        "ebitda_annualized": 1302400000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 238400000.0,
+        "depreciation": -121100000.0,
+        "ebitda": 117300000.0,
+        "ebitda_annualized": 469200000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 478400000.0,
-    "ebitda_growth": 24.615785360771035,
+    "latest_ebitda": 325600000.0,
+    "ebitda_growth": 177.57885763000854,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -9975,10 +11196,26 @@
         "ebitda": 577500000.0,
         "ebitda_annualized": 2310000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 431100000.0,
+        "depreciation": -34000000.0,
+        "ebitda": 397100000.0,
+        "ebitda_annualized": 1588400000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 481800000.0,
+        "depreciation": -81700000.0,
+        "ebitda": 400100000.0,
+        "ebitda_annualized": 1600400000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 815600000.0,
-    "ebitda_growth": 4.47034712437556,
+    "latest_ebitda": 397100000.0,
+    "ebitda_growth": -0.7498125468632842,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -10082,10 +11319,26 @@
         "ebitda": 3358000000.0,
         "ebitda_annualized": 13432000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 3557000000.0,
+        "depreciation": -1039000000.0,
+        "ebitda": 2518000000.0,
+        "ebitda_annualized": 10072000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2250000000.0,
+        "depreciation": -978000000.0,
+        "ebitda": 1272000000.0,
+        "ebitda_annualized": 5088000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 5884000000.0,
-    "ebitda_growth": -1.7696160267111853,
+    "latest_ebitda": 2518000000.0,
+    "ebitda_growth": 97.95597484276729,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -10189,10 +11442,26 @@
         "ebitda": 6469000000.0,
         "ebitda_annualized": 25876000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 4355000000.0,
+        "depreciation": -1439000000.0,
+        "ebitda": 2916000000.0,
+        "ebitda_annualized": 11664000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 3885000000.0,
+        "depreciation": -1364000000.0,
+        "ebitda": 2521000000.0,
+        "ebitda_annualized": 10084000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 6682000000.0,
-    "ebitda_growth": 1.3191811978771797,
+    "latest_ebitda": 2916000000.0,
+    "ebitda_growth": 15.668385561285202,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -10297,10 +11566,18 @@
         "ebitda": 1357860000.0,
         "ebitda_annualized": 5431440000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1421256000.0,
+        "depreciation": 656444000.0,
+        "ebitda": 2077700000.0,
+        "ebitda_annualized": 8310800000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1588260000.0,
-    "ebitda_growth": -16.417750216288923,
+    "latest_ebitda": 2077700000.0,
+    "ebitda_growth": 30.81611323083122,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -10311,6 +11588,13 @@
     "symbol": "PM",
     "company_name": "Philip Morris International Inc.",
     "annual_data": [
+      {
+        "period": "FY 2025",
+        "operating_income": 14892000000.0,
+        "depreciation": 1996000000.0,
+        "ebitda": 16888000000.0,
+        "period_type": "annual"
+      },
       {
         "period": "FY 2024",
         "operating_income": 13402000000.0,
@@ -10323,13 +11607,6 @@
         "operating_income": 11556000000.0,
         "depreciation": 1398000000.0,
         "ebitda": 12954000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 12975000000.0,
-        "depreciation": 998000000.0,
-        "ebitda": 13973000000.0,
         "period_type": "annual"
       }
     ],
@@ -10357,10 +11634,18 @@
         "ebitda": 4024000000.0,
         "ebitda_annualized": 16096000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 3373000000.0,
+        "depreciation": 521000000.0,
+        "ebitda": 3894000000.0,
+        "ebitda_annualized": 15576000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 4768000000.0,
-    "ebitda_growth": 13.46977629700143,
+    "latest_ebitda": 3894000000.0,
+    "ebitda_growth": -18.330536912751676,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -10456,10 +11741,18 @@
         "ebitda": 117381000.0,
         "ebitda_annualized": 469524000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 60650000.0,
+        "depreciation": -16316000.0,
+        "ebitda": 44334000.0,
+        "ebitda_annualized": 177336000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 208425000.0,
-    "ebitda_growth": 2.5708534898942426,
+    "latest_ebitda": 44334000.0,
+    "ebitda_growth": -78.72903922274199,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -10563,10 +11856,26 @@
         "ebitda": 3365000000.0,
         "ebitda_annualized": 13460000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 2918000000.0,
+        "depreciation": -898000000.0,
+        "ebitda": 2020000000.0,
+        "ebitda_annualized": 8080000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2582000000.0,
+        "depreciation": -846000000.0,
+        "ebitda": 1736000000.0,
+        "ebitda_annualized": 6944000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3993000000.0,
-    "ebitda_growth": 14.478211009174313,
+    "latest_ebitda": 2020000000.0,
+    "ebitda_growth": 16.359447004608295,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -10671,10 +11980,64 @@
         "ebitda": 490500000.0,
         "ebitda_annualized": 1962000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 524700000.0,
+        "depreciation": 757200000.0,
+        "ebitda": 1281900000.0,
+        "ebitda_annualized": 5127600000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 602900000.0,
-    "ebitda_growth": 14.947569113441372,
+    "latest_ebitda": 1281900000.0,
+    "ebitda_growth": 112.62232542710234,
+    "data_quality": "complete",
+    "indices": [
+      "SP500_TOP30"
+    ],
+    "primary_index": "SP500_TOP30"
+  },
+  {
+    "symbol": "ROST",
+    "company_name": "ROSS STORES, INC.",
+    "annual_data": [
+      {
+        "period": "FY 2024",
+        "operating_income": 2307663000.0,
+        "depreciation": 419432000.0,
+        "ebitda": 2727095000.0,
+        "period_type": "annual"
+      }
+    ],
+    "quarterly_data": [
+      {
+        "period": "Q3 2025",
+        "operating_income": 648498000.0,
+        "depreciation": 132187000.0,
+        "ebitda": 780685000.0,
+        "ebitda_annualized": 3122740000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q2 2025",
+        "operating_income": 638274000.0,
+        "depreciation": 126399000.0,
+        "ebitda": 764673000.0,
+        "ebitda_annualized": 3058692000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q1 2025",
+        "operating_income": 606470000.0,
+        "depreciation": 115938000.0,
+        "ebitda": 722408000.0,
+        "ebitda_annualized": 2889632000.0,
+        "period_type": "quarterly"
+      }
+    ],
+    "latest_ebitda": 780685000.0,
+    "ebitda_growth": 2.09396696365636,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -10685,6 +12048,13 @@
     "symbol": "RTX",
     "company_name": "RTX Corp",
     "annual_data": [
+      {
+        "period": "FY 2025",
+        "operating_income": 9300000000.0,
+        "depreciation": 4378000000.0,
+        "ebitda": 13678000000.0,
+        "period_type": "annual"
+      },
       {
         "period": "FY 2024",
         "operating_income": 6538000000.0,
@@ -10704,13 +12074,6 @@
         "operating_income": 5414000000.0,
         "depreciation": 4108000000.0,
         "ebitda": 9522000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 4958000000.0,
-        "depreciation": 4557000000.0,
-        "ebitda": 9515000000.0,
         "period_type": "annual"
       }
     ],
@@ -10778,10 +12141,26 @@
         "ebitda": 2929000000.0,
         "ebitda_annualized": 11716000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 2596000000.0,
+        "depreciation": 1159000000.0,
+        "ebitda": 3755000000.0,
+        "ebitda_annualized": 15020000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2111000000.0,
+        "depreciation": -2051000000.0,
+        "ebitda": 60000000.0,
+        "ebitda_annualized": 240000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3614000000.0,
-    "ebitda_growth": -31.201218351418238,
+    "latest_ebitda": 3755000000.0,
+    "ebitda_growth": 6158.333333333334,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -10884,6 +12263,14 @@
         "depreciation": 71100000.0,
         "ebitda": 955400000.0,
         "ebitda_annualized": 3821600000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": null,
+        "depreciation": -133900000.0,
+        "ebitda": null,
+        "ebitda_annualized": null,
         "period_type": "quarterly"
       }
     ],
@@ -11000,11 +12387,11 @@
         "period_type": "quarterly"
       },
       {
-        "period": "Q3 2023",
-        "operating_income": 99082000.0,
-        "depreciation": 25932000.0,
-        "ebitda": 125014000.0,
-        "ebitda_annualized": 500056000.0,
+        "period": "Q2 2026",
+        "operating_income": 474298000.0,
+        "depreciation": 12800000.0,
+        "ebitda": 487098000.0,
+        "ebitda_annualized": 1948392000.0,
         "period_type": "quarterly"
       },
       {
@@ -11046,10 +12433,26 @@
         "ebitda": 181665000.0,
         "ebitda_annualized": 726660000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 228391000.0,
+        "depreciation": 11600000.0,
+        "ebitda": 239991000.0,
+        "ebitda_annualized": 959964000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 288486000.0,
+        "depreciation": -27004000.0,
+        "ebitda": 261482000.0,
+        "ebitda_annualized": 1045928000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 157680000.0,
-    "ebitda_growth": -61.30438196953038,
+    "latest_ebitda": 239991000.0,
+    "ebitda_growth": -8.218921378909446,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -11153,10 +12556,26 @@
         "ebitda": 422508000.0,
         "ebitda_annualized": 1690032000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 121393000.0,
+        "depreciation": 304351000.0,
+        "ebitda": 425744000.0,
+        "ebitda_annualized": 1702976000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 303808000.0,
+        "depreciation": -71858000.0,
+        "ebitda": 231950000.0,
+        "ebitda_annualized": 927800000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 376576000.0,
-    "ebitda_growth": -30.31016359464061,
+    "latest_ebitda": 425744000.0,
+    "ebitda_growth": 83.54990299633542,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -11261,10 +12680,18 @@
         "ebitda": 2964000000.0,
         "ebitda_annualized": 11856000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1058000000.0,
+        "depreciation": -2483000000.0,
+        "ebitda": -1425000000.0,
+        "ebitda_annualized": -5700000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 7019000000.0,
-    "ebitda_growth": 11.696371737746658,
+    "latest_ebitda": -1425000000.0,
+    "ebitda_growth": -120.3020373272546,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -11475,10 +12902,26 @@
         "ebitda": 323000000.0,
         "ebitda_annualized": 1292000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 111000000.0,
+        "depreciation": -131400000.0,
+        "ebitda": -20400000.0,
+        "ebitda_annualized": -81600000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 59500000.0,
+        "depreciation": -126200000.0,
+        "ebitda": -66700000.0,
+        "ebitda_annualized": -266800000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 316900000.0,
-    "ebitda_growth": -2.9996939087848182,
+    "latest_ebitda": -20400000.0,
+    "ebitda_growth": 69.41529235382309,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -11582,9 +13025,17 @@
         "ebitda": null,
         "ebitda_annualized": null,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 581000000.0,
+        "depreciation": null,
+        "ebitda": null,
+        "ebitda_annualized": null,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1539000000.0,
+    "latest_ebitda": null,
     "ebitda_growth": null,
     "data_quality": "complete",
     "indices": [
@@ -11689,10 +13140,18 @@
         "ebitda": 10894000000.0,
         "ebitda_annualized": 43576000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 5326000000.0,
+        "depreciation": 5374000000.0,
+        "ebitda": 10700000000.0,
+        "ebitda_annualized": 42800000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 11436000000.0,
-    "ebitda_growth": 58.76718034152436,
+    "latest_ebitda": 10700000000.0,
+    "ebitda_growth": -6.435816719132564,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -11796,10 +13255,18 @@
         "ebitda": 2014000000.0,
         "ebitda_annualized": 8056000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1608000000.0,
+        "depreciation": -1593000000.0,
+        "ebitda": 15000000.0,
+        "ebitda_annualized": 60000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3279000000.0,
-    "ebitda_growth": -3.074194501921372,
+    "latest_ebitda": 15000000.0,
+    "ebitda_growth": -99.54254345837145,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -11903,10 +13370,18 @@
         "ebitda": 1948000000.0,
         "ebitda_annualized": 7792000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 2016000000.0,
+        "depreciation": -543000000.0,
+        "ebitda": 1473000000.0,
+        "ebitda_annualized": 5892000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2168000000.0,
-    "ebitda_growth": -19.405204460966544,
+    "latest_ebitda": 1473000000.0,
+    "ebitda_growth": -32.057195571955724,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -12010,10 +13485,18 @@
         "ebitda": 7369000000.0,
         "ebitda_annualized": 29476000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 4586000000.0,
+        "depreciation": 3149000000.0,
+        "ebitda": 7735000000.0,
+        "ebitda_annualized": 30940000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 7938000000.0,
-    "ebitda_growth": -0.11325028312570783,
+    "latest_ebitda": 7735000000.0,
+    "ebitda_growth": -2.5573192239858904,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -12117,10 +13600,26 @@
         "ebitda": 2100000000.0,
         "ebitda_annualized": 8400000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 1409000000.0,
+        "depreciation": 1380000000.0,
+        "ebitda": 2789000000.0,
+        "ebitda_annualized": 11156000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1583000000.0,
+        "depreciation": 1160000000.0,
+        "ebitda": 2743000000.0,
+        "ebitda_annualized": 10972000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2974000000.0,
-    "ebitda_growth": -21.05123440403504,
+    "latest_ebitda": 2789000000.0,
+    "ebitda_growth": 1.6769959897921984,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -12132,6 +13631,13 @@
     "symbol": "TXN",
     "company_name": "TEXAS INSTRUMENTS INC",
     "annual_data": [
+      {
+        "period": "FY 2025",
+        "operating_income": 6023000000.0,
+        "depreciation": 1918000000.0,
+        "ebitda": 7941000000.0,
+        "period_type": "annual"
+      },
       {
         "period": "FY 2024",
         "operating_income": 5465000000.0,
@@ -12151,13 +13657,6 @@
         "operating_income": 10140000000.0,
         "depreciation": 925000000.0,
         "ebitda": 11065000000.0,
-        "period_type": "annual"
-      },
-      {
-        "period": "FY 2021",
-        "operating_income": 8960000000.0,
-        "depreciation": 755000000.0,
-        "ebitda": 9715000000.0,
         "period_type": "annual"
       }
     ],
@@ -12225,10 +13724,26 @@
         "ebitda": 1632000000.0,
         "ebitda_annualized": 6528000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 1473000000.0,
+        "depreciation": -771000000.0,
+        "ebitda": 702000000.0,
+        "ebitda_annualized": 2808000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1377000000.0,
+        "depreciation": -639000000.0,
+        "ebitda": 738000000.0,
+        "ebitda_annualized": 2952000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 3044000000.0,
-    "ebitda_growth": 15.041572184429327,
+    "latest_ebitda": 702000000.0,
+    "ebitda_growth": -4.878048780487805,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -12333,10 +13848,18 @@
         "ebitda": 366000000.0,
         "ebitda_annualized": 1464000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 770000000.0,
+        "depreciation": -419000000.0,
+        "ebitda": 351000000.0,
+        "ebitda_annualized": 1404000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1301000000.0,
-    "ebitda_growth": -19.790382244143036,
+    "latest_ebitda": 351000000.0,
+    "ebitda_growth": -73.0207532667179,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -12440,10 +13963,18 @@
         "ebitda": 8928000000.0,
         "ebitda_annualized": 35712000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 7773000000.0,
+        "depreciation": 1041000000.0,
+        "ebitda": 8814000000.0,
+        "ebitda_annualized": 35256000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 5414000000.0,
-    "ebitda_growth": -44.46609908708585,
+    "latest_ebitda": 8814000000.0,
+    "ebitda_growth": 62.80014776505356,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -12548,10 +14079,26 @@
         "ebitda": 6201000000.0,
         "ebitda_annualized": 24804000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 6148000000.0,
+        "depreciation": 316000000.0,
+        "ebitda": 6464000000.0,
+        "ebitda_annualized": 25856000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 6349000000.0,
+        "depreciation": 274000000.0,
+        "ebitda": 6623000000.0,
+        "ebitda_annualized": 26492000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 6494000000.0,
-    "ebitda_growth": 4.7081586584972595,
+    "latest_ebitda": 6464000000.0,
+    "ebitda_growth": -2.400724747093462,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -12656,10 +14203,18 @@
         "ebitda": 364800000.0,
         "ebitda_annualized": 1459200000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 316300000.0,
+        "depreciation": 59100000.0,
+        "ebitda": 375400000.0,
+        "ebitda_annualized": 1501600000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 409900000.0,
-    "ebitda_growth": 10.903679653679655,
+    "latest_ebitda": 375400000.0,
+    "ebitda_growth": -8.416686996828494,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -12763,10 +14318,18 @@
         "ebitda": 1193000000.0,
         "ebitda_annualized": 4772000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 1026000000.0,
+        "depreciation": -114500000.0,
+        "ebitda": 911500000.0,
+        "ebitda_annualized": 3646000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1240200000.0,
-    "ebitda_growth": -2.881754111198121,
+    "latest_ebitda": 911500000.0,
+    "ebitda_growth": -26.503789711336882,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -12871,10 +14434,18 @@
         "ebitda": 11966000000.0,
         "ebitda_annualized": 47864000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 7421000000.0,
+        "depreciation": 4506000000.0,
+        "ebitda": 11927000000.0,
+        "ebitda_annualized": 47708000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 12723000000.0,
-    "ebitda_growth": 22.525038520801232,
+    "latest_ebitda": 11927000000.0,
+    "ebitda_growth": -6.256386072467185,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -12979,10 +14550,18 @@
         "ebitda": 1530000000.0,
         "ebitda_annualized": 6120000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 919000000.0,
+        "depreciation": 652000000.0,
+        "ebitda": 1571000000.0,
+        "ebitda_annualized": 6284000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 1718000000.0,
-    "ebitda_growth": 2.4448419797257004,
+    "latest_ebitda": 1571000000.0,
+    "ebitda_growth": -8.556461001164143,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -13086,10 +14665,26 @@
         "ebitda": 9969000000.0,
         "ebitda_annualized": 39876000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2025",
+        "operating_income": 8231000000.0,
+        "depreciation": 2511000000.0,
+        "ebitda": 10742000000.0,
+        "ebitda_annualized": 42968000000.0,
+        "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 5523000000.0,
+        "depreciation": 2254000000.0,
+        "ebitda": 7777000000.0,
+        "ebitda_annualized": 31108000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 10302000000.0,
-    "ebitda_growth": 3.350722311396469,
+    "latest_ebitda": 10742000000.0,
+    "ebitda_growth": 38.12524109553813,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30",
@@ -13194,10 +14789,18 @@
         "ebitda": 1343000000.0,
         "ebitda_annualized": 5372000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 347000000.0,
+        "depreciation": -1320000000.0,
+        "ebitda": -973000000.0,
+        "ebitda_annualized": -3892000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 2965000000.0,
-    "ebitda_growth": -0.033715441672285906,
+    "latest_ebitda": -973000000.0,
+    "ebitda_growth": -132.81618887015176,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
@@ -13301,10 +14904,18 @@
         "ebitda": 202000000.0,
         "ebitda_annualized": 808000000.0,
         "period_type": "quarterly"
+      },
+      {
+        "period": "Q4 2024",
+        "operating_income": 225000000.0,
+        "depreciation": -86000000.0,
+        "ebitda": 139000000.0,
+        "ebitda_annualized": 556000000.0,
+        "period_type": "quarterly"
       }
     ],
-    "latest_ebitda": 309000000.0,
-    "ebitda_growth": -3.7383177570093453,
+    "latest_ebitda": 139000000.0,
+    "ebitda_growth": -55.016181229773466,
     "data_quality": "complete",
     "indices": [
       "SP500_TOP30"
