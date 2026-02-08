@@ -6,9 +6,13 @@ let currentSearch = '';
 let allCompanies = [];
 let stockPrices = {};
 
+// Base URL for large data assets (served from R2)
+const DATA_BASE = 'https://data.mikemcgilly.com';
+
 // Load cached stock prices from a local JSON file (static snapshot)
 async function loadStockPriceSnapshot() {
     const possiblePaths = [
+        `${DATA_BASE}/stock_prices.json`,
         './data/stock_prices.json',
         '/data/stock_prices.json',
         'data/stock_prices.json'
@@ -37,6 +41,7 @@ async function loadPortfolioData() {
         console.log('Attempting to load portfolio data...');
         // Try multiple path variations for different hosting environments
         const possiblePaths = [
+            `${DATA_BASE}/portfolio_ebitda_data.json`,
             './data/portfolio_ebitda_data.json',
             '/data/portfolio_ebitda_data.json',
             'data/portfolio_ebitda_data.json'
