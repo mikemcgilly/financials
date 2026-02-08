@@ -53,11 +53,7 @@ def generate_portfolio_data():
     file_path = 'C:\\Projects\\financials_website\\financials\\website\\s&p500.txt'
 
     with open(file_path, 'r') as file:
-        symbols = file.readlines()
-
-
-    # To remove newlines from the list items:
-    symbols = [line.strip() for line in file if line.strip()]
+        symbols = [line.strip().upper() for line in file if line.strip()]
     # print(clean_lines_list)
 
 
