@@ -48,8 +48,21 @@ def generate_portfolio_data():
     
     # Get all stocks from universe
     symbols = get_all_stocks()
+
+
+    file_path = 'C:\\Projects\\financials_website\\financials\\website\\s&p500.txt'
+
+    with open(file_path, 'r') as file:
+        symbols = file.readlines()
+
+
+    # To remove newlines from the list items:
+    symbols = [line.strip() for line in symbols]
+    # print(clean_lines_list)
+
+
     portfolio_data = []
-    classifications = get_stock_classifications()
+    # classifications = get_stock_classifications()
     expected_quarters, expected_years = get_current_periods()
     
     for symbol in symbols:
@@ -78,9 +91,9 @@ def generate_portfolio_data():
                 'quarterly_data': [],
                 'latest_ebitda': None,
                 'ebitda_growth': None,
-                'data_quality': 'complete',
-                'indices': classifications.get(symbol.upper(), {}).get('indices', []),
-                'primary_index': classifications.get(symbol.upper(), {}).get('primary_index', 'OTHER')
+                'data_quality': 'complete'
+                # 'indices': classifications.get(symbol.upper(), {}).get('indices', []),
+                # 'primary_index': classifications.get(symbol.upper(), {}).get('primary_index', 'OTHER')
             }
             
             # Process annual data
