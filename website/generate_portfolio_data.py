@@ -47,7 +47,7 @@ def generate_portfolio_data():
     set_identity("mikemcgilly@gmail.com")
     
     # Get all stocks from universe
-    symbols = get_all_stocks()
+    symbols = [] # get_all_stocks()
 
 
     file_path = 'C:\\Projects\\financials_website\\financials\\website\\s&p500.txt'
