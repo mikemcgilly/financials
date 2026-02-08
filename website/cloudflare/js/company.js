@@ -510,7 +510,20 @@ async function loadOHLCData(symbol) {
             
             const allData = await resp.json();
             console.log(`[DEBUG] Loaded OHLC data for ${Object.keys(allData).length} symbols`);
-            return allData[symbol] || [];
+            // return allData[symbol] || [];
+            const sym = String(symbol).trim().toUpperCase();
+
+            // Direct hit
+            let series = allData[sym];
+
+            // Fallback: keys may contain hidden whitespace/newlines
+            if (!series) {
+            const matchKey = Object.keys(allData).find(k => k.trim().toUpperCase() === sym);
+            if (matchKey) series = allData[matchKey];
+            }
+
+            return Array.isArray(series) ? series : [];
+
         } catch (error) {
             console.log(`[DEBUG] Path ${path} threw error:`, error.message);
         }

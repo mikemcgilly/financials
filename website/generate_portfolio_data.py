@@ -57,7 +57,7 @@ def generate_portfolio_data():
 
 
     # To remove newlines from the list items:
-    symbols = [line.strip() for line in symbols]
+    symbols = [line.strip() for line in file if line.strip()]
     # print(clean_lines_list)
 
 
