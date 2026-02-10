@@ -22,10 +22,10 @@
                 <h3>EBITDA Trend Distribution</h3>
                 <canvas id="trend-chart"></canvas>
             </div>
-            <div class="card valuation-histogram">
+            <!-- <div class="card valuation-histogram">
                 <h3>Valuation Distribution</h3>
                 <canvas id="valuation-chart"></canvas>
-            </div>
+            </div> -->
         </div>
 
         <div class="methodology-section">
@@ -40,15 +40,15 @@
                 
                 <p><strong>EBITDA Y/Y Trend (Smoothed):</strong> Measures the average annual change in EBITDA using a 2-period moving average. Expressed in billions per year. Positive values indicate growing earnings, negative values indicate declining earnings. Strong trends are >$1B or <-$1B per year.</p>
                 
-                <p><strong>Valuation Bands:</strong> Based on current price relative to 252-day (one trading year) moving average with standard deviation bands:
+                <!-- <p><strong>Valuation Bands:</strong> Based on current price relative to 252-day (one trading year) moving average with standard deviation bands:
                 <span class="badge discount">Discount</span> (>2σ below MA), 
                 <span class="badge below_value">Below Value</span> (1-2σ below MA), 
                 <span class="badge fair_value">Fair Value</span> (±1σ from MA), 
                 <span class="badge above_value">Above Value</span> (1-2σ above MA), 
-                <span class="badge premium">Premium</span> (>2σ above MA). Lower bands may indicate buying opportunities; higher bands may indicate overvaluation.</p>
+                <span class="badge premium">Premium</span> (>2σ above MA). Lower bands may indicate buying opportunities; higher bands may indicate overvaluation.</p> -->
             </div>
         </div>
-
+<!-- 
         <div class="filter-controls">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                 <h3 style="margin: 0;">Filters</h3>
@@ -61,7 +61,7 @@
                 <button class="filter-btn" data-filter="NASDAQ100_TOP30">NASDAQ 100 TOP 30%</button>
                 <button class="filter-btn" data-filter="DOW">DOW INDUSTRIALS</button>
             </div>
-            <h3>Filter by Valuation:</h3>
+             <h3>Filter by Valuation:</h3>
             <div class="filter-buttons valuation-filters">
                 <button class="filter-btn valuation-btn active" data-valuation="ALL">ALL</button>
                 <button class="filter-btn valuation-btn badge discount" data-valuation="discount">Discount</button>
@@ -69,7 +69,7 @@
                 <button class="filter-btn valuation-btn badge fair_value" data-valuation="fair_value">Fair Value</button>
                 <button class="filter-btn valuation-btn badge above_value" data-valuation="above_value">Above Value</button>
                 <button class="filter-btn valuation-btn badge premium" data-valuation="premium">Premium</button>
-            </div>
+            </div> 
             <h3>Filter by EBITDA Trend:</h3>
             <div class="filter-buttons">
                 <button class="filter-btn slope-filter-btn active" data-slope="ALL">ALL</button>
@@ -81,7 +81,7 @@
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="Search by symbol or company name...">
             </div>
-        </div>
+        </div> -->
 
         <div class="portfolio-grid" id="portfolio-grid">
             <!-- Companies will be populated by JavaScript -->

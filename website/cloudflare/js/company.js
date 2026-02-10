@@ -582,24 +582,24 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Stock quote rendering
     // 1) Try live Yahoo quote via Cloudflare Pages Function (/api/quote)
     // 2) Fall back to the cached snapshot in /data/stock_prices.json
-    try {
-        const live = await loadLiveQuote(companyData.symbol);
-        if (live) {
-            setText('current-price', live.price != null ? `$${Number(live.price).toFixed(2)}` : 'Data not available');
-            setText('market-cap', live.marketCap != null ? formatMarketCap(Number(live.marketCap)) : 'Data not available');
-            setText('pe-ratio', live.peRatio != null && Number(live.peRatio) !== 0 ? Number(live.peRatio).toFixed(2) : 'Data not available');
-        } else {
-            const snapshot = await loadStockPriceSnapshot();
-            const q = snapshot ? snapshot[companyData.symbol] : null;
+    // try {
+    //     const live = await loadLiveQuote(companyData.symbol);
+    //     if (live) {
+    //         setText('current-price', live.price != null ? `$${Number(live.price).toFixed(2)}` : 'Data not available');
+    //         setText('market-cap', live.marketCap != null ? formatMarketCap(Number(live.marketCap)) : 'Data not available');
+    //         setText('pe-ratio', live.peRatio != null && Number(live.peRatio) !== 0 ? Number(live.peRatio).toFixed(2) : 'Data not available');
+    //     } else {
+    //         const snapshot = await loadStockPriceSnapshot();
+    //         const q = snapshot ? snapshot[companyData.symbol] : null;
 
-            setText('current-price', q?.current_price != null ? `$${Number(q.current_price).toFixed(2)}` : 'Data not available');
-            setText('market-cap', q?.market_cap != null ? formatMarketCap(Number(q.market_cap)) : 'Data not available');
-            setText('pe-ratio', q?.pe_ratio != null && Number(q.pe_ratio) !== 0 ? Number(q.pe_ratio).toFixed(2) : 'Data not available');
-        }
-    } catch (e) {
-        console.log('Quote render failed:', e?.message || e);
-        setText('current-price', 'Data not available');
-        setText('market-cap', 'Data not available');
-        setText('pe-ratio', 'Data not available');
-    }
+    //         setText('current-price', q?.current_price != null ? `$${Number(q.current_price).toFixed(2)}` : 'Data not available');
+    //         setText('market-cap', q?.market_cap != null ? formatMarketCap(Number(q.market_cap)) : 'Data not available');
+    //         setText('pe-ratio', q?.pe_ratio != null && Number(q.pe_ratio) !== 0 ? Number(q.pe_ratio).toFixed(2) : 'Data not available');
+    //     }
+    // } catch (e) {
+    //     console.log('Quote render failed:', e?.message || e);
+    //     setText('current-price', 'Data not available');
+    //     setText('market-cap', 'Data not available');
+    //     setText('pe-ratio', 'Data not available');
+    // }
 });

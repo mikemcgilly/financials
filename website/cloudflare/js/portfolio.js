@@ -428,7 +428,7 @@ function createTrendHistogram(companies) {
                     bodyColor: '#cccccc',
                     callbacks: {
                         label: function(context) {
-                            return `${context.parsed.y} companies (click to filter)`;
+                            return `${context.parsed.y} companies`;
                         }
                     }
                 }
@@ -517,7 +517,7 @@ function createValuationHistogram(companies) {
                     bodyColor: '#cccccc',
                     callbacks: {
                         label: function(context) {
-                            return `${context.parsed.y} companies (click to filter)`;
+                            return `${context.parsed.y} companies`;
                         }
                     }
                 }
